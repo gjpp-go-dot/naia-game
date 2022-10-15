@@ -6,6 +6,8 @@ export var nibWeight: float = 0.075
 export var freeze: bool = true setget set_freeze
 var speed = 0.0 setget setSpeed, getSpeed
 
+var damage = 50
+
 func setSpeed(newSpeed):
 	speed = newSpeed
 
