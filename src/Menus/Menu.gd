@@ -14,7 +14,7 @@ func _ready():
 
 func _on_Configuracoes_pressed():
 	get_tree().change_scene("res://scenes/Menus e utilitarios/Configurações.tscn")
-	
+
 
 
 func _on_Sair_pressed():
