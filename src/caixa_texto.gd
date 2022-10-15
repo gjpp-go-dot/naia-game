@@ -53,12 +53,12 @@ func hide_textbox():
 	finalizar.text = ""
 	texto.text = ""
 	texto_container.hide()
-	
+
 #função mostrar a text box
 func show_textbox():
 	iniciar.text = "*"
 	texto_container.show()
-	
+
 #função mostrar texto dentro da text box
 func mostrar_texto():
 	var proximo_texto = texto_fila.pop_front()
@@ -85,9 +85,9 @@ func mudar_estado(proximo_estado):
 func _on_Tween_tween_completed(object, key):
 	finalizar.text = "v"
 	mudar_estado(State.INATIVO)
-	
+
 func _on_Area2D_body_entered(body):
 	id_npc = 1
 	mudar_estado(State.PRONTO)
 	_txt()
-	
+

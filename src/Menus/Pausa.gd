@@ -26,18 +26,18 @@ func _ready():
 		$Popup/Musica/Label.text = 'Music volume:'
 		$Popup/SFX/Label.text = "SFX volume:"
 		$Popup/Salvar.text = "Save and return"
-	
+
 func pause():
 	$".".show()
 	get_tree().paused = true
 	GlobalOpcoes.isPaused = true
-	
+
 func unpause():
 	$".".hide()
 	$Popup.hide()
 	get_tree().paused = false
 	GlobalOpcoes.isPaused = false
-	
+
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
 		if GlobalOpcoes.isPaused:
