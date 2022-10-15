@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://scenes/blocos/bloco_instavel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://sound_efects/koertes-ccby-birdsongloop16s.ogg" type="AudioStream" id=2]
@@ -14,11 +14,18 @@
 [ext_resource path="res://scenes/Main.gd" type="Script" id=12]
 [ext_resource path="res://scenes/caixa_texto.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/vida_extra.tscn" type="PackedScene" id=14]
-[ext_resource path="res://adversario.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/adversario.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/grasss.png" type="Texture" id=16]
 [ext_resource path="res://assets/block.png" type="Texture" id=17]
 [ext_resource path="res://assets/grass2.png" type="Texture" id=18]
 [ext_resource path="res://scenes/Menus e utilitarios/Pausa.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/back.jpg" type="Texture" id=20]
+[ext_resource path="res://src/shaders/InfinityBackgroundPixelPerfect.gdshader" type="Shader" id=21]
+
+[sub_resource type="ShaderMaterial" id=24]
+shader = ExtResource( 21 )
+shader_param/direction = Vector2( 1, 0 )
+shader_param/speed_scale = 0.01
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
@@ -575,6 +582,17 @@ extents = Vector2( 72.5, 1.25 )
 modulate = Color( 0.976471, 0.976471, 0.976471, 1 )
 script = ExtResource( 12 )
 
+[node name="Sprite" type="TextureRect" parent="."]
+light_mask = 0
+material = SubResource( 24 )
+margin_left = -2397.0
+margin_top = -863.0
+margin_right = -2365.0
+margin_bottom = -846.0
+rect_scale = Vector2( 200, 200 )
+texture = ExtResource( 20 )
+expand = true
+
 [node name="personagem" parent="." instance=ExtResource( 4 )]
 position = Vector2( -26, 221 )
 collision_mask = 278
@@ -590,9 +608,7 @@ volume_db = -22.128
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_mirroring = Vector2( 900, 250 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+motion_mirroring = Vector2( 600, 400 )
 
 [node name="Hud" parent="." instance=ExtResource( 8 )]
 

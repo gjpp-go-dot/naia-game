@@ -29,7 +29,7 @@ func _physics_process(delta):
 		motion.y += gravidade
 	motion = move_and_slide(motion, up) #Função que move e mantem movendo o objeto enquanto o jogador aperta o botão / Colocando que motion é igual a essa função ele vai ta zerando a gravidade toda vez que essa função for chamada
 	
-	if Input.is_action_just_pressed("ui_accept"):
+	if Input.is_action_just_pressed("ui_accept") and motion.y == 0:
 		Global.attack = true
 	
 	match Global.attack:
