@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fast-simple-chop-5-6270.mp3-2977b4db1fe347d479d8ffdf8454b625.mp3str"
+
+[deps]
+
+source_file="res://sound_efects/fast-simple-chop-5-6270.mp3"
+dest_files=[ "res://.import/fast-simple-chop-5-6270.mp3-2977b4db1fe347d479d8ffdf8454b625.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
