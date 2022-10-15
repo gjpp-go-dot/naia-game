@@ -2,7 +2,7 @@ extends RigidBody2D
 
 var targetAimPoint = Vector2(0,0)
 var launched = false
-export var nibWeight: float = 0.065
+export var nibWeight: float = 0.075
 export var freeze: bool = true setget set_freeze
 var speed = 0.0 setget setSpeed, getSpeed
 
@@ -26,9 +26,9 @@ func aim_on(target: Vector2):
 	targetAimPoint = target
 
 func _physics_process(delta):
-	rotate(deg2rad((1 if global_rotation_degrees < 90 else -1) * (delta * 60) * ((weight * mass) * nibWeight)))
+	print(global_rotation_degrees)
+	rotate(deg2rad((1 if global_rotation_degrees < 90 and global_rotation_degrees > -90  else -1) * (delta * 60) * ((weight * mass) * nibWeight)))
 
-# FIXME: Bugs de tempo / stuttering da linha de predição
 func get_prediction_line():
 	var lines_to_draw = []
 	var pos = position
@@ -39,8 +39,8 @@ func get_prediction_line():
 	var step = 2.0 / num_points
 
 	for _i in range(num_points):
-		var new_pos = pos + velocity * step + Vector2(0, 9.8) * gravity_weight * step * step
-		var new_velocity = velocity + Vector2(0, 9.8) * gravity_weight * step
+		var new_pos = pos + velocity * step + Vector2(0, weight) * gravity_weight * step * step
+		var new_velocity = velocity + Vector2(0, weight) * gravity_weight * step
 		lines_to_draw.append([pos, new_pos])
 		pos = new_pos
 		velocity = new_velocity
@@ -58,5 +58,3 @@ func set_freeze(_freeze: bool):
 
 func _ready():
 	set_freeze(freeze)
-	#aim_on(Vector2(1280, 0))
-	#throw()

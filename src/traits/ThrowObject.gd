@@ -4,7 +4,7 @@ export (PackedScene) var throwObjectScene = null
 
 var throwObject = null
 var aiming = false
-var throwSpeed = 65
+var throwSpeed = 50
 
 func _ready():
 	assert(throwObjectScene != null)
@@ -20,15 +20,14 @@ func _draw():
 			for i in range(lines.size() - 1):
 				draw_line(lines[i][0], lines[i][1], Color(1, 1, 1, 1), 2)
 
-func _process(delta):
+func _process(_delta):
 	if throwObject.launched:
 		return
 
 	if aiming:
 		update()
-		throwObject.setSpeed(throwSpeed * (delta * 60))
+		throwObject.setSpeed(throwSpeed)
 		var mousePos = get_viewport().get_mouse_position()
-		print(mousePos)
 		throwObject.aim_on(mousePos)
 
 		if Input.is_action_just_pressed("spear_throw"):
