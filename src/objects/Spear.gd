@@ -26,7 +26,6 @@ func aim_on(target: Vector2):
 	targetAimPoint = target
 
 func _physics_process(delta):
-	print(global_rotation_degrees)
 	rotate(deg2rad((1 if global_rotation_degrees < 90 and global_rotation_degrees > -90  else -1) * (delta * 60) * ((weight * mass) * nibWeight)))
 
 func get_prediction_line():
