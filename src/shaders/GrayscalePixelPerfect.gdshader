@@ -16,7 +16,7 @@ void fragment() { // Fragment shader
 	vec4 Texture = texturePointSmooth(TEXTURE, UV); // Sample the texture
 
 	if (grayscale) {
-	    COLOR.rgb = vec3(dot(Texture.rgb, vec3(0.333, 0.333, 0.333)));
+		COLOR.rgb = vec3(dot(Texture.rgb, vec3(0.333, 0.333, 0.333)));
 		COLOR.a = Texture.a
 	} else {
 		COLOR = Texture.rgba; // Set the color
