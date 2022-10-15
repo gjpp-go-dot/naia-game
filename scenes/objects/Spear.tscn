@@ -1,12 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://assets/objects/thow_placeholder.png" type="Texture" id=1]
+[ext_resource path="res://assets/objects/spear.png" type="Texture" id=1]
+[ext_resource path="res://src/shaders/PixelPerfect.gdshader" type="Shader" id=2]
 [ext_resource path="res://src/objects/Spear.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 88 )
+extents = Vector2( 4, 35.5 )
 
 [sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 2 )
 
 [node name="Spear" type="RigidBody2D"]
 mass = 0.816326
@@ -17,14 +19,13 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -1 )
+position = Vector2( -1.5, -5.42999e-06 )
 rotation = 1.5708
+scale = Vector2( 2, 2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
-position = Vector2( -1, 0 )
 rotation = 0.785398
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
-offset = Vector2( -5, 0 )

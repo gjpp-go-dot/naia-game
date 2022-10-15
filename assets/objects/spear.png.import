@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/thow_placeholder.png-2a3f6a7510a3eedd4359379bbb5134cd.stex"
+path="res://.import/spear.png-e7633d7b9e4d6301e7a71b15a350feb1.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/thow_placeholder.png"
-dest_files=[ "res://.import/thow_placeholder.png-2a3f6a7510a3eedd4359379bbb5134cd.stex" ]
+source_file="res://assets/objects/spear.png"
+dest_files=[ "res://.import/spear.png-e7633d7b9e4d6301e7a71b15a350feb1.stex" ]
 
 [params]
 
@@ -22,7 +22,7 @@ compress/normal_map=0
 flags/repeat=0
 flags/filter=true
 flags/mipmaps=false
-flags/anisotropic=false
+flags/anisotropic=true
 flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
