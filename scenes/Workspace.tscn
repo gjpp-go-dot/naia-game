@@ -10,5 +10,5 @@
 position = Vector2( 701, 425 )
 
 [node name="ThowObject" parent="." instance=ExtResource( 2 )]
-position = Vector2( 425, 479 )
+position = Vector2( 581, 46 )
 throwObjectScene = ExtResource( 3 )
