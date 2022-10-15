@@ -11,12 +11,13 @@ config_version=4
 [application]
 
 config/name="Game"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/Menus e utilitarios/Menu.tscn"
 config/icon="res://assets/icon.png"
 
 [autoload]
 
 Global="*res://src/Global.gd"
+GlobalOpcoes="*res://src/Menus/GlobalOpcoes.gd"
 
 [display]
 
