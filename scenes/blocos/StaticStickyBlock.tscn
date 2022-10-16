@@ -5,8 +5,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
-[node name="bloco_estatico" type="StaticBody2D"]
-modulate = Color( 1, 0.960784, 0, 1 )
+[node name="StaticStickyBlock" type="StaticBody2D"]
+modulate = Color( 0.968627, 1, 0, 1 )
 collision_layer = 4
 
 [node name="Icon" type="Sprite" parent="."]

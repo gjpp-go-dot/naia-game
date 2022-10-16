@@ -17,7 +17,7 @@ func _draw():
 		var lines = throwObject.get_prediction_line()
 
 		if lines.size() > 0:
-			for i in range(lines.size() - 1):
+			for i in range(5, lines.size() - 1, 3):
 				draw_line(lines[i][0], lines[i][1], Color(1, 1, 1, 1), 2)
 
 func _process(_delta):

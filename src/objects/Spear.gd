@@ -9,6 +9,7 @@ export var freeze: bool = true setget set_freeze
 
 var speed = 0.0 setget setSpeed, getSpeed
 var damage = 50
+var sticked = false
 
 func setSpeed(newSpeed):
 	speed = newSpeed
@@ -37,13 +38,13 @@ func get_prediction_line():
 	var pos = position
 
 	var velocity = calculate_speed() * (1 - ((weight * mass) * nibWeight))
-	var num_points = 10
+	var num_points = 100
 	var gravity_weight = (weight * mass)
 	var step = 2.0 / num_points
 
 	for _i in range(num_points):
-		var new_pos = pos + velocity * step + Vector2(0, weight) * gravity_weight * step * step
-		var new_velocity = velocity + Vector2(0, weight) * gravity_weight * step
+		var new_pos = pos + velocity * step + Vector2(0, (weight * mass) - (nibWeight * ((weight * mass)))) * gravity_weight * step * step
+		var new_velocity = velocity + Vector2(0, (weight * mass) - (nibWeight * ((weight * mass)))) * gravity_weight * step
 		lines_to_draw.append([pos, new_pos])
 		pos = new_pos
 		velocity = new_velocity
@@ -77,7 +78,7 @@ func __stab(direction, selfDestroy = false):
 	attacking = false
 
 func attack(attackType, direction, selfDestroy = false):
-	if launched or attacking:
+	if launched or attacking or sticked:
 		return
 	attacking = true
 	collision_mask = 0
@@ -97,6 +98,12 @@ func attack(attackType, direction, selfDestroy = false):
 			__stab(direction, selfDestroy)
 
 
-func _on_Area2D_body_shape_entered(body_rid:RID, body:Node, body_shape_index:int, local_shape_index:int):
+func _on_Area2D_body_shape_entered(_body_rid: RID, body: Node, _body_shape_index: int, _local_shape_index: int):
 	if attacking:
 		body.call("hit", self)
+
+	if launched:
+		if body.name == "StaticStickyBlock":
+			set_freeze(true)
+			sleeping = true
+			sticked = true
