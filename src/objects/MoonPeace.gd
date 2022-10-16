@@ -38,11 +38,11 @@ func get_prediction_line():
 	var velocity = calculate_speed()
 	var num_points = 100
 	var gravity_weight = (weight * mass)
-	var step = 1.75 / num_points
+	var step = 4.0 / num_points
 
 	for _i in range(num_points):
-		var new_pos = pos + velocity * step + Vector2(0, 9.8) * gravity_weight * step * step
-		var new_velocity = velocity + Vector2(0, 9.8) * gravity_weight * step
+		var new_pos = pos + velocity * step + Vector2(0, 9.8 + gravity_weight) * gravity_weight * step * step
+		var new_velocity = velocity + Vector2(0, 9.8 + gravity_weight) * gravity_weight * step
 		lines_to_draw.append([pos, new_pos])
 		pos = new_pos
 		velocity = new_velocity
