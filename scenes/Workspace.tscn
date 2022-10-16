@@ -22,7 +22,7 @@ glow_high_quality = true
 position = Vector2( 808, 345 )
 
 [node name="ThowObject" parent="." instance=ExtResource( 2 )]
-position = Vector2( 485, 156 )
+position = Vector2( 278, 251 )
 throwObjectScene = ExtResource( 3 )
 
 [node name="AttackWithObject" parent="." instance=ExtResource( 6 )]

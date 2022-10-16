@@ -4,7 +4,7 @@ export (PackedScene) var throwObjectScene = null
 
 var throwObject = null
 var aiming = false
-var throwSpeed = 65
+var throwSpeed = 70
 
 func _ready():
 	assert(throwObjectScene != null)
