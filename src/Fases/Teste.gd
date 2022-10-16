@@ -1,9 +1,9 @@
 extends Node2D
 
 
-func _ready():
-	if Global.checkpoint[1][0]:
-		$personagem.position = Vector2(641,245)
+#func _ready():
+#	if Global.checkpoint[1][0]:
+#		$personagem.position = Vector2(641,245)
 
 
 func _on_Death_area_entered(area):

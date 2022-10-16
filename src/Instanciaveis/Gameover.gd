@@ -11,7 +11,7 @@ func _ready():
 		$Label.text = "Game Over"
 		$TentarDNV.text = "Try again"
 		$Menu.text = 'Main menu'
-	
+
 	$AnimationPlayer.play("Gamend")
 
 func _on_TentarDNV_pressed():

@@ -25,38 +25,38 @@ func _physics_process(delta):
 		if Input.is_action_pressed("ui_up"):
 			$jumpfx.play()
 			impulso()
-			
+
 	else:
 		motion.y += gravidade
 	motion = move_and_slide(motion, up) #Função que move e mantem movendo o objeto enquanto o jogador aperta o botão / Colocando que motion é igual a essa função ele vai ta zerando a gravidade toda vez que essa função for chamada
-	
+
 	if Input.is_action_just_pressed("ui_accept"):
 		state = ATTACK
-	
+
 	match state:
 		CALM:
 			spear_attack.visible = false
-			
+
 		ATTACK:
 			spear_attack.visible = true
 			time_attack += delta
 			if time_attack >= 0.4:
 				time_attack = 0
 				state = CALM
-	
-		
+
+
 	# detectar contato com plataformas
 	for platforms in get_slide_count():
 		var collision = get_slide_collision(platforms)
 		if collision.collider.has_method("collide_with"):
 			collision.collider.collide_with(collision, self)
-	
-	if Global.vida == 0: 
-		game_over() 
-			
+
+	if Global.vida == 0:
+		game_over()
+
 func impulso(num = 1):
 	motion.y = num * jump_force
-	
+
 func sofrer_dano():
 	if invulnerabilidade != true:
 		Global.vida -=1

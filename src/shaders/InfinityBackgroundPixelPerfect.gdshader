@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform vec2 direction = vec2(1.0, 0.0);
-uniform float speed_scale = 0.1;
+uniform float speed_scale = 0.01;
 
 vec4 texturePointSmooth(sampler2D tex, vec2 uv) { // Smooth texture sampling
 	vec2 size = vec2(textureSize(tex, 0)); // Get texture size
