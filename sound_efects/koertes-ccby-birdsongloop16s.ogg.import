@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/koertes-ccby-birdsongloop16s.ogg-5230aab2016ba638db269a44e2d73c81.oggstr"
+
+[deps]
+
+source_file="res://sound_efects/koertes-ccby-birdsongloop16s.ogg"
+dest_files=[ "res://.import/koertes-ccby-birdsongloop16s.ogg-5230aab2016ba638db269a44e2d73c81.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
