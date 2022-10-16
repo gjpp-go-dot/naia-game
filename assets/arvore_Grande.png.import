@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/a65cdb666647aca02e1d498c278f1754.jpg-720330b3481e15fd5dd30530a4e57fbc.stex"
+path="res://.import/arvore_Grande.png-f28443f1072836dc521d4ca73d05850f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/a65cdb666647aca02e1d498c278f1754.jpg"
-dest_files=[ "res://.import/a65cdb666647aca02e1d498c278f1754.jpg-720330b3481e15fd5dd30530a4e57fbc.stex" ]
+source_file="res://assets/arvore_Grande.png"
+dest_files=[ "res://.import/arvore_Grande.png-f28443f1072836dc521d4ca73d05850f.stex" ]
 
 [params]
 
@@ -19,8 +19,8 @@ compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=false
+flags/repeat=0
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

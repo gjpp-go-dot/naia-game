@@ -22,4 +22,4 @@ func _on_Sair_pressed():
 
 
 func _on_Novo_pressed():
-	get_tree().change_scene("res://scenes/Main.tscn")
+	get_tree().change_scene("res://scenes/Fases/Fase1.tscn")

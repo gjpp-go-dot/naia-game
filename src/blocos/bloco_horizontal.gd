@@ -6,14 +6,17 @@ var velocidade = 1 #velocidade horizontal do bloco (mais baixa)
 var limite #intervalo que o bloco pode percorrer 
 func _ready():
 	posicao_inicial = self.position.x
-	posicao_final = 100 
+	posicao_final = 448
 	limite = posicao_inicial + posicao_final #posição até onde o corpo pode se mover no eixo x
 func _process(delta):
 	if (self.position.x >= limite): #se a posição for maior do que o limite
 		flip = true
 	elif (self.position.x <= posicao_inicial):
 		flip = false
+		
 	if (flip): 
+		$Icon.flip_h = false
 		self.position.x -= velocidade #altera o sentido da velocidade se o flip for ativo
 	else:
+		$Icon.flip_h = true
 		self.position.x += velocidade #permanece inalterado

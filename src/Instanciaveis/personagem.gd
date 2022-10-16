@@ -65,8 +65,7 @@ func sofrer_dano():
 	invulnerabilidade = false
 
 func game_over():
-	print("perdeu")
-#	get_tree(change_scene("game_over"))
+	get_tree().change_scene("res://scenes/Menus e utilitarios/Gameover.tscn")
 
 func _process(delta):
 	$jumpfx.volume_db = GlobalOpcoes.controlSFX(5,-35)

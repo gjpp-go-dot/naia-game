@@ -8,7 +8,7 @@ var limite #intervalo que o bloco pode percorrer
 
 func _ready():
 	posicaoInicial = self.position.x #posição atual do bloco no momento em que o jogo está operando
-	posicaoFinal = 100
+	posicaoFinal = 320
 	limite = posicaoInicial + posicaoFinal #posição até onde o corpo pode se mover no eixo x
 
 func _process(_delta):
