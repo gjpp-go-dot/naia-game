@@ -2,6 +2,7 @@ extends Node2D
 
 
 func _ready():
+	Global.points = Global.count
 	if GlobalOpcoes.isPortuguese:
 		$Label.text = "Fim de Jogo"
 		$TentarDNV.text = "Tentar novamente"
