@@ -23,15 +23,11 @@ position = Vector2( 808, 345 )
 
 [node name="ThowObject" parent="." instance=ExtResource( 2 )]
 position = Vector2( 278, 251 )
-throwObjectScene = ExtResource( 3 )
+throwObjectScene = ExtResource( 4 )
 
 [node name="AttackWithObject" parent="." instance=ExtResource( 6 )]
 position = Vector2( 710, 355 )
 attackObjectScene = ExtResource( 3 )
-
-[node name="Sprite" parent="." instance=ExtResource( 4 )]
-modulate = Color( 1.3, 1.3, 1.3, 1 )
-position = Vector2( 428, 406 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )

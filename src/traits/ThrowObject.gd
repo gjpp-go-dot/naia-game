@@ -1,10 +1,10 @@
 extends Node2D
 
 export (PackedScene) var throwObjectScene = null
+export (float) var throwSpeed = 70.0
 
 var throwObject = null
 var aiming = false
-var throwSpeed = 70
 
 func _ready():
 	assert(throwObjectScene != null)
