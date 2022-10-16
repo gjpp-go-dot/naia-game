@@ -24,6 +24,6 @@ texture = ExtResource( 1 )
 stream = ExtResource( 3 )
 volume_db = -50.0
 
-[connection signal="body_entered" from="." to="." method="_on_coletavel_body_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_coletavel_body_entered"]
 [connection signal="finished" from="itemfx" to="." method="_on_itemfx_finished"]

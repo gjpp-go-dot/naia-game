@@ -11,17 +11,15 @@ func _ready():
 		$personagem.position = Vector2(5656,288)
 	$personagem/Camera2D.limit_left = 0
 	$personagem/Camera2D.limit_right = 7168
-	Global.checkpoint[0][0] = true
+	$personagem/Camera2D.limit_top = -384
 
 func _process(delta):
 	for i in range(1,5):
 		if get_node('bloco_vertical'+str(i)).position.y >= 480: 
-			get_node('bloco_vertical'+str(i)).position.y = 96
+			get_node('bloco_vertical'+str(i)).position.y = 80
 	
 	
 	
-
-
 
 func _on_Area2D_area_entered(area):
 	inside = true

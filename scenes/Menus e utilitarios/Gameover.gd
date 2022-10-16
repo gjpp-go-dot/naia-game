@@ -20,7 +20,10 @@ func _ready():
 	$AnimationPlayer.play("Gamend")
 
 func _on_TentarDNV_pressed():
-	get_tree().reload_current_scene()
+	for i in range (len(Global.checkpoint)):
+		for u in range(len(Global.checkpoint[i])):
+			if Global.checkpoint[i][u]:
+				get_tree().change_scene("res://scenes/Fases/Fase"+str(i+1))
 
 
 func _on_Menu_pressed():

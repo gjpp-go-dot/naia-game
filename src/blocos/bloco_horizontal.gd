@@ -15,6 +15,8 @@ func _process(delta):
 		flip = false
 		
 	if (flip): 
+		$Icon.flip_h = false
 		self.position.x -= velocidade #altera o sentido da velocidade se o flip for ativo
 	else:
+		$Icon.flip_h = true
 		self.position.x += velocidade #permanece inalterado

@@ -4,20 +4,16 @@
 [ext_resource path="res://src/adversario.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 56, 51.5 )
+extents = Vector2( 56, 52 )
 
 [node name="adversario" type="KinematicBody2D"]
-position = Vector2( 8, 9 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 53, 48.5 )
+position = Vector2( 56, 52 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 54.75, 52.375 )
-scale = Vector2( 0.0661621, 0.0628662 )
+position = Vector2( 56, 52 )
+scale = Vector2( 0.0625, 0.0585937 )
 texture = ExtResource( 1 )
