@@ -1,0 +1,156 @@
+[gd_resource type="SpriteFrames" load_steps=30 format=3 uid="uid://o1kjbsipv5ya"]
+
+[ext_resource type="Texture2D" uid="uid://rypsi7lbvjaq" path="res://assets/sprites/entities/naia/idle/naia_idle1.png" id="1_ii1gm"]
+[ext_resource type="Texture2D" uid="uid://bfumo6p82vt4y" path="res://assets/sprites/entities/naia/idle/naia_idle2.png" id="2_3rjho"]
+[ext_resource type="Texture2D" uid="uid://c6stf6qryrnv5" path="res://assets/sprites/entities/naia/idle/naia_idle3.png" id="3_a1pnm"]
+[ext_resource type="Texture2D" uid="uid://eajcw8r021kv" path="res://assets/sprites/entities/naia/idle/naia_idle4.png" id="4_1362p"]
+[ext_resource type="Texture2D" uid="uid://2n4012l4b5hm" path="res://assets/sprites/entities/naia/jump/naia_jump1.png" id="5_hkb8u"]
+[ext_resource type="Texture2D" uid="uid://cnwpud28ucr76" path="res://assets/sprites/entities/naia/jump/naia_jump2.png" id="6_cvhpm"]
+[ext_resource type="Texture2D" uid="uid://cgbo3etvvi6ef" path="res://assets/sprites/entities/naia/jump/naia_jump3.png" id="7_8e3cl"]
+[ext_resource type="Texture2D" uid="uid://dhv0x051e4jje" path="res://assets/sprites/entities/naia/jump/naia_jump4.png" id="8_4r42b"]
+[ext_resource type="Texture2D" uid="uid://luwqkrg35651" path="res://assets/sprites/entities/naia/jump/naia_jump5.png" id="9_5h1ch"]
+[ext_resource type="Texture2D" uid="uid://duxqveyoygh6j" path="res://assets/sprites/entities/naia/jump/naia_jump6.png" id="10_4l8sc"]
+[ext_resource type="Texture2D" uid="uid://bkagvn0nnn5xb" path="res://assets/sprites/entities/naia/jump/naia_jump7.png" id="11_r65uc"]
+[ext_resource type="Texture2D" uid="uid://cd5osf7v7dota" path="res://assets/sprites/entities/naia/run/naia_run1.png" id="12_q8frj"]
+[ext_resource type="Texture2D" uid="uid://dvu5lpl1imphv" path="res://assets/sprites/entities/naia/run/naia_run2.png" id="13_a1yhm"]
+[ext_resource type="Texture2D" uid="uid://btefb7ua25827" path="res://assets/sprites/entities/naia/run/naia_run3.png" id="14_o40jm"]
+[ext_resource type="Texture2D" uid="uid://daacmtwrpb6oa" path="res://assets/sprites/entities/naia/run/naia_run4.png" id="15_hcb6q"]
+[ext_resource type="Texture2D" uid="uid://8dj4d66clqvg" path="res://assets/sprites/entities/naia/run/naia_run5.png" id="16_021js"]
+[ext_resource type="Texture2D" uid="uid://dtr4723oqum7w" path="res://assets/sprites/entities/naia/run/naia_run6.png" id="17_s6gcf"]
+[ext_resource type="Texture2D" uid="uid://kpspo35ltglq" path="res://assets/sprites/entities/naia/run/naia_run7.png" id="18_kwds2"]
+[ext_resource type="Texture2D" uid="uid://6et73koiwa4l" path="res://assets/sprites/entities/naia/spear/naia_lanca1.png" id="19_ppbi6"]
+[ext_resource type="Texture2D" uid="uid://d4g8ci0opv2bn" path="res://assets/sprites/entities/naia/spear/naia_lanca2.png" id="20_8njcq"]
+[ext_resource type="Texture2D" uid="uid://4jlytx1xebc2" path="res://assets/sprites/entities/naia/spear/naia_lanca3.png" id="21_lmr3p"]
+[ext_resource type="Texture2D" uid="uid://byjjql1xtioap" path="res://assets/sprites/entities/naia/spear/naia_lanca4.png" id="22_je6ul"]
+[ext_resource type="Texture2D" uid="uid://cmiodpuc060j8" path="res://assets/sprites/entities/naia/spear/naia_lanca5.png" id="23_eqnpo"]
+[ext_resource type="Texture2D" uid="uid://binrh4wqgyoil" path="res://assets/sprites/entities/naia/walk/naia_walk1.png" id="24_kk6rb"]
+[ext_resource type="Texture2D" uid="uid://cbdf5h6lq5g6s" path="res://assets/sprites/entities/naia/walk/naia_walk2.png" id="25_k5xqx"]
+[ext_resource type="Texture2D" uid="uid://qdjao4tgcmtx" path="res://assets/sprites/entities/naia/walk/naia_walk3.png" id="26_8d3sr"]
+[ext_resource type="Texture2D" uid="uid://vjjah3qlj3px" path="res://assets/sprites/entities/naia/walk/naia_walk4.png" id="27_g3w4o"]
+[ext_resource type="Texture2D" uid="uid://bdr1vqu0ycjc7" path="res://assets/sprites/entities/naia/walk/naia_walk5.png" id="28_xrhc5"]
+[ext_resource type="Texture2D" uid="uid://30i41dffxmgm" path="res://assets/sprites/entities/naia/walk/naia_walk6.png" id="29_pc7ox"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5h1ch")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ii1gm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_3rjho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a1pnm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1362p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_hkb8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cvhpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8e3cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_4r42b")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.6,
+"texture": ExtResource("10_4l8sc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r65uc")
+}],
+"loop": true,
+"name": &"land",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_q8frj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_a1yhm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_o40jm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hcb6q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_021js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_s6gcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_kwds2")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_ppbi6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_8njcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lmr3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_je6ul")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_eqnpo")
+}],
+"loop": true,
+"name": &"spear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_kk6rb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_k5xqx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_8d3sr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_g3w4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_xrhc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_pc7ox")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
