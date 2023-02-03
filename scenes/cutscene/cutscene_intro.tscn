@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://bngs1fh858uye"]
+
+[ext_resource type="Texture2D" uid="uid://mjleyflwukyc" path="res://assets/sprites/cutscene/f_01/background.png" id="1_s857v"]
+[ext_resource type="Texture2D" uid="uid://chaby7qa51wor" path="res://assets/sprites/cutscene/f_01/lua.png" id="2_vs28w"]
+[ext_resource type="Texture2D" uid="uid://cqtuaopb0nd31" path="res://assets/sprites/cutscene/f_01/quarto_plano.png" id="3_jrnu8"]
+[ext_resource type="Texture2D" uid="uid://dfcobawg8dpt2" path="res://assets/sprites/cutscene/f_01/terceiro_plano.png" id="4_bw85g"]
+[ext_resource type="Texture2D" uid="uid://ctlixnvuc8vq4" path="res://assets/sprites/cutscene/f_01/segundo_plano.png" id="5_voe2w"]
+[ext_resource type="Texture2D" uid="uid://bro2bh8o5138x" path="res://assets/sprites/cutscene/f_01/fogueira.png" id="6_ilaqt"]
+[ext_resource type="Texture2D" uid="uid://hf27uqtwcpfm" path="res://assets/sprites/cutscene/f_01/mae.png" id="7_da4lx"]
+[ext_resource type="Texture2D" uid="uid://brokjj4vx4lks" path="res://assets/sprites/cutscene/f_01/primeiro_plano.png" id="8_6bm12"]
+
+[sub_resource type="Animation" id="Animation_glabt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mae:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(427, 240)]
+}
+
+[sub_resource type="Animation" id="Animation_cdbd4"]
+resource_name = "intro cutscene"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Mae:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(427, 240), Vector2(421, 240)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3o0i1"]
+_data = {
+"RESET": SubResource("Animation_glabt"),
+"intro cutscene": SubResource("Animation_cdbd4")
+}
+
+[node name="cutscene_intro" type="Node2D"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_3o0i1")
+}
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(427, 240)
+texture = ExtResource("1_s857v")
+
+[node name="Lua" type="Sprite2D" parent="."]
+position = Vector2(428, 241)
+texture = ExtResource("2_vs28w")
+
+[node name="QuartoPlano" type="Sprite2D" parent="."]
+position = Vector2(427, 240)
+texture = ExtResource("3_jrnu8")
+
+[node name="TerceiroPlano" type="Sprite2D" parent="."]
+position = Vector2(427, 240)
+texture = ExtResource("4_bw85g")
+
+[node name="SegundoPlano" type="Sprite2D" parent="."]
+position = Vector2(427, 240)
+texture = ExtResource("5_voe2w")
+
+[node name="Fogueira" type="Sprite2D" parent="."]
+position = Vector2(427, 240)
+texture = ExtResource("6_ilaqt")
+
+[node name="Mae" type="Sprite2D" parent="."]
+position = Vector2(427, 240)
+texture = ExtResource("7_da4lx")
+
+[node name="PrimeiroPlano" type="Sprite2D" parent="."]
+position = Vector2(427, 240)
+texture = ExtResource("8_6bm12")
