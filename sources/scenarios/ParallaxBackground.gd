@@ -1,4 +1,4 @@
-extends Node
+extends ParallaxBackground
 
 
 var background: Vector2 = Vector2()

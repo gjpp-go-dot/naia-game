@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bs3djxv3y00tg"
-path="res://.godot/imported/parallax-03-desert.png-d66b7f7cf6a2c098015b957b298d91dd.ctex"
+uid="uid://b8i0nqq4m8mac"
+path="res://.godot/imported/TileSetNaiaFim.png-f7a08a76b2b78cc13aefde09178dab6c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/environment/parallax-03-desert.png"
-dest_files=["res://.godot/imported/parallax-03-desert.png-d66b7f7cf6a2c098015b957b298d91dd.ctex"]
+source_file="res://resources/tiles/TileSetNaiaFim.png"
+dest_files=["res://.godot/imported/TileSetNaiaFim.png-f7a08a76b2b78cc13aefde09178dab6c.ctex"]
 
 [params]
 
