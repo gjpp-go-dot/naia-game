@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bngs1fh858uye"]
+[gd_scene load_steps=14 format=3 uid="uid://bngs1fh858uye"]
 
 [ext_resource type="Texture2D" uid="uid://mjleyflwukyc" path="res://assets/sprites/cutscene/f_01/background.png" id="1_s857v"]
 [ext_resource type="Texture2D" uid="uid://chaby7qa51wor" path="res://assets/sprites/cutscene/f_01/lua.png" id="2_vs28w"]
@@ -7,10 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://ctlixnvuc8vq4" path="res://assets/sprites/cutscene/f_01/segundo_plano.png" id="5_voe2w"]
 [ext_resource type="Texture2D" uid="uid://bro2bh8o5138x" path="res://assets/sprites/cutscene/f_01/fogueira.png" id="6_ilaqt"]
 [ext_resource type="Texture2D" uid="uid://hf27uqtwcpfm" path="res://assets/sprites/cutscene/f_01/mae.png" id="7_da4lx"]
+[ext_resource type="Texture2D" uid="uid://b8rbfb1vydhkf" path="res://assets/sprites/cutscene/f_01/efeito_noturno.png" id="8_6anoh"]
 [ext_resource type="Texture2D" uid="uid://brokjj4vx4lks" path="res://assets/sprites/cutscene/f_01/primeiro_plano.png" id="8_6bm12"]
+[ext_resource type="Texture2D" uid="uid://tg82kajod7ii" path="res://assets/sprites/cutscene/f_01/luz_luar.png" id="9_85isg"]
 
 [sub_resource type="Animation" id="Animation_glabt"]
-length = 0.001
+length = 10.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -22,6 +24,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(427, 240)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lua:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(428, 241)]
 }
 
 [sub_resource type="Animation" id="Animation_cdbd4"]
@@ -80,6 +94,14 @@ texture = ExtResource("6_ilaqt")
 [node name="Mae" type="Sprite2D" parent="."]
 position = Vector2(427, 240)
 texture = ExtResource("7_da4lx")
+
+[node name="efeito_noturno" type="Sprite2D" parent="."]
+position = Vector2(427, 240)
+texture = ExtResource("8_6anoh")
+
+[node name="luz_luar" type="Sprite2D" parent="."]
+position = Vector2(427, 240)
+texture = ExtResource("9_85isg")
 
 [node name="PrimeiroPlano" type="Sprite2D" parent="."]
 position = Vector2(427, 240)
