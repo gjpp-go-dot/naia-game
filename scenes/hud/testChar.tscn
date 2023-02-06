@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b04b1gk4snpl6"]
+[gd_scene load_steps=5 format=3 uid="uid://b04b1gk4snpl6"]
 
 [ext_resource type="Script" path="res://sources/hud/TestChar.gd" id="1_b1m6g"]
 [ext_resource type="Texture2D" uid="uid://c1nps3o22rvh6" path="res://icon.svg" id="2_hnly3"]
+[ext_resource type="PackedScene" uid="uid://bc1j0tnlnf6p2" path="res://scenes/hud/Pausa.tscn" id="3_qqhwk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0rri"]
 size = Vector2(64, 64)
@@ -15,3 +16,11 @@ texture = ExtResource("2_hnly3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_v0rri")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pausa" parent="CanvasLayer" instance=ExtResource("3_qqhwk")]
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(80, 0)
+collide_with_areas = true

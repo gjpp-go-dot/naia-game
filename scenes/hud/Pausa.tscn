@@ -1,7 +1,13 @@
 [gd_scene load_steps=13 format=3 uid="uid://bc1j0tnlnf6p2"]
 
+[ext_resource type="Shader" path="res://scenes/hud/Pausa.gdshader" id="1_6vjjh"]
 [ext_resource type="Script" path="res://sources/hud/Pausa.gd" id="1_nomq2"]
 [ext_resource type="Texture2D" uid="uid://cs875cg88pdcu" path="res://assets/sprites/hud/Ajuste.png" id="2_wme5e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jviqg"]
+shader = ExtResource("1_6vjjh")
+shader_parameter/blur = 1.831
+shader_parameter/brightness = 0.608
 
 [sub_resource type="LabelSettings" id="LabelSettings_5m400"]
 font_size = 96
@@ -12,13 +18,6 @@ outline_color = Color(0, 0, 0, 1)
 font_size = 32
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Gradient" id="Gradient_ye0y1"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_v26lx"]
-gradient = SubResource("Gradient_ye0y1")
 
 [sub_resource type="LabelSettings" id="LabelSettings_yqg3s"]
 font_size = 32
@@ -32,6 +31,19 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_gxj6e"]
 resource_name = "Appear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_coijd"]
 resource_name = "Pausa"
@@ -494,6 +506,18 @@ tracks/18/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath(".:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_blljv"]
 _data = {
@@ -502,16 +526,14 @@ _data = {
 "RESET": SubResource("Animation_5fv5d")
 }
 
-[node name="Pausa" type="Popup"]
-size = Vector2i(1280, 720)
-visible = true
-transparent = true
-script = ExtResource("1_nomq2")
-
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Pausa" type="ColorRect"]
+process_mode = 3
+modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_jviqg")
 offset_right = 1280.0
 offset_bottom = 720.0
-color = Color(0, 0, 0, 0.380392)
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_nomq2")
 
 [node name="Volumes" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
@@ -519,6 +541,7 @@ texture = ExtResource("2_wme5e")
 
 [node name="Label" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 450.0
 offset_top = 50.0
 offset_right = 851.0
@@ -529,6 +552,7 @@ label_settings = SubResource("LabelSettings_5m400")
 [node name="SlideMas" type="HSlider" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 411.0
 offset_top = 247.0
 offset_right = 640.0
@@ -538,6 +562,7 @@ value = 100.0
 
 [node name="VolMas" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 535.0
 offset_top = 205.0
 offset_right = 745.0
@@ -548,6 +573,7 @@ label_settings = SubResource("LabelSettings_lkglo")
 [node name="SlideMus" type="HSlider" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 411.0
 offset_top = 347.0
 offset_right = 640.0
@@ -557,6 +583,7 @@ value = 100.0
 
 [node name="VolMus" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 522.0
 offset_top = 305.0
 offset_right = 758.0
@@ -567,6 +594,7 @@ label_settings = SubResource("LabelSettings_lkglo")
 [node name="SlideSFX" type="HSlider" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 411.0
 offset_top = 453.0
 offset_right = 640.0
@@ -576,6 +604,7 @@ value = 100.0
 
 [node name="VolSFX" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 549.0
 offset_top = 405.0
 offset_right = 731.0
@@ -583,15 +612,14 @@ offset_bottom = 453.0
 text = "Volume SFX"
 label_settings = SubResource("LabelSettings_lkglo")
 
-[node name="Voltar" type="TextureButton" parent="."]
+[node name="Voltar" type="Button" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 470.0
 offset_top = 540.0
 offset_right = 810.0
 offset_bottom = 604.0
-texture_normal = SubResource("GradientTexture1D_v26lx")
-stretch_mode = 0
 
 [node name="Label" type="Label" parent="Voltar"]
 layout_mode = 1
@@ -603,6 +631,7 @@ text = "Voltar à pausa"
 label_settings = SubResource("LabelSettings_yqg3s")
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 471.0
 offset_right = 809.0
 offset_bottom = 135.0
@@ -610,6 +639,7 @@ text = "Ajustes"
 label_settings = SubResource("LabelSettings_o34oh")
 
 [node name="Continuar" type="Button" parent="."]
+layout_mode = 0
 offset_left = 411.0
 offset_top = 220.0
 offset_right = 640.0
@@ -618,6 +648,7 @@ scale = Vector2(2, 2)
 text = "Continuar"
 
 [node name="AjuVol" type="Button" parent="."]
+layout_mode = 0
 offset_left = 411.0
 offset_top = 370.0
 offset_right = 640.0
@@ -626,6 +657,7 @@ scale = Vector2(2, 2)
 text = "Volumes"
 
 [node name="VoltarMenu" type="Button" parent="."]
+layout_mode = 0
 offset_left = 411.0
 offset_top = 520.0
 offset_right = 640.0
@@ -637,8 +669,3 @@ text = "Voltar ao menu"
 libraries = {
 "": SubResource("AnimationLibrary_blljv")
 }
-
-[connection signal="button_down" from="Voltar" to="." method="_on_voltar_button_down"]
-[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed" flags=18]
-[connection signal="button_down" from="AjuVol" to="." method="_on_aju_vol_button_down"]
-[connection signal="button_down" from="VoltarMenu" to="." method="_on_voltar_menu_button_down"]

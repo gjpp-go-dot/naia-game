@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://xyj0117to5w6"]
+[gd_scene load_steps=15 format=3 uid="uid://b3gkpi0e3an8w"]
 
 [ext_resource type="Script" path="res://sources/hud/MenuIni.gd" id="1_po4lr"]
 [ext_resource type="Texture2D" uid="uid://rr8pa7q4kfcd" path="res://resources/environment/Temporary_Menus/N_b6N3.png" id="2_mfe4p"]
@@ -202,7 +202,7 @@ offset_bottom = 346.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="Iniciar"]
-anchors_preset = -1
+layout_mode = 0
 anchor_left = -0.0113636
 offset_left = 0.988636
 offset_right = 343.0
@@ -219,6 +219,7 @@ offset_bottom = 506.0
 action_mode = 0
 
 [node name="Label" type="Label" parent="Ajustes"]
+layout_mode = 0
 offset_left = 2.0
 offset_right = 60.0
 offset_bottom = 27.0
@@ -233,6 +234,7 @@ offset_bottom = 666.0
 action_mode = 0
 
 [node name="Label" type="Label" parent="Sair"]
+layout_mode = 0
 offset_left = 1.0
 offset_right = 93.0
 offset_bottom = 27.0

@@ -1,12 +1,16 @@
 extends CharacterBody2D
 
 
+@onready var ray = $RayCast2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
+func _unhandled_input(event) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		$CanvasLayer/Pausa.pause()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -26,3 +30,14 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	if Input.is_action_just_pressed("interact"):
+		interact()
+		
+func interact():
+	if ray.is_colliding() == false:
+		return
+	var obj = ray.get_collider()
+	if obj.is_in_group("npc"):
+		obj.start_talk()
+		
