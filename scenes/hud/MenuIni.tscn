@@ -1,20 +1,22 @@
-[gd_scene load_steps=15 format=3 uid="uid://b3gkpi0e3an8w"]
+[gd_scene load_steps=16 format=3 uid="uid://b3gkpi0e3an8w"]
 
 [ext_resource type="Script" path="res://sources/hud/MenuIni.gd" id="1_po4lr"]
 [ext_resource type="Texture2D" uid="uid://rr8pa7q4kfcd" path="res://resources/environment/Temporary_Menus/N_b6N3.png" id="2_mfe4p"]
 [ext_resource type="PackedScene" uid="uid://rwuxnsmrn1rb" path="res://scenes/hud/Ajustes.tscn" id="2_rmswp"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_gtfrn"]
-font_size = 160
+[ext_resource type="Texture2D" uid="uid://dj2asclkj47na" path="res://assets/sprites/hud/botões/hud_logo.png" id="4_7ogs6"]
+[ext_resource type="FontFile" uid="uid://k5hc5clgka41" path="res://assets/fonts/joystix monospace.otf" id="5_xa2bj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xmc2q"]
-font_size = 64
+font = ExtResource("5_xa2bj")
+font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_dfnpp"]
-font_size = 64
+font = ExtResource("5_xa2bj")
+font_size = 48
 
 [sub_resource type="LabelSettings" id="LabelSettings_7gerh"]
-font_size = 64
+font = ExtResource("5_xa2bj")
+font_size = 48
 
 [sub_resource type="Animation" id="Animation_sq822"]
 resource_name = "IniBig"
@@ -186,13 +188,11 @@ position = Vector2(647, 326)
 scale = Vector2(2, 2)
 texture = ExtResource("2_mfe4p")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Sprite2D" parent="."]
 texture_repeat = 1
-offset_left = 81.0
-offset_right = 437.0
-offset_bottom = 222.0
-text = "Naia"
-label_settings = SubResource("LabelSettings_gtfrn")
+position = Vector2(314, 112.75)
+scale = Vector2(1.13699, 1.16265)
+texture = ExtResource("4_7ogs6")
 
 [node name="Iniciar" type="TextureButton" parent="."]
 offset_left = 81.0

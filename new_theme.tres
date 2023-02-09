@@ -1,0 +1,48 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cut60d1txe8do"]
+
+[ext_resource type="Texture2D" uid="uid://dxpvrbxm7o8cv" path="res://assets/sprites/hud/controles/hud_bolinha.png" id="1_d5i7d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lx7n"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.4)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t1ijc"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxosv"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+corner_detail = 6
+
+[resource]
+HSlider/constants/grabber_offset = 0
+HSlider/icons/grabber = ExtResource("1_d5i7d")
+HSlider/icons/grabber_disabled = ExtResource("1_d5i7d")
+HSlider/icons/grabber_highlight = ExtResource("1_d5i7d")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_8lx7n")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_t1ijc")
+HSlider/styles/slider = SubResource("StyleBoxFlat_vxosv")

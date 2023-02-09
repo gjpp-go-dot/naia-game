@@ -8,12 +8,11 @@ func volume():
 	master = $SlideMas.value
 	music = $SlideMus.value
 	sfx = $SlideSFX.value
-	master = master/100*86 - 80
-	music = music/100*86 - 80
-	sfx = sfx/100*86 - 80
+
 	
 
 func _ready():
+	music = AudioServer.get_bus_volume_db(1)
 	$SlideMas.value = master
 	$SlideMus.value = music
 	$SlideSFX.value = sfx

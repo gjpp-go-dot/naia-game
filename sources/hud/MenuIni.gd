@@ -15,7 +15,7 @@ func _on_iniciar_mouse_entered():
 
 func _on_ajustes_mouse_entered():
 	$AnimAju.play("AjuBig")
-
+	
 
 func _on_sair_mouse_entered():
 	$AnimSai.play("SaiBig")

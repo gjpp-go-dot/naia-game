@@ -1,11 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://cr6fs126whjch"]
+[gd_scene load_steps=6 format=3 uid="uid://cr6fs126whjch"]
 
 [ext_resource type="PackedScene" uid="uid://b04b1gk4snpl6" path="res://scenes/hud/testChar.tscn" id="1_8i8bt"]
+[ext_resource type="Script" path="res://scenes/hud/TestScene.gd" id="1_ay2k3"]
+[ext_resource type="Texture2D" uid="uid://c1nps3o22rvh6" path="res://icon.svg" id="3_7pbf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x7skk"]
+size = Vector2(198, 100.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otqkr"]
 size = Vector2(1280, 86)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_ay2k3")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+modulate = Color(0.976471, 0.345098, 1, 1)
+position = Vector2(766, 391)
+scale = Vector2(0.65625, 0.625)
+texture = ExtResource("3_7pbf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(767, 381.25)
+shape = SubResource("RectangleShape2D_x7skk")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_8i8bt")]
 position = Vector2(320, 360)
@@ -23,3 +41,5 @@ offset_top = -44.0
 offset_right = 639.0
 offset_bottom = 42.0
 color = Color(0.372549, 0.6, 0.372549, 1)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

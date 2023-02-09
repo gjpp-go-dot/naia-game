@@ -1,31 +1,24 @@
-[gd_scene load_steps=12 format=3 uid="uid://rwuxnsmrn1rb"]
+[gd_scene load_steps=14 format=3 uid="uid://rwuxnsmrn1rb"]
 
-[ext_resource type="Texture2D" uid="uid://cs875cg88pdcu" path="res://assets/sprites/hud/Ajuste.png" id="1_kg4pa"]
 [ext_resource type="Script" path="res://sources/hud/Ajustes.gd" id="1_ox2ix"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_5m400"]
-font_size = 96
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://dkjo6y2t6db5d" path="res://assets/sprites/hud/caixas e bg/hud_bg_flores.png" id="2_4qsjn"]
+[ext_resource type="Texture2D" uid="uid://dwwvch5bylion" path="res://assets/sprites/hud/caixas e bg/hud_caixa_ajustes.png" id="3_bf35r"]
+[ext_resource type="Texture2D" uid="uid://rjmba0u81awr" path="res://assets/sprites/hud/botões/hud_botão_ajustespixel.png" id="4_sebgo"]
+[ext_resource type="Theme" uid="uid://cut60d1txe8do" path="res://new_theme.tres" id="5_lvy4l"]
+[ext_resource type="FontFile" uid="uid://d2gbk8mxri583" path="res://assets/fonts/Play-Regular.ttf" id="6_c35ul"]
+[ext_resource type="Texture2D" uid="uid://bxmy56x82cqp8" path="res://assets/sprites/hud/botões/hud_botão_voltar.png" id="7_jq5oo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_lkglo"]
+font = ExtResource("6_c35ul")
 font_size = 32
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_cp1ow"]
+OptionButton/fonts/font = ExtResource("6_c35ul")
 
 [sub_resource type="LabelSettings" id="LabelSettings_8t0u8"]
-font_size = 32
-outline_size = 10
-outline_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Gradient" id="Gradient_ye0y1"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(0, 0, 0, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_v26lx"]
-gradient = SubResource("Gradient_ye0y1")
-
-[sub_resource type="LabelSettings" id="LabelSettings_yqg3s"]
+font = ExtResource("6_c35ul")
 font_size = 32
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
@@ -470,26 +463,22 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ox2ix")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0.239216)
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-color = Color(0, 0, 0, 1)
+position = Vector2(640, 360)
+texture = ExtResource("2_4qsjn")
 
 [node name="Ajuste" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(640, 360)
-texture = ExtResource("1_kg4pa")
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("3_bf35r")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 471.0
-offset_right = 809.0
-offset_bottom = 135.0
-text = "Ajustes"
-label_settings = SubResource("LabelSettings_5m400")
+position = Vector2(640, 126)
+scale = Vector2(2, 2)
+texture = ExtResource("4_sebgo")
 
 [node name="SlideMas" type="HSlider" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -499,7 +488,9 @@ offset_top = 247.0
 offset_right = 640.0
 offset_bottom = 263.0
 scale = Vector2(2, 2)
-value = 100.0
+theme = ExtResource("5_lvy4l")
+min_value = -50.0
+max_value = 0.0
 
 [node name="VolMas" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -519,7 +510,9 @@ offset_top = 347.0
 offset_right = 640.0
 offset_bottom = 363.0
 scale = Vector2(2, 2)
-value = 100.0
+theme = ExtResource("5_lvy4l")
+min_value = -50.0
+max_value = 0.0
 
 [node name="VolMus" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -539,7 +532,9 @@ offset_top = 453.0
 offset_right = 640.0
 offset_bottom = 469.0
 scale = Vector2(2, 2)
-value = 100.0
+theme = ExtResource("5_lvy4l")
+min_value = -50.0
+max_value = 0.0
 
 [node name="VolSFX" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -558,7 +553,9 @@ offset_left = 493.0
 offset_top = 553.0
 offset_right = 787.0
 offset_bottom = 595.0
+theme = SubResource("Theme_cp1ow")
 item_count = 2
+selected = 0
 popup/item_0/text = "Português"
 popup/item_0/id = 0
 popup/item_1/text = "English"
@@ -577,21 +574,12 @@ label_settings = SubResource("LabelSettings_8t0u8")
 [node name="Voltar" type="TextureButton" parent="."]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 470.0
-offset_top = 621.0
-offset_right = 810.0
+offset_left = 1055.0
+offset_top = 641.0
+offset_right = 1221.0
 offset_bottom = 685.0
-texture_normal = SubResource("GradientTexture1D_v26lx")
+texture_normal = ExtResource("7_jq5oo")
 stretch_mode = 0
-
-[node name="Label" type="Label" parent="Voltar"]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 8.0
-offset_right = 294.0
-offset_bottom = 56.0
-text = "Voltar ao menu"
-label_settings = SubResource("LabelSettings_yqg3s")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
