@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhttbrygvtifo"]
+
+[ext_resource type="Script" path="res://sources/objects/Vines.gd" id="1_g22os"]
+[ext_resource type="Texture2D" uid="uid://blcstnrqd4mxm" path="res://assets/sprites/map/vine.png" id="2_ux2do"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnsj2"]
+size = Vector2(12, 0)
+
+[node name="Vines" type="Node2D"]
+z_index = -1
+script = ExtResource("1_g22os")
+
+[node name="Vine" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_left = -6.0
+offset_right = -1.0
+scale = Vector2(2, 2)
+size_flags_horizontal = 4
+texture = ExtResource("2_ux2do")
+expand_mode = 1
+stretch_mode = 1
+metadata/_edit_group_ = true
+
+[node name="VineArea" type="Area2D" parent="."]
+position = Vector2(-1, 29)
+collision_layer = 512
+collision_mask = 512
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VineArea"]
+position = Vector2(0, -29)
+shape = SubResource("RectangleShape2D_xnsj2")
+
+[connection signal="body_shape_entered" from="VineArea" to="." method="_on_vine_area_body_shape_entered"]
+[connection signal="body_shape_exited" from="VineArea" to="." method="_on_vine_area_body_shape_exited"]
