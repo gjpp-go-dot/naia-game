@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://71tmx3lddscr"]
+
+[ext_resource type="Script" path="res://sources/objects/Spear.gd" id="1_vxd2e"]
+[ext_resource type="Texture2D" uid="uid://b1nx44lev3j30" path="res://assets/sprites/objects/spear/spear_combat.png" id="2_1dln6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q14td"]
+size = Vector2(2, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q5hun"]
+radius = 4.12311
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1esh"]
+size = Vector2(6, 12)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s0rn2"]
+radius = 25.02
+
+[node name="Spear" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 4
+mass = 0.45
+gravity_scale = 0.5
+max_contacts_reported = 5
+contact_monitor = true
+script = ExtResource("1_vxd2e")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1dln6")
+
+[node name="CollisionShape2DInnerHandle" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8.5)
+shape = SubResource("RectangleShape2D_q14td")
+disabled = true
+
+[node name="CollisionShape2DInnerTip" type="CollisionShape2D" parent="."]
+position = Vector2(0, -32)
+shape = SubResource("CircleShape2D_q5hun")
+
+[node name="CollisionShape2DOuterTip" type="CollisionShape2D" parent="."]
+position = Vector2(0, -26)
+shape = SubResource("RectangleShape2D_q1esh")
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 9)
+shape = SubResource("CircleShape2D_s0rn2")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_shape_exited" from="Area2D" to="." method="_on_area_2d_body_shape_exited"]
