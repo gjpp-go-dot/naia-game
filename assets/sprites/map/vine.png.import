@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mtps42jg8tcu"
-path="res://.godot/imported/naia_lanca5.png-73c25fc12b847a766f8bd38ef20f8af7.ctex"
+uid="uid://blcstnrqd4mxm"
+path="res://.godot/imported/vine.png-87dd71925f86de5b79a719388633707b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/entities/naia/spear/naia_lanca5.png"
-dest_files=["res://.godot/imported/naia_lanca5.png-73c25fc12b847a766f8bd38ef20f8af7.ctex"]
+source_file="res://assets/sprites/map/vine.png"
+dest_files=["res://.godot/imported/vine.png-87dd71925f86de5b79a719388633707b.ctex"]
 
 [params]
 
@@ -19,7 +19,7 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/bptc_ldr=0
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=false
 mipmaps/limit=-1

@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=30 format=3 uid="uid://o1kjbsipv5ya"]
+[gd_resource type="SpriteFrames" load_steps=34 format=3 uid="uid://o1kjbsipv5ya"]
 
 [ext_resource type="Texture2D" uid="uid://rypsi7lbvjaq" path="res://assets/sprites/entities/naia/idle/naia_idle1.png" id="1_ii1gm"]
 [ext_resource type="Texture2D" uid="uid://bfumo6p82vt4y" path="res://assets/sprites/entities/naia/idle/naia_idle2.png" id="2_3rjho"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://luwqkrg35651" path="res://assets/sprites/entities/naia/jump/naia_jump5.png" id="9_5h1ch"]
 [ext_resource type="Texture2D" uid="uid://duxqveyoygh6j" path="res://assets/sprites/entities/naia/jump/naia_jump6.png" id="10_4l8sc"]
 [ext_resource type="Texture2D" uid="uid://bkagvn0nnn5xb" path="res://assets/sprites/entities/naia/jump/naia_jump7.png" id="11_r65uc"]
+[ext_resource type="Texture2D" uid="uid://18eox8gjaq4" path="res://assets/sprites/entities/naia/rappel/Rappel_cima.png" id="12_cpjdh"]
 [ext_resource type="Texture2D" uid="uid://cd5osf7v7dota" path="res://assets/sprites/entities/naia/run/naia_run1.png" id="12_q8frj"]
 [ext_resource type="Texture2D" uid="uid://dvu5lpl1imphv" path="res://assets/sprites/entities/naia/run/naia_run2.png" id="13_a1yhm"]
 [ext_resource type="Texture2D" uid="uid://btefb7ua25827" path="res://assets/sprites/entities/naia/run/naia_run3.png" id="14_o40jm"]
@@ -18,17 +19,32 @@
 [ext_resource type="Texture2D" uid="uid://8dj4d66clqvg" path="res://assets/sprites/entities/naia/run/naia_run5.png" id="16_021js"]
 [ext_resource type="Texture2D" uid="uid://dtr4723oqum7w" path="res://assets/sprites/entities/naia/run/naia_run6.png" id="17_s6gcf"]
 [ext_resource type="Texture2D" uid="uid://kpspo35ltglq" path="res://assets/sprites/entities/naia/run/naia_run7.png" id="18_kwds2"]
-[ext_resource type="Texture2D" uid="uid://6et73koiwa4l" path="res://assets/sprites/entities/naia/spear/naia_lanca1.png" id="19_ppbi6"]
-[ext_resource type="Texture2D" uid="uid://d4g8ci0opv2bn" path="res://assets/sprites/entities/naia/spear/naia_lanca2.png" id="20_8njcq"]
-[ext_resource type="Texture2D" uid="uid://4jlytx1xebc2" path="res://assets/sprites/entities/naia/spear/naia_lanca3.png" id="21_lmr3p"]
-[ext_resource type="Texture2D" uid="uid://byjjql1xtioap" path="res://assets/sprites/entities/naia/spear/naia_lanca4.png" id="22_je6ul"]
-[ext_resource type="Texture2D" uid="uid://cmiodpuc060j8" path="res://assets/sprites/entities/naia/spear/naia_lanca5.png" id="23_eqnpo"]
+[ext_resource type="Texture2D" uid="uid://tikq8kllly1g" path="res://assets/sprites/entities/naia/spear/naia_lanca1.png" id="19_ppbi6"]
+[ext_resource type="Texture2D" uid="uid://b7csq8bq0cclg" path="res://assets/sprites/entities/naia/spear/naia_lanca3.png" id="21_lmr3p"]
+[ext_resource type="Texture2D" uid="uid://hq4krsjbs2qh" path="res://assets/sprites/entities/naia/spear/naia_lanca4.png" id="22_je6ul"]
+[ext_resource type="Texture2D" uid="uid://mtps42jg8tcu" path="res://assets/sprites/entities/naia/spear/naia_lanca5.png" id="23_eqnpo"]
 [ext_resource type="Texture2D" uid="uid://binrh4wqgyoil" path="res://assets/sprites/entities/naia/walk/naia_walk1.png" id="24_kk6rb"]
 [ext_resource type="Texture2D" uid="uid://cbdf5h6lq5g6s" path="res://assets/sprites/entities/naia/walk/naia_walk2.png" id="25_k5xqx"]
 [ext_resource type="Texture2D" uid="uid://qdjao4tgcmtx" path="res://assets/sprites/entities/naia/walk/naia_walk3.png" id="26_8d3sr"]
 [ext_resource type="Texture2D" uid="uid://vjjah3qlj3px" path="res://assets/sprites/entities/naia/walk/naia_walk4.png" id="27_g3w4o"]
 [ext_resource type="Texture2D" uid="uid://bdr1vqu0ycjc7" path="res://assets/sprites/entities/naia/walk/naia_walk5.png" id="28_xrhc5"]
 [ext_resource type="Texture2D" uid="uid://30i41dffxmgm" path="res://assets/sprites/entities/naia/walk/naia_walk6.png" id="29_pc7ox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7vnd"]
+atlas = ExtResource("12_cpjdh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owkvs"]
+atlas = ExtResource("12_cpjdh")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xym5b"]
+atlas = ExtResource("12_cpjdh")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkmgt"]
+atlas = ExtResource("12_cpjdh")
+region = Rect2(192, 0, 64, 64)
 
 [resource]
 animations = [{
@@ -81,30 +97,47 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("11_r65uc")
 }],
-"loop": true,
+"loop": false,
 "name": &"land",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_h7vnd")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_owkvs")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_xym5b")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_tkmgt")
+}],
+"loop": true,
+"name": &"rappel",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
 "texture": ExtResource("12_q8frj")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("13_a1yhm")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("14_o40jm")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("15_hcb6q")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("16_021js")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("17_s6gcf")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("18_kwds2")
 }],
 "loop": true,
@@ -112,42 +145,44 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.6,
 "texture": ExtResource("19_ppbi6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_8njcq")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_lmr3p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_je6ul")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_eqnpo")
 }],
-"loop": true,
-"name": &"spear",
+"loop": false,
+"name": &"spear_aim",
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.3,
+"texture": ExtResource("21_lmr3p")
+}, {
+"duration": 0.3,
+"texture": ExtResource("22_je6ul")
+}, {
+"duration": 0.3,
+"texture": ExtResource("23_eqnpo")
+}],
+"loop": false,
+"name": &"spear_release",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.8,
 "texture": ExtResource("24_kk6rb")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": ExtResource("25_k5xqx")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": ExtResource("26_8d3sr")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": ExtResource("27_g3w4o")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": ExtResource("28_xrhc5")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": ExtResource("29_pc7ox")
 }],
 "loop": true,
