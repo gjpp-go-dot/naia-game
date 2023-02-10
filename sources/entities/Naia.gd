@@ -255,7 +255,6 @@ func _physics_process(delta):
 		if (wall_jumped == null) or (wall_jumped != wall_jumped_direction):
 			wall_jumped = wall_jumped_direction
 			velocity.x = wall_jumped_direction * (max_wall_jump_speed * 2.75)
-			#print(last_direction)
 			jump()
 
 	move_and_slide()
