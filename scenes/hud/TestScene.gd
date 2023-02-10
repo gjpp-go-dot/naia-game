@@ -8,7 +8,7 @@ func _ready():
 func sla():
 	$CharacterBody2D.canMove = false
 	$DefaultDialogNode.visible = true
-	Dialogic.start_timeline("timeline",false)
+	Dialogic.start_timeline("ini",false)
 	first = false
 	Dialogic.connect("timeline_ended",oi)
 

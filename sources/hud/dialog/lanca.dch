@@ -1,7 +1,7 @@
 {
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
-"color": Color(1, 1, 1, 1),
+"color": Color(0.0862745, 0.494118, 0.458824, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
@@ -9,13 +9,13 @@
 },
 "default_portrait": "New portrait",
 "description": "",
-"display_name": "lanca",
+"display_name": "Lança",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
 "New portrait": {
-"image": "res://icon.svg",
+"image": "res://assets/sprites/hud/128x128/spear_spirit.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 0.7,
