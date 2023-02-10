@@ -74,6 +74,8 @@ var default_gravity = gravity
 
 var last_wall_hold = Time.get_ticks_msec()
 var wall_jumped = null
+var raycast_distance = 40
+var last_seen_direction = 1
 
 func bind_process_event(event_name):
 	emit_signal("process_event", event_name)
@@ -244,17 +246,16 @@ func _physics_process(delta):
 			elif landed:
 				jump()
 
-	if is_on_wall() and (Input.get_axis(INPUTS_MAP.MOVE_LEFT, INPUTS_MAP.MOVE_RIGHT) != 0):
+	if (Input.get_axis(INPUTS_MAP.MOVE_LEFT, INPUTS_MAP.MOVE_RIGHT) != 0) and is_on_wall():
 		if velocity.y > 0:
 			velocity.y = velocity.y + acceleration if velocity.y < max_wall_jump_speed else max_wall_jump_speed
-		last_wall_hold = Time.get_ticks_msec()
 
-	if can["jump"] and Input.is_action_just_pressed(INPUTS_MAP.JUMP) and (last_wall_hold - Time.get_ticks_msec() < 394) and is_on_wall() and not is_on_floor():
-		if wall_jumped == null or wall_jumped != get_wall_normal():
+	if can["jump"] and Input.is_action_just_pressed(INPUTS_MAP.JUMP) and (get_node("RayCast2DLeft").call("is_colliding") or get_node("RayCast2DRight").call("is_colliding")) and not is_on_floor():
+		var wall_jumped_direction = 1 if get_node("RayCast2DLeft").call("is_colliding") else -1
+		if (wall_jumped == null) or (wall_jumped != wall_jumped_direction):
+			wall_jumped = wall_jumped_direction
+			velocity.x = wall_jumped_direction * (max_wall_jump_speed * 2.75)
 			jump()
-			var ine = get_wall_normal().x * (max_wall_jump_speed * 2.75)
-			velocity.x = ine
-			wall_jumped = get_wall_normal()
 
 	move_and_slide()
 
