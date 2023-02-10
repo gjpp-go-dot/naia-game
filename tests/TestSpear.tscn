@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="2_d1ko2"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="2_ixpyc"]
-[ext_resource type="PackedScene" uid="uid://blfduy7pm2f83" path="res://scenes/hud/hud.tscn" id="3_cv2gu"]
+[ext_resource type="PackedScene" uid="uid://dn541h2uv03tw" path="res://scenes/hud/hud.tscn" id="3_cv2gu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1q8o"]
 
