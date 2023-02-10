@@ -168,7 +168,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	if in_trampoline:
-		if Input.is_action_just_pressed(INPUTS_MAP.JUMP):
+		if not Input.is_action_pressed(INPUTS_MAP.JUMP) or get_node("Naiui/ProgressBar").get("value") == 100:
 			jump(jump_speed + ((jump_speed * 0.40) * (get_node("Naiui/ProgressBar").get("value") / 100)))
 			print(velocity.y)
 			landed = false

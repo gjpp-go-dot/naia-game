@@ -94,6 +94,7 @@ func _on_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_in
 		collision_layer = 1
 		collision_mask = 1
 		get_node("CollisionShape2DInnerHandle").set_deferred("disabled", false)
+		get_node("NipCollision").visible = true
 		run_hability()
 
 func _physics_process(delta):
@@ -109,6 +110,7 @@ func call_back(node):
 	callback_node = node
 	sleeping = true
 	freeze = true
+	get_node("NipCollision").visible = false
 	if callback_tween:
 		callback_tween.kill()
 	callback_tween = create_tween()

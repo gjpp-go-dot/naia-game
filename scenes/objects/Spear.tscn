@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://71tmx3lddscr"]
+[gd_scene load_steps=8 format=3 uid="uid://71tmx3lddscr"]
 
 [ext_resource type="Script" path="res://sources/objects/Spear.gd" id="1_vxd2e"]
 [ext_resource type="Texture2D" uid="uid://b1nx44lev3j30" path="res://assets/sprites/objects/spear/spear_combat.png" id="2_1dln6"]
+[ext_resource type="Texture2D" uid="uid://3aa1haofcicb" path="res://assets/sprites/objects/spear/nip_collision.png" id="3_pqbxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q14td"]
 size = Vector2(2, 57)
@@ -23,10 +24,14 @@ gravity_scale = 0.5
 max_contacts_reported = 5
 contact_monitor = true
 script = ExtResource("1_vxd2e")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1dln6")
+
+[node name="NipCollision" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -35)
+texture = ExtResource("3_pqbxo")
 
 [node name="CollisionShape2DInnerHandle" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8.5)
