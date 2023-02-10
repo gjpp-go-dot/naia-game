@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://res5v7heprty"]
+[gd_scene load_steps=7 format=3 uid="uid://res5v7heprty"]
 
 [ext_resource type="Script" path="res://sources/entities/Naia.gd" id="1_mof0k"]
-[ext_resource type="SpriteFrames" uid="uid://o1kjbsipv5ya" path="res://resources/animations/NaiaSpriteFrames.tres" id="1_pi5ql"]
 [ext_resource type="Script" path="res://sources/animations/NaiaAnimatedSprite2D.gd" id="3_nrcns"]
 [ext_resource type="Script" path="res://sources/ui/ProgressBar.gd" id="4_w8isn"]
 
@@ -31,8 +30,6 @@ drag_bottom_margin = 0.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-sprite_frames = ExtResource("1_pi5ql")
-animation = &"idle"
 script = ExtResource("3_nrcns")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -67,4 +64,3 @@ script = ExtResource("4_w8isn")
 
 [connection signal="process_event" from="." to="AnimatedSprite2D" method="_on_naia_process_event"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
-[connection signal="animation_finished_component" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished_component"]

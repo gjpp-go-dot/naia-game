@@ -57,7 +57,7 @@ func add_portrait(character:DialogicCharacter, portrait:String,  position_idx:in
 		print_debug('[DialogicError] Cannot call add_portrait() with null character.')
 		return null
 	if not portrait in character.portraits:
-		print_debug("[DialogicError] Tried joining ",character.display_name, " wit not-existing portrait '", portrait, "'. Will use default portrait instead.")
+		print_debug("[DialogicError] Tried joining ",character.display_name, " with not-existing portrait '", portrait, "'. Will use default portrait instead.")
 		portrait = character.default_portrait
 		if portrait.is_empty():
 			print_debug("[DialogicError] Character ",character.display_name, " has no default portrait to use.")
@@ -83,7 +83,7 @@ func add_portrait(character:DialogicCharacter, portrait:String,  position_idx:in
 func change_portrait(character:DialogicCharacter, portrait:String, mirrored:bool = false, z_index: int = 0, update_zindex:bool = false, extra_data:String = "") -> void:
 	if not character or not is_character_joined(character):
 		print_debug('[DialogicError] Cannot change portrait of null/not joined character.')
-		return null
+		return
 	
 	if portrait.is_empty():
 		portrait = character.default_portrait
@@ -130,6 +130,10 @@ func change_portrait(character:DialogicCharacter, portrait:String, mirrored:bool
 			portrait_node.scale = Vector2(1,1)*character.scale * character.portraits[portrait].get('scale', 1)
 		else:
 			portrait_node.scale = Vector2(1,1)*character.portraits[portrait].get('scale', 1)
+		
+		for property in character.portraits[portrait].get('export_overrides', {}).keys():
+			portrait_node.set(property, str_to_var(character.portraits[portrait]['export_overrides'][property]))
+		
 		if portrait_node.has_method('_update_portrait'):
 			portrait_node._update_portrait(character, portrait)
 		if portrait_node.has_method('_set_mirror'):
@@ -172,7 +176,7 @@ func animate_portrait(character:DialogicCharacter, animation_path:String, length
 func move_portrait(character:DialogicCharacter, position_idx:int, z_index:int = 0, update_zindex:bool = false,  time:float = 0.0):
 	if not character or not is_character_joined(character):
 		print_debug('[DialogicError] Cannot move portrait of null/not joined character.')
-		return null
+		return
 	
 	var char_node = dialogic.current_state_info.portraits[character.resource_path].node
 	
@@ -180,7 +184,7 @@ func move_portrait(character:DialogicCharacter, position_idx:int, z_index:int = 
 		char_node.z_index = z_index
 	
 	char_node.set_meta('position', position_idx)
-
+	
 	if time == 0.0:
 		char_node.position = current_positions[position_idx]
 	else:
@@ -210,9 +214,11 @@ func add_portrait_position(position_number: int, position:Vector2) -> void:
 		_default_positions[position_number] = position
 		current_positions[position_number] = position
 
+
 func reset_portrait_positions(time:float = 0.0) -> void:
 	for position in current_positions:
 		move_portrait_position(position, _default_positions[position], false, time)
+
 
 func reset_portrait_position(position:int, time:float = 0.0) -> void:
 	move_portrait_position(position, _default_positions[position], false, time)
@@ -226,7 +232,7 @@ func move_portrait_position(position_number: int, vector:Vector2, relative:bool 
 			add_portrait_position(position_number, vector)
 		else: 
 			print_debug('[DialogicError] Cannot move non-existent position. (Use SetAbsolute to create a new position)')
-			return null
+			return
 	
 	if !relative:
 		current_positions[position_number] = vector
@@ -249,11 +255,13 @@ func move_portrait_position(position_number: int, vector:Vector2, relative:bool 
 func is_character_joined(character:DialogicCharacter) -> bool:
 	return character.resource_path in dialogic.current_state_info['portraits']
 
+
 func get_joined_characters() -> Array:
 	var chars = []
 	for char_path in dialogic.current_state_info.get('portraits', {}).keys():
 		chars.append(load(char_path))
 	return chars
+
 
 func update_rpg_portrait_mode(character:DialogicCharacter = null, portrait:String = "") -> void:
 	if DialogicUtil.get_project_setting('dialogic/portrait_mode', 0) == DialogicCharacterEvent.PortraitModes.RPG:
@@ -287,6 +295,7 @@ func update_rpg_portrait_mode(character:DialogicCharacter = null, portrait:Strin
 			add_portrait(character, portrait, 1, false)
 			var anim = animate_portrait(character, AnimationName, AnimationLength)
 
+
 # makes sure positions are listed and can be accessed
 func check_positions_and_holder() -> void:
 	if _portrait_holder_reference == null and len(get_tree().get_nodes_in_group('dialogic_portrait_holder')) == 0:
@@ -300,3 +309,9 @@ func check_positions_and_holder() -> void:
 	
 	if current_positions.size() == 0:
 		current_positions = _default_positions.duplicate()
+
+
+func text_effect_portrait(text_node:Control, skipped:bool, argument:String) -> void:
+	if argument:
+		if Dialogic.current_state_info.get('character', null):
+			Dialogic.Portraits.change_portrait(load(Dialogic.current_state_info.character), argument)
