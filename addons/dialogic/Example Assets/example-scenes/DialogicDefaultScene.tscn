@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://btx7jmmry0ots"]
+[gd_scene load_steps=30 format=3 uid="uid://btx7jmmry0ots"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Example Assets/example-scenes/DialogicDefaultScene.gd" id="1"]
 [ext_resource type="Script" path="res://addons/dialogic/Events/Text/node_dialog_text.gd" id="2"]
@@ -14,10 +14,7 @@
 [ext_resource type="Script" path="res://addons/dialogic/Events/Style/node_style.gd" id="12"]
 [ext_resource type="AudioStream" uid="uid://dwcre3fjf3cj8" path="res://addons/dialogic/Example Assets/sound-effects/typing5.wav" id="13"]
 [ext_resource type="AudioStream" uid="uid://b6c1p14bc20p1" path="res://addons/dialogic/Example Assets/sound-effects/typing1.wav" id="14"]
-[ext_resource type="FontFile" uid="uid://baocfjq2ygo6r" path="res://assets/fonts/Play-Bold.ttf" id="15_dqxqa"]
-[ext_resource type="Texture2D" uid="uid://bfarlndwp2mlo" path="res://assets/sprites/hud/caixas e bg/hud_caixa_dialogo.png" id="16_gx4mk"]
 [ext_resource type="Script" path="res://addons/dialogic/Events/Text/node_input_handler.gd" id="17"]
-[ext_resource type="FontFile" uid="uid://d2gbk8mxri583" path="res://assets/fonts/Play-Regular.ttf" id="17_fkpud"]
 [ext_resource type="Script" path="res://addons/dialogic/Events/Choice/node_button_sound.gd" id="18"]
 [ext_resource type="Script" path="res://addons/dialogic/Events/Text/node_next_indicator.gd" id="20_ljcq2"]
 [ext_resource type="Script" path="res://addons/dialogic/Example Assets/example-scenes/ExampleGlossaryPopup.gd" id="20_vmnp2"]
@@ -102,8 +99,13 @@ layer = -1
 script = ExtResource("5_uvb2c")
 
 [node name="DialogicNode_PortraitHolder" type="CanvasLayer" parent="."]
-layer = 1
+layer = 0
 script = ExtResource("6")
+
+[node name="PortraitPosition1" type="Marker2D" parent="."]
+position = Vector2(106, 604)
+script = ExtResource("5")
+position_index = 1
 
 [node name="PortraitPosition2" type="Marker2D" parent="."]
 position = Vector2(302, 601)
@@ -193,10 +195,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -371.5
-offset_top = -657.0
-offset_right = -283.5
-offset_bottom = -616.0
+offset_left = -276.0
+offset_top = -190.0
+offset_right = -209.0
+offset_bottom = -160.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wpkyg")
@@ -207,50 +209,44 @@ metadata/_edit_group_ = true
 
 [node name="DialogicNode_NameLabel" type="Label" parent="DefaultStyle/PanelContainer2"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("15_dqxqa")
-theme_override_font_sizes/font_size = 32
 text = "Name"
 script = ExtResource("3")
 
-[node name="PanelContainer" type="Sprite2D" parent="DefaultStyle"]
-z_index = -1
-position = Vector2(646, 153)
-texture = ExtResource("16_gx4mk")
+[node name="PanelContainer" type="PanelContainer" parent="DefaultStyle"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -266.0
+offset_top = -136.0
+offset_right = 286.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_q3vpc")
 metadata/_edit_layout_mode = 1
 
 [node name="DialogicNode_DialogText" type="RichTextLabel" parent="DefaultStyle/PanelContainer"]
-offset_left = -380.0
-offset_top = -45.0
-offset_right = 524.0
-offset_bottom = 65.0
-theme_override_fonts/normal_font = ExtResource("17_fkpud")
-theme_override_font_sizes/normal_font_size = 24
+layout_mode = 2
 bbcode_enabled = true
 text = "Some default text"
 script = ExtResource("2")
 
 [node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="DefaultStyle/PanelContainer/DialogicNode_DialogText"]
 script = ExtResource("10")
+sounds = []
 play_every_character = 0
 
 [node name="DNextIndicator" type="Control" parent="DefaultStyle/PanelContainer"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 535.0
-offset_top = 80.0
-offset_right = 535.0
-offset_bottom = 80.0
+visible = false
+layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 script = ExtResource("20_ljcq2")
 show_on_questions = true
 metadata/_edit_layout_mode = 1
-
-[node name="PortraitPosition1" type="Marker2D" parent="DefaultStyle"]
-z_index = 5
-position = Vector2(170, 240)
-script = ExtResource("5")
-position_index = 1
 
 [node name="DialogicNode_TextInput" type="Control" parent="DefaultStyle"]
 layout_mode = 1
@@ -333,6 +329,7 @@ layout_mode = 2
 layout_mode = 2
 bbcode_enabled = true
 text = "Some text"
+fit_content_height = true
 
 [node name="Extra" type="RichTextLabel" parent="DefaultStyle/Glossary/Panel/VBox"]
 layout_mode = 2
@@ -340,6 +337,7 @@ theme_override_colors/default_color = Color(1, 1, 1, 0.584314)
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "[right]Wow, some text!"
+fit_content_height = true
 
 [node name="Control" type="Control" parent="DefaultStyle/Glossary/Panel"]
 show_behind_parent = true
@@ -452,6 +450,7 @@ use_character_color = false
 [node name="DialogicNode_DialogText" type="RichTextLabel" parent="SpecialStyle/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Some default text"
+fit_content_height = true
 script = ExtResource("2")
 Align = 1
 

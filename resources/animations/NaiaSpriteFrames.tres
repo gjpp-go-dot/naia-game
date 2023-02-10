@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=34 format=3 uid="uid://o1kjbsipv5ya"]
+[gd_resource type="SpriteFrames" load_steps=34 format=3 uid="uid://bfnq5yiqi7axf"]
 
 [ext_resource type="Texture2D" uid="uid://rypsi7lbvjaq" path="res://assets/sprites/entities/naia/idle/naia_idle1.png" id="1_ii1gm"]
 [ext_resource type="Texture2D" uid="uid://bfumo6p82vt4y" path="res://assets/sprites/entities/naia/idle/naia_idle2.png" id="2_3rjho"]

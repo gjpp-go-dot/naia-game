@@ -31,7 +31,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
-	if Input.is_action_just_pressed("interact"):
+	if Input.is_action_just_pressed("dialogic_default_action"):
 		interact()
 		
 func interact():

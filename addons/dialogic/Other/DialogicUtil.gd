@@ -85,21 +85,21 @@ static func get_project_setting(setting:String, default = null):
 static func get_indexers(include_custom := true, force_reload := false) -> Array[DialogicIndexer]:
 	if Engine.get_main_loop().has_meta('dialogic_indexers') and !force_reload:
 		return Engine.get_main_loop().get_meta('dialogic_indexers')
-
-	var indexers: Array[DialogicIndexer] = []
-
+	
+	var indexers := []
+	
 	for file in listdir("res://addons/dialogic/Events/", false):
 		var possible_script:String = "res://addons/dialogic/Events/" + file + "/index.gd"
 		if FileAccess.file_exists(possible_script):
 			indexers.append(load(possible_script).new())
-
+	
 	if include_custom:
 		var extensions_folder :String= ProjectSettings.get_setting('dialogic/extension_folder/', "res://addons/dialogic_additions/")
 		for file in listdir(extensions_folder, false, false):
 			var possible_script: String = extensions_folder.path_join(file + "/index.gd")
 			if FileAccess.file_exists(possible_script):
 				indexers.append(load(possible_script).new())
-
+	
 	Engine.get_main_loop().set_meta('dialogic_indexers', indexers)
 	return indexers
 
@@ -153,7 +153,7 @@ static func get_color_palette(default:bool = false) -> Dictionary:
 			if ProjectSettings.has_setting('dialogic/editor/' + color_name):
 				color_dict[color_name] = ProjectSettings.get_setting('dialogic/editor/' + color_name)
 		index += 1
-
+	
 	return color_dict
 
 
@@ -164,7 +164,7 @@ static func get_color(value:String) -> Color:
 
 static func is_physics_timer()->bool:
 	return get_project_setting('dialogic/timer/process_in_physics', false)
-
+	
 
 static func update_timer_process_callback(timer:Timer) -> void:
 	timer.process_callback = Timer.TIMER_PROCESS_PHYSICS if is_physics_timer() else Timer.TIMER_PROCESS_IDLE
