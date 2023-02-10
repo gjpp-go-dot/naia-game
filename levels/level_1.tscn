@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0152avn4ho16"]
+[gd_scene load_steps=11 format=3 uid="uid://c0152avn4ho16"]
 
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="1_3883s"]
 [ext_resource type="PackedScene" uid="uid://bprcs25t8mnlk" path="res://scenes/scenarios/background_1.tscn" id="2_w7m6g"]
-[ext_resource type="Texture2D" path="res://resources/tiles/water_animation.tres" id="3_noulb"]
+[ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="3_noulb"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="4_nc05u"]
+[ext_resource type="PackedScene" uid="uid://blfduy7pm2f83" path="res://scenes/hud/hud.tscn" id="5_rvhrh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bv0ef"]
 texture = ExtResource("3_noulb")
@@ -317,3 +318,5 @@ layer_0/tile_data = PackedInt32Array(262142, 1048578, 5, 262143, 1048578, 5, 196
 
 [node name="Naia" parent="." instance=ExtResource("1_3883s")]
 position = Vector2(278, 134)
+
+[node name="Node2D" parent="." instance=ExtResource("5_rvhrh")]
