@@ -47,10 +47,9 @@ func run_hability():
 		call_deferred("trampoline_exec")
 	elif spear_type == SpearType.RAPPEL:
 		call_deferred("rappel_exec")
-		
+
 func set_spear_type(type):
 	spear_type = type
-	Constants.estado = spear_type
 	get_node("Sprite2D").set("texture", spear_textures[spear_type])
 
 func aim(global_position_mouse, direction):

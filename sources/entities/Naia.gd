@@ -2,12 +2,14 @@ extends CharacterBody2D
 
 @export var speed = 140
 @export var run_multiplier = 1.6
-@export var jump_speed = -700
-@export var gravity = 2100
+@export var jump_speed = -650
+@export var gravity = 1800
 @export_range(0.0, 1.0) var friction = 0.12
 @export_range(0.0 , 1.0) var acceleration = 0.11
+@export var max_wall_jump_speed = 120
 
 signal process_event(event_name)
+signal update_spear_type(spear_type)
 
 var can = {
 	"move": true,
@@ -70,6 +72,11 @@ var current_spear_type = SpearTypes.DEFAULT
 var camera_tween = null
 
 var default_gravity = gravity
+
+var last_wall_hold = Time.get_ticks_msec()
+var wall_jumped = null
+var raycast_distance = 40
+var last_seen_direction = 1
 
 func bind_process_event(event_name):
 	emit_signal("process_event", event_name)
@@ -138,6 +145,7 @@ func set_type_spear(type = null):
 	if is_instance_valid(spear_object):
 		spear_object.call("set_spear_type", type)
 
+	emit_signal("update_spear_type", type)
 
 func exec_trampoline():
 	in_trampoline = true
@@ -179,6 +187,7 @@ func _physics_process(delta):
 			set_camera_zoom(DEFAULT_CAMERA_ZOOM)
 		else:
 			return
+
 	velocity.y += gravity * delta
 
 	if get_current_animation() == "spear_aim" or get_current_animation() == "spear_release":
@@ -239,12 +248,24 @@ func _physics_process(delta):
 			elif landed:
 				jump()
 
+	if (Input.get_axis(INPUTS_MAP.MOVE_LEFT, INPUTS_MAP.MOVE_RIGHT) != 0) and is_on_wall():
+		if velocity.y > 0:
+			velocity.y = velocity.y + acceleration if velocity.y < max_wall_jump_speed else max_wall_jump_speed
+
+	if can["jump"] and Input.is_action_just_pressed(INPUTS_MAP.JUMP) and (get_node("RayCast2DLeft").call("is_colliding") or get_node("RayCast2DRight").call("is_colliding")) and not is_on_floor():
+		var wall_jumped_direction = 1 if get_node("RayCast2DLeft").call("is_colliding") else -1
+		if (wall_jumped == null) or (wall_jumped != wall_jumped_direction):
+			wall_jumped = wall_jumped_direction
+			velocity.x = wall_jumped_direction * (max_wall_jump_speed * 2.75)
+			jump()
+
 	move_and_slide()
 
 	if is_on_floor():
 		if (not landed) and (velocity.y > jump_speed * 0.5):
 			bind_set_state(STATES.LANDING)
 			landed = true
+			wall_jumped = null
 	else:
 		if in_rappel:
 			print(velocity.y)

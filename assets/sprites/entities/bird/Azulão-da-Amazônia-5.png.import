@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfo1b4t8sdgtw"
-path="res://.godot/imported/02.png-53200a35c6603a30edb03e34c2c276ad.ctex"
+uid="uid://dcput57wqm52y"
+path="res://.godot/imported/Azulão-da-Amazônia-5.png-da24aa758a5d3bb731ebe32d74112fd6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objects/rock/02.png"
-dest_files=["res://.godot/imported/02.png-53200a35c6603a30edb03e34c2c276ad.ctex"]
+source_file="res://assets/sprites/entities/bird/Azulão-da-Amazônia-5.png"
+dest_files=["res://.godot/imported/Azulão-da-Amazônia-5.png-da24aa758a5d3bb731ebe32d74112fd6.ctex"]
 
 [params]
 
