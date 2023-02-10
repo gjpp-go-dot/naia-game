@@ -38,13 +38,13 @@ text/autocontinue_delay=1.0
 variables={}
 editor/current_editor=&"Character Editor"
 editor/current_resources={
-"Character Editor": "res://sources/CharactersDiag/Taina.dch",
+"Character Editor": "res://sources/hud/dialog/player.dch",
 "Timeline Editor": "res://sources/hud/dialog/ini.dtl"
 }
-editor/last_resources=["res://sources/hud/dialog/lanca.dch", "res://sources/CharactersDiag/Taina.dch", "res://sources/hud/dialog/player.dch"]
+editor/last_resources=["res://sources/CharactersDiag/Taina.dch", "res://sources/hud/dialog/player.dch", "res://sources/hud/dialog/lanca.dch"]
 editor/timeline_editor_mode=0
 editor/character_preview_mode=1
-editor/current_timeline_path="res://sources/hud/dialog/timeline.dtl"
+editor/current_timeline_path="res://sources/hud/dialog/ini.dtl"
 
 [display]
 
