@@ -213,4 +213,4 @@ position = Vector2(286, 282)
 
 [node name="Node2D" parent="." instance=ExtResource("3_cv2gu")]
 
-[connection signal="process_event" from="Naia" to="Node2D" method="_on_naia_process_event"]
+[connection signal="update_spear_type" from="Naia" to="Node2D" method="_on_naia_update_spear_type"]

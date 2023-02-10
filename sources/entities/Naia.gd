@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var max_wall_jump_speed = 120
 
 signal process_event(event_name)
+signal update_spear_type(spear_type)
 
 var can = {
 	"move": true,
@@ -144,6 +145,7 @@ func set_type_spear(type = null):
 	if is_instance_valid(spear_object):
 		spear_object.call("set_spear_type", type)
 
+	emit_signal("update_spear_type", type)
 
 func exec_trampoline():
 	in_trampoline = true

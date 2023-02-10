@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ciy41mvl7f8vc"]
+[gd_scene load_steps=6 format=3 uid="uid://dn541h2uv03tw"]
 
 [ext_resource type="Script" path="res://sources/hud/hud.gd" id="1_mr1nb"]
 [ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://resources/hud/sprite_0.png" id="2_qht6f"]
@@ -24,7 +24,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="CanvasLayer"]
+[node name="HudSpear" type="CanvasLayer"]
 script = ExtResource("1_mr1nb")
 
 [node name="icons" type="AnimatedSprite2D" parent="."]
