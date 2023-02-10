@@ -54,12 +54,12 @@ func RAPPEL():
 	self.play(ANIMATIONS_MAP.RAPPEL)
 
 func RAPPEL_IDLE():
-	self.pause()
+	self.stop()
 
 func PREPARE_TRAMPOLINE_JUMP():
 	self.play(ANIMATIONS_MAP.JUMP)
 	self.frame = 0
-	self.pause()
+	self.stop()
 
 var event_manager = preload("res://sources/generics/EventManager.gd").new()
 
