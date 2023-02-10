@@ -98,6 +98,7 @@ func process_spear_aim():
 	spear_object.call("aim", get_global_mouse_position(), last_direction)
 	if Input.is_action_just_pressed(INPUTS_MAP.SPEAR_THROW):
 		get_node("AnimatedSprite2D").call("manual_unlock")
+		get_node("AnimatedSprite2D").set("lock", false)
 		bind_set_state(STATES.SPEAR_RELEASE)
 		bind_process_event("spear_release")
 		spear_object.call("throw", last_direction)
@@ -191,7 +192,7 @@ func _physics_process(delta):
 		last_direction = direction
 
 	if can["spear_attack"] and (not get_node("AnimatedSprite2D").get("lock")) and (current_state != STATES.SPEAR_RELEASE and current_state != STATES.SPEAR_AIM) and Input.is_action_just_pressed(INPUTS_MAP.SPEAR_AIM):
-			if spear_object == null and is_on_floor():
+			if spear_object == null and is_on_floor() and not (get_current_animation() == "spear_aim" or get_current_animation() == "spear_release"):
 				summon_new_spear()
 			else:
 				call_spear_back()
@@ -285,6 +286,7 @@ func _on_animated_sprite_2d_animation_finished_component(animation):
 	pass
 	match animation:
 		"spear_release":
+			get_node("AnimatedSprite2D").call("manual_unlock")
 			bind_set_state(STATES.IDLE)
-			bind_process_event("idle")
+			get_node("AnimatedSprite2D").call("STOP")
 			reset_focus_horizon()

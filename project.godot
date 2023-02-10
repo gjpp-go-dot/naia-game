@@ -124,6 +124,10 @@ dialogic_default_action={
 ]
 }
 
+[physics]
+
+common/max_physics_steps_per_frame=12
+
 [rendering]
 
 renderer/rendering_method="mobile"
