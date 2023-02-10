@@ -6,6 +6,7 @@ extends CharacterBody2D
 @export var gravity = 2100
 @export_range(0.0, 1.0) var friction = 0.12
 @export_range(0.0 , 1.0) var acceleration = 0.11
+@export var max_wall_jump_speed = 120
 
 signal process_event(event_name)
 
@@ -70,6 +71,9 @@ var current_spear_type = SpearTypes.DEFAULT
 var camera_tween = null
 
 var default_gravity = gravity
+
+var last_wall_hold = Time.get_ticks_msec()
+var wall_jumped = false
 
 func bind_process_event(event_name):
 	emit_signal("process_event", event_name)
@@ -179,6 +183,7 @@ func _physics_process(delta):
 			set_camera_zoom(DEFAULT_CAMERA_ZOOM)
 		else:
 			return
+
 	velocity.y += gravity * delta
 
 	if get_current_animation() == "spear_aim" or get_current_animation() == "spear_release":
@@ -239,12 +244,22 @@ func _physics_process(delta):
 			elif landed:
 				jump()
 
+	if is_on_wall() and (Input.get_axis(INPUTS_MAP.MOVE_LEFT, INPUTS_MAP.MOVE_RIGHT) != 0):
+		if velocity.y > 0:
+			velocity.y = velocity.y + acceleration if velocity.y < max_wall_jump_speed else max_wall_jump_speed
+		last_wall_hold = Time.get_ticks_msec()
+
+	if can["jump"] and Input.is_action_just_pressed(INPUTS_MAP.JUMP) and not wall_jumped and (last_wall_hold - Time.get_ticks_msec() < 394) and is_on_wall():
+		jump()
+		wall_jumped = true
+
 	move_and_slide()
 
 	if is_on_floor():
 		if (not landed) and (velocity.y > jump_speed * 0.5):
 			bind_set_state(STATES.LANDING)
 			landed = true
+			wall_jumped = false
 	else:
 		if in_rappel:
 			print(velocity.y)
