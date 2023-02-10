@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 @export var speed = 140
 @export var run_multiplier = 1.6
-@export var jump_speed = -700
-@export var gravity = 2100
+@export var jump_speed = -650
+@export var gravity = 1800
 @export_range(0.0, 1.0) var friction = 0.12
 @export_range(0.0 , 1.0) var acceleration = 0.11
 @export var max_wall_jump_speed = 120
@@ -73,7 +73,7 @@ var camera_tween = null
 var default_gravity = gravity
 
 var last_wall_hold = Time.get_ticks_msec()
-var wall_jumped = false
+var wall_jumped = null
 
 func bind_process_event(event_name):
 	emit_signal("process_event", event_name)
@@ -249,9 +249,12 @@ func _physics_process(delta):
 			velocity.y = velocity.y + acceleration if velocity.y < max_wall_jump_speed else max_wall_jump_speed
 		last_wall_hold = Time.get_ticks_msec()
 
-	if can["jump"] and Input.is_action_just_pressed(INPUTS_MAP.JUMP) and not wall_jumped and (last_wall_hold - Time.get_ticks_msec() < 394) and is_on_wall():
-		jump()
-		wall_jumped = true
+	if can["jump"] and Input.is_action_just_pressed(INPUTS_MAP.JUMP) and (last_wall_hold - Time.get_ticks_msec() < 394) and is_on_wall() and not is_on_floor():
+		if wall_jumped == null or wall_jumped != get_wall_normal():
+			jump()
+			var ine = get_wall_normal().x * (max_wall_jump_speed * 2.75)
+			velocity.x = ine
+			wall_jumped = get_wall_normal()
 
 	move_and_slide()
 
@@ -259,7 +262,7 @@ func _physics_process(delta):
 		if (not landed) and (velocity.y > jump_speed * 0.5):
 			bind_set_state(STATES.LANDING)
 			landed = true
-			wall_jumped = false
+			wall_jumped = null
 	else:
 		if in_rappel:
 			print(velocity.y)

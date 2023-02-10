@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="1_3883s"]
 [ext_resource type="PackedScene" uid="uid://bprcs25t8mnlk" path="res://scenes/scenarios/background_1.tscn" id="2_w7m6g"]
-[ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="3_noulb"]
+[ext_resource type="Texture2D" path="res://resources/tiles/water_animation.tres" id="3_noulb"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="4_nc05u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bv0ef"]
