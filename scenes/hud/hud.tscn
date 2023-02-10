@@ -1,21 +1,31 @@
-[gd_scene load_steps=3 format=3 uid="uid://dn541h2uv03tw"]
+[gd_scene load_steps=6 format=3 uid="uid://dn541h2uv03tw"]
 
-[ext_resource type="Texture2D" uid="uid://c1nps3o22rvh6" path="res://icon.svg" id="1_cbeq1"]
 [ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_jqptw"]
+[ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://resources/hud/sprite_0.png" id="2_qht6f"]
+[ext_resource type="Texture2D" uid="uid://dwf5yq576m68a" path="res://resources/hud/sprite_1.png" id="3_61ylb"]
+[ext_resource type="Texture2D" uid="uid://d20iwws13spdm" path="res://resources/hud/sprite_2.png" id="4_l2qkw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ueo45"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_l2qkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_61ylb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qht6f")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="CanvasLayer"]
 script = ExtResource("1_jqptw")
 
-[node name="spear1" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("1_cbeq1")
-
-[node name="spear2" type="Sprite2D" parent="."]
-visible = false
-modulate = Color(0.670588, 0, 0.239216, 1)
-texture = ExtResource("1_cbeq1")
-
-[node name="spear0" type="Sprite2D" parent="."]
-visible = false
-texture = ExtResource("1_cbeq1")
+[node name="icons" type="AnimatedSprite2D" parent="."]
+position = Vector2(607, 330)
+scale = Vector2(2.58577, 2.18718)
+frames = SubResource("SpriteFrames_ueo45")
