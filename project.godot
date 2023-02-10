@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
+
 Constants="*res://sources/globals/contants.gd"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 
