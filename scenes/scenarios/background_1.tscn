@@ -21,8 +21,8 @@ motion_mirroring = Vector2(1276, 0)
 
 [node name="Sprite2D_Layer0" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer0"]
 modulate = Color(0.156863, 0.313726, 0, 1)
-position = Vector2(21, -133.125)
-scale = Vector2(0.443056, 1.42153)
+position = Vector2(21, -41.0002)
+scale = Vector2(0.443056, 1.93333)
 texture = ExtResource("2_b52jq")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -32,8 +32,8 @@ motion_mirroring = Vector2(1276, 0)
 
 [node name="Sprite2D_Layer0" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
 modulate = Color(0.156863, 0.313726, 0, 1)
-position = Vector2(659, -132.625)
-scale = Vector2(0.443056, 1.41875)
+position = Vector2(659, -40)
+scale = Vector2(0.443056, 1.93333)
 texture = ExtResource("2_b52jq")
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
