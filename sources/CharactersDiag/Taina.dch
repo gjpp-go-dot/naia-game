@@ -25,21 +25,21 @@
 "image": "res://assets/sprites/hud/128x128/naia_smile.png",
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.7,
 "scene": ""
 },
 "Neutral": {
 "image": "res://assets/sprites/hud/128x128/naia_neutral.png",
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.7,
 "scene": ""
 },
 "Surprised": {
 "image": "res://assets/sprites/hud/128x128/naia_suprise.png",
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.7,
 "scene": ""
 }
 },

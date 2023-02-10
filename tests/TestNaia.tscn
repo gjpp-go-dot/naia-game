@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://did8qmdj6ormx"]
 
-[ext_resource type="PackedScene" path="res://scenes/entities/Naia.tscn" id="1_gqbdu"]
+[ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="1_gqbdu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xobo2"]
 size = Vector2(650.5, 26)

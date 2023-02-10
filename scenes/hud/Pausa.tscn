@@ -667,7 +667,6 @@ texture = ExtResource("5_sxhmh")
 [node name="SlideMas" type="HSlider" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 467.0
 offset_top = 248.0
 offset_right = 696.0
@@ -679,7 +678,6 @@ max_value = 0.0
 
 [node name="VolMas" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 535.0
 offset_top = 205.0
 offset_right = 745.0
@@ -690,7 +688,6 @@ label_settings = SubResource("LabelSettings_lkglo")
 [node name="SlideMus" type="HSlider" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 467.0
 offset_top = 347.0
 offset_right = 696.0
@@ -702,7 +699,6 @@ max_value = 0.0
 
 [node name="VolMus" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 522.0
 offset_top = 305.0
 offset_right = 758.0
@@ -713,7 +709,6 @@ label_settings = SubResource("LabelSettings_lkglo")
 [node name="SlideSFX" type="HSlider" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 467.0
 offset_top = 453.0
 offset_right = 696.0
@@ -725,7 +720,6 @@ max_value = 0.0
 
 [node name="VolSFX" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 549.0
 offset_top = 405.0
 offset_right = 731.0
@@ -736,7 +730,6 @@ label_settings = SubResource("LabelSettings_lkglo")
 [node name="Voltar" type="TextureButton" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 986.0
 offset_top = 609.0
 offset_right = 1152.0
@@ -749,7 +742,6 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_capwa")
 
 [node name="Continuar" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 477.0
 offset_top = 220.0
 offset_right = 699.0
@@ -758,7 +750,6 @@ scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("7_2anqu")
 
 [node name="AjuVol" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 477.0
 offset_top = 370.0
 offset_right = 699.0
@@ -767,7 +758,6 @@ scale = Vector2(1.5, 1.5)
 texture_normal = ExtResource("8_av71t")
 
 [node name="VoltarMenu" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 458.0
 offset_top = 520.0
 offset_right = 702.0
