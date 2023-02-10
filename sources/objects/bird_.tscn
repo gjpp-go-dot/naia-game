@@ -1,0 +1,79 @@
+[gd_scene load_steps=18 format=3 uid="uid://dyueqasa5w1s"]
+
+[ext_resource type="Texture2D" uid="uid://cbaccql4p3c24" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-1.png" id="1_l0qr4"]
+[ext_resource type="Script" path="res://sources/entities/bird_.gd" id="1_vcdvp"]
+[ext_resource type="Texture2D" uid="uid://bxjoey26yoro" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-2.png" id="2_ch2u1"]
+[ext_resource type="Texture2D" uid="uid://ccpxe4e0yq5wj" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-3.png" id="3_if87x"]
+[ext_resource type="Texture2D" uid="uid://bdusqq135eykq" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-4.png" id="4_6wa5t"]
+[ext_resource type="Texture2D" uid="uid://okaeustdjjm2" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-5.png" id="5_2hyyi"]
+[ext_resource type="Texture2D" uid="uid://brjkig2vv33d2" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-6.png" id="6_4l0xb"]
+[ext_resource type="Texture2D" uid="uid://dsgkepbr5wl7c" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-7.png" id="7_buawu"]
+[ext_resource type="Texture2D" uid="uid://c32ctpx27u2h5" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-8.png" id="8_shrye"]
+[ext_resource type="Texture2D" uid="uid://ply4gpuk36t7" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-9.png" id="9_frc4h"]
+[ext_resource type="Texture2D" uid="uid://d4c7f5fyidp78" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-10.png" id="10_vj6bg"]
+[ext_resource type="Texture2D" uid="uid://bemhbhrcvxurk" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-11.png" id="11_ksg4q"]
+[ext_resource type="Texture2D" uid="uid://lku5qa7p8ui8" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-12.png" id="12_djnpf"]
+[ext_resource type="Texture2D" uid="uid://cerxvccy6vi7c" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-13.png" id="13_7avrv"]
+[ext_resource type="Texture2D" uid="uid://whjsa11ni0xr" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-14.png" id="14_0mx4c"]
+[ext_resource type="Texture2D" uid="uid://b1dwk6monqhjx" path="res://assets/sprites/entities/bird/Azulão-da-Amazônia-15.png" id="15_2511d"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_joyr1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l0qr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ch2u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_if87x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6wa5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2hyyi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4l0xb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_buawu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_shrye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_frc4h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vj6bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ksg4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_djnpf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7avrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_0mx4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_2511d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 16.0
+}]
+
+[node name="bird_" type="Node2D"]
+script = ExtResource("1_vcdvp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 1)
+frames = SubResource("SpriteFrames_joyr1")
+playing = true
