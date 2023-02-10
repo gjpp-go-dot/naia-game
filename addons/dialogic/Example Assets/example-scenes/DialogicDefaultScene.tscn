@@ -102,7 +102,7 @@ layer = -1
 script = ExtResource("5_uvb2c")
 
 [node name="DialogicNode_PortraitHolder" type="CanvasLayer" parent="."]
-layer = 0
+layer = 1
 script = ExtResource("6")
 
 [node name="PortraitPosition2" type="Marker2D" parent="."]
@@ -231,7 +231,6 @@ script = ExtResource("2")
 
 [node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="DefaultStyle/PanelContainer/DialogicNode_DialogText"]
 script = ExtResource("10")
-sounds = []
 play_every_character = 0
 
 [node name="DNextIndicator" type="Control" parent="DefaultStyle/PanelContainer"]
@@ -334,7 +333,6 @@ layout_mode = 2
 layout_mode = 2
 bbcode_enabled = true
 text = "Some text"
-fit_content_height = true
 
 [node name="Extra" type="RichTextLabel" parent="DefaultStyle/Glossary/Panel/VBox"]
 layout_mode = 2
@@ -342,7 +340,6 @@ theme_override_colors/default_color = Color(1, 1, 1, 0.584314)
 theme_override_font_sizes/normal_font_size = 15
 bbcode_enabled = true
 text = "[right]Wow, some text!"
-fit_content_height = true
 
 [node name="Control" type="Control" parent="DefaultStyle/Glossary/Panel"]
 show_behind_parent = true
@@ -455,7 +452,6 @@ use_character_color = false
 [node name="DialogicNode_DialogText" type="RichTextLabel" parent="SpecialStyle/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Some default text"
-fit_content_height = true
 script = ExtResource("2")
 Align = 1
 
