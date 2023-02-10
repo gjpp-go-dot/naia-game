@@ -21,7 +21,7 @@ script = ExtResource("1_mof0k")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -50)
-zoom = Vector2(1.2, 1.2)
+zoom = Vector2(1.1, 1.1)
 position_smoothing_enabled = true
 drag_horizontal_enabled = true
 drag_left_margin = 0.05

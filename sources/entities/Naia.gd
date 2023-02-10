@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 130
+@export var speed = 140
 @export var run_multiplier = 1.6
-@export var jump_speed = -600
+@export var jump_speed = -700
 @export var gravity = 2100
 @export_range(0.0, 1.0) var friction = 0.12
 @export_range(0.0 , 1.0) var acceleration = 0.11
@@ -45,7 +45,7 @@ var spear_scene = preload("res://scenes/objects/Spear.tscn")
 const SPEAR_OFFSET_RIGHT = Vector2(-29, -9)
 const SPEAR_OFFSET_LEFT = Vector2(29, -9)
 
-const DEFAULT_CAMERA_ZOOM = Vector2(1.2, 1.2)
+const DEFAULT_CAMERA_ZOOM = Vector2(1.1, 1.1)
 
 var current_state = STATES.IDLE
 var landed = true
@@ -169,7 +169,7 @@ func _process(_delta):
 func _physics_process(delta):
 	if in_trampoline:
 		if not Input.is_action_pressed(INPUTS_MAP.JUMP) or get_node("Naiui/ProgressBar").get("value") == 100:
-			jump(jump_speed + ((jump_speed * 0.40) * (get_node("Naiui/ProgressBar").get("value") / 100)))
+			jump(jump_speed + ((jump_speed * 0.50) * (get_node("Naiui/ProgressBar").get("value") / 100)))
 			print(velocity.y)
 			landed = false
 			in_trampoline = false

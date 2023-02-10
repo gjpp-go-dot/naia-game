@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://b4gn0djnkielh" path="res://resources/environment/parallax-04.png" id="6_ibhig"]
 
 [node name="background_1" type="Node2D"]
+position = Vector2(229, -3)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(0, 80)
@@ -15,14 +16,17 @@ transform = Transform2D(1, 0, 0, 1, 0, 80)
 script = ExtResource("1_snbmu")
 
 [node name="ParallaxLayer0" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(229, -3)
 motion_scale = Vector2(0.05, 0.05)
 motion_mirroring = Vector2(792, 0)
 
 [node name="Sprite2D_Layer0" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer0"]
+position = Vector2(-1, 20)
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("2_b52jq")
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(229, -3)
 motion_scale = Vector2(0.055, 0.055)
 motion_mirroring = Vector2(792, 0)
 
@@ -31,6 +35,7 @@ scale = Vector2(0.55, 0.55)
 texture = ExtResource("3_hut0w")
 
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(229, -3)
 motion_scale = Vector2(0.3, 0.3)
 motion_mirroring = Vector2(792, 0)
 
@@ -39,6 +44,7 @@ scale = Vector2(0.55, 0.55)
 texture = ExtResource("4_fc7e7")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(229, -3)
 motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(792, 0)
 
@@ -47,6 +53,7 @@ scale = Vector2(0.55, 0.55)
 texture = ExtResource("5_i63f2")
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(229, -3)
 motion_scale = Vector2(0.6, 0.6)
 motion_mirroring = Vector2(792, 0)
 
