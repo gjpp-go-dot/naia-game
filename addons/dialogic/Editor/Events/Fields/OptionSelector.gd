@@ -1,10 +1,8 @@
 @tool
 extends Control
 
-## Event block field for constant options. For varying options use ComplexPicker.
-
-signal value_changed
 var property_name : String
+signal value_changed
 
 var options : Array = []
 var disabled = false:
@@ -24,7 +22,16 @@ func _ready():
 	$MenuButton.add_theme_color_override("font_disabled_color", get_theme_color("font_color", "MenuButton"))
 	$MenuButton.about_to_popup.connect(insert_options)
 	$MenuButton.get_popup().index_pressed.connect(index_pressed)
+	set_left_text('')
+	set_right_text('')
 
+func set_right_text(value:String):
+	$RightText.text = str(value)
+	$RightText.visible = !value.is_empty()
+
+func set_left_text(value:String):
+	$LeftText.text = str(value)
+	$LeftText.visible = !value.is_empty()
 
 func set_value(value):
 	for option in options:

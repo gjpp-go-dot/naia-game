@@ -78,7 +78,7 @@ func _execute() -> void:
 		if dialogic.has_subsystem('Glossary'):
 			final_text = dialogic.Glossary.parse_glossary(final_text)
 		
-		dialogic.Text.update_dialog_text(final_text)
+		dialogic.Text.update_dialog_text(dialogic.Text.color_names(final_text))
 		
 		#Plays the audio region for the current line.
 		if dialogic.has_subsystem('Voice') and dialogic.Voice.is_voiced(dialogic.current_event_idx):
@@ -145,8 +145,8 @@ func from_text(string:String) -> void:
 		_character_directory = self.get_meta("editor_character_directory")
 	var reg := RegEx.new()
 	
-	# Reference regex without Godot escapes: ((")?(?<name>(?(2)[^"\n]*|[^(: \n]*))(?(2)"|)(\W*\((?<portrait>.*)\))?\s*(?<!\\):)?(?<text>(.|\n)*)
-	reg.compile("((\")?(?<name>(?(2)[^\"\\n]*|[^(: \\n]*))(?(2)\"|)(\\W*\\((?<portrait>.*)\\))?\\s*(?<!\\\\):)?(?<text>(.|\\n)*)")
+	# Reference regex without Godot escapes: ((")?(?<name>(?(2)[^"\n]*|[^(: \n]*))(?(2)"|)(\W*\((?<portrait>.*)\))?\s*(?<!\\):)?(?<text>.*)
+	reg.compile("((\")?(?<name>(?(2)[^\"\\n]*|[^(: \\n]*))(?(2)\"|)(\\W*\\((?<portrait>.*)\\))?\\s*(?<!\\\\):)?(?<text>.*)")
 	var result := reg.search(string)
 	if result and !result.get_string('name').is_empty():
 		var name := result.get_string('name').strip_edges()

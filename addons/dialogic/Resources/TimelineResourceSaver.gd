@@ -22,7 +22,7 @@ func _recognize(resource: Resource) -> bool:
 func _save(resource: Resource, path: String = '', flags: int = 0) -> int:
 	if resource.get_meta("timeline_not_saved", false):
 		if len(resource.events) == 0:
-			printerr("[Dialogic] "+path+": save was called, but there are no events. Timeline will not be saved, to prevent accidental data loss. Please delete the timeline file if you are trying to clear all of the events.")
+			printerr("[Dialogic] Timeline save was called, but there are no events. Timeline will not be saved, to prevent accidental data loss. Please delete the timeline file if you are trying to clear all of the events.")
 			return ERR_INVALID_DATA
 		
 #		print('[Dialogic] Beginning saving timeline. Safety checks will be performed before writing, and temporary file will be created and removed if saving is successful...')
@@ -35,21 +35,20 @@ func _save(resource: Resource, path: String = '', flags: int = 0) -> int:
 			
 			var indent := 0
 			for idx in range(0, len(resource.events)):
-				if resource.events[idx]:
-					var event : DialogicEvent = resource.events[idx]
-					if event.event_name == 'End Branch':
-						indent -=1
-						continue
+				var event :DialogicEvent= resource.events[idx]
+				if event.event_name == 'End Branch':
+					indent -=1
+					continue
+				
+				for i in event.empty_lines_above:
+					timeline_as_text += '\t'.repeat(indent) + '\n'
 					
-					for i in event.empty_lines_above:
-						timeline_as_text += '\t'.repeat(indent) + '\n'
-						
-					if event != null:
-						timeline_as_text += "\t".repeat(indent)+ event.event_node_as_text + "\n"
-					if event.can_contain_events:
-						indent += 1
-					if indent < 0: 
-						indent = 0
+				if event != null:
+					timeline_as_text += "\t".repeat(indent)+ event.event_node_as_text + "\n"
+				if event.can_contain_events:
+					indent += 1
+				if indent < 0: 
+					indent = 0
 		
 		# if events are string lines, just save them
 		else:

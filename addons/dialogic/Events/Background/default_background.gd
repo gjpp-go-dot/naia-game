@@ -11,7 +11,7 @@ extends TextureRect
 
 
 func _ready() -> void:
-	expand_mode = true
+	ignore_texture_size = true
 	stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 	
 	anchor_right = 1

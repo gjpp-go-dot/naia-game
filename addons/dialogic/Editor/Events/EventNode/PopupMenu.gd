@@ -1,8 +1,6 @@
 @tool
 extends PopupMenu
 
-var current_event : Node = null
-
 func _ready():
 	clear()
 	add_icon_item(get_theme_icon("Help", "EditorIcons"), "Documentation")
