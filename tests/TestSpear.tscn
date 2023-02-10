@@ -212,3 +212,5 @@ layer_0/tile_data = PackedInt32Array(393215, 65538, 7, 327679, 65538, 7, 262143,
 position = Vector2(286, 282)
 
 [node name="Node2D" parent="." instance=ExtResource("3_cv2gu")]
+
+[connection signal="process_event" from="Naia" to="Node2D" method="_on_naia_process_event"]
