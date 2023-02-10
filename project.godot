@@ -36,7 +36,7 @@ text/speed=0.01
 text/skippable=true
 text/autocontinue_delay=1.0
 variables={}
-editor/current_editor=&"Character Editor"
+editor/current_editor=&"Timeline Editor"
 editor/current_resources={
 "Character Editor": "res://sources/CharactersDiag/Taina.dch",
 "Timeline Editor": "res://sources/hud/dialog/timeline.dtl"
