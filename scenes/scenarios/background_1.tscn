@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://c610x75p3qjou" path="res://assets/sprites/parallax/bg_trees1.png" id="5_8lc7b"]
 
 [node name="background_1" type="Node2D"]
-position = Vector2(218, 156)
+position = Vector2(-20, 157)
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(0, 80)
@@ -15,40 +15,81 @@ transform = Transform2D(1, 0, 0, 1, 0, 80)
 script = ExtResource("1_snbmu")
 
 [node name="ParallaxLayer0" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(218, 156)
+position = Vector2(-20, 157)
 motion_scale = Vector2(0.05, 0.05)
-motion_mirroring = Vector2(639, 0)
+motion_mirroring = Vector2(1276, 0)
 
 [node name="Sprite2D_Layer0" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer0"]
 modulate = Color(0.156863, 0.313726, 0, 1)
-position = Vector2(103, -55.75)
-scale = Vector2(0.443056, 0.998611)
+position = Vector2(21, -133.125)
+scale = Vector2(0.443056, 1.42153)
+texture = ExtResource("2_b52jq")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-20, 157)
+motion_scale = Vector2(0.05, 0.05)
+motion_mirroring = Vector2(1276, 0)
+
+[node name="Sprite2D_Layer0" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+modulate = Color(0.156863, 0.313726, 0, 1)
+position = Vector2(659, -132.625)
+scale = Vector2(0.443056, 1.41875)
 texture = ExtResource("2_b52jq")
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(219, 156)
+position = Vector2(-19, 157)
 motion_scale = Vector2(0.055, 0.055)
-motion_mirroring = Vector2(639, 0)
+motion_mirroring = Vector2(1276, 0)
 
 [node name="Sprite2D_Layer1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
-position = Vector2(101, -55.55)
+position = Vector2(22, -55)
 scale = Vector2(0.5, 0.420735)
 texture = ExtResource("3_tu6pf")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(218, 156)
-motion_scale = Vector2(0.3, 0.3)
-motion_mirroring = Vector2(639, 0)
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-19, 157)
+motion_scale = Vector2(0.055, 0.055)
+motion_mirroring = Vector2(1276, 0)
 
-[node name="Sprite2D_Layer2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+[node name="Sprite2D_Layer1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(659, -55)
+scale = Vector2(0.5, 0.420735)
+texture = ExtResource("3_tu6pf")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-20, 157)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1276, 0)
+
+[node name="Sprite2D_Layer2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
 position = Vector2(103, -6.00003)
 scale = Vector2(0.499219, 0.493056)
 texture = ExtResource("4_464j3")
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(218, 156)
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-20, 157)
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1276, 0)
+
+[node name="Sprite2D_Layer2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(742, -1)
+scale = Vector2(0.499219, 0.493056)
+texture = ExtResource("4_464j3")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(700, 152)
 motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(639, 0)
+motion_mirroring = Vector2(1276, 0)
+
+[node name="Sprite2D_Layer3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2(22, 5)
+scale = Vector2(0.499219, 0.493056)
+texture = ExtResource("5_8lc7b")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-20, 157)
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(1276, 0)
 
 [node name="Sprite2D_Layer3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(103, -1)
