@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://b1nx44lev3j30" path="res://assets/sprites/objects/spear/spear_combat.png" id="2_1dln6"]
 [ext_resource type="Texture2D" uid="uid://3aa1haofcicb" path="res://assets/sprites/objects/spear/nip_collision.png" id="3_pqbxo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q14td"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6ysn"]
 size = Vector2(2, 57)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q5hun"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_osbxj"]
 radius = 4.12311
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1esh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8poy8"]
 size = Vector2(6, 12)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s0rn2"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_k5hi4"]
 radius = 25.02
 
 [node name="Spear" type="RigidBody2D"]
@@ -35,16 +35,16 @@ texture = ExtResource("3_pqbxo")
 
 [node name="CollisionShape2DInnerHandle" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8.5)
-shape = SubResource("RectangleShape2D_q14td")
+shape = SubResource("RectangleShape2D_i6ysn")
 disabled = true
 
 [node name="CollisionShape2DInnerTip" type="CollisionShape2D" parent="."]
 position = Vector2(0, -32)
-shape = SubResource("CircleShape2D_q5hun")
+shape = SubResource("CircleShape2D_osbxj")
 
 [node name="CollisionShape2DOuterTip" type="CollisionShape2D" parent="."]
 position = Vector2(0, -26)
-shape = SubResource("RectangleShape2D_q1esh")
+shape = SubResource("RectangleShape2D_8poy8")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
@@ -52,7 +52,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 9)
-shape = SubResource("CircleShape2D_s0rn2")
+shape = SubResource("CircleShape2D_k5hi4")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
