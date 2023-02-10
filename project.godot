@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+<<<<<<< Updated upstream
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 
 [dialogic]
@@ -45,6 +46,9 @@ editor/last_resources=["res://sources/hud/dialog/lanca.dch", "res://sources/Char
 editor/timeline_editor_mode=0
 editor/character_preview_mode=1
 editor/current_timeline_path="res://sources/hud/dialog/timeline.dtl"
+=======
+Constants="*res://sources/globals/contants.gd"
+>>>>>>> Stashed changes
 
 [display]
 

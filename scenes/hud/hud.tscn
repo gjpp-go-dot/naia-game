@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn541h2uv03tw"]
+
+[ext_resource type="Texture2D" uid="uid://c1nps3o22rvh6" path="res://icon.svg" id="1_cbeq1"]
+[ext_resource type="Script" path="res://scenes/hud/hud.gd" id="1_jqptw"]
+
+[node name="Node2D" type="CanvasLayer"]
+script = ExtResource("1_jqptw")
+
+[node name="spear1" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("1_cbeq1")
+
+[node name="spear2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.670588, 0, 0.239216, 1)
+texture = ExtResource("1_cbeq1")
+
+[node name="spear0" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_cbeq1")
