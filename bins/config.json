@@ -1,8 +1,0 @@
-{
-	"defaultSpeed": 130,
-	"runMultiplier": 1.6,
-	"jumpLength": 700,
-	"gravity": 2100,
-	"friction": 0.15,
-	"acceleration": 0.15
-}
