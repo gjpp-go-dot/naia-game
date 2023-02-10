@@ -47,10 +47,10 @@ func run_hability():
 		call_deferred("trampoline_exec")
 	elif spear_type == SpearType.RAPPEL:
 		call_deferred("rappel_exec")
-
+		
 func set_spear_type(type):
 	spear_type = type
-
+	Constants.estado = spear_type
 	get_node("Sprite2D").set("texture", spear_textures[spear_type])
 
 func aim(global_position_mouse, direction):
@@ -93,6 +93,8 @@ func _on_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_in
 		set_deferred("sleeping", true)
 		collision_layer = 1
 		collision_mask = 1
+		print(rotation)
+		get_node("CollisionShape2DInnerHandle").rotation_degrees = -90 if rad_to_deg(rotation) > 0 else 90
 		get_node("CollisionShape2DInnerHandle").set_deferred("disabled", false)
 		get_node("NipCollision").visible = true
 		run_hability()

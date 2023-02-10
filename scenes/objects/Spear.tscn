@@ -4,19 +4,20 @@
 [ext_resource type="Texture2D" uid="uid://b1nx44lev3j30" path="res://assets/sprites/objects/spear/spear_combat.png" id="2_1dln6"]
 [ext_resource type="Texture2D" uid="uid://3aa1haofcicb" path="res://assets/sprites/objects/spear/nip_collision.png" id="3_pqbxo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i6ysn"]
-size = Vector2(2, 57)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26x1a"]
+size = Vector2(55.5, 2)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_osbxj"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ibl4d"]
 radius = 4.12311
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8poy8"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_usb6s"]
 size = Vector2(6, 12)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_k5hi4"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_02sf1"]
 radius = 25.02
 
 [node name="Spear" type="RigidBody2D"]
+rotation = 6.27868
 collision_layer = 0
 collision_mask = 4
 mass = 0.45
@@ -24,6 +25,7 @@ gravity_scale = 0.5
 max_contacts_reported = 5
 contact_monitor = true
 script = ExtResource("1_vxd2e")
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1dln6")
@@ -34,17 +36,19 @@ position = Vector2(0, -35)
 texture = ExtResource("3_pqbxo")
 
 [node name="CollisionShape2DInnerHandle" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8.5)
-shape = SubResource("RectangleShape2D_i6ysn")
+position = Vector2(-3.60619e-07, 8.25)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_26x1a")
 disabled = true
+one_way_collision = true
 
 [node name="CollisionShape2DInnerTip" type="CollisionShape2D" parent="."]
 position = Vector2(0, -32)
-shape = SubResource("CircleShape2D_osbxj")
+shape = SubResource("CircleShape2D_ibl4d")
 
 [node name="CollisionShape2DOuterTip" type="CollisionShape2D" parent="."]
 position = Vector2(0, -26)
-shape = SubResource("RectangleShape2D_8poy8")
+shape = SubResource("RectangleShape2D_usb6s")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
@@ -52,7 +56,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 9)
-shape = SubResource("CircleShape2D_k5hi4")
+shape = SubResource("CircleShape2D_02sf1")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

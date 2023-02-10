@@ -16,7 +16,7 @@ config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
-
+Constants="*res://sources/globals/contants.gd"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 
 [dialogic]
@@ -124,6 +124,10 @@ dialogic_default_action={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+
+[physics]
+
+common/max_physics_steps_per_frame=12
 
 [rendering]
 
