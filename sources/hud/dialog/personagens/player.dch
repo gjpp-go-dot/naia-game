@@ -15,7 +15,7 @@
 "offset": Vector2(0, 0),
 "portraits": {
 "New portrait": {
-"image": "res://icon.svg",
+"image": "res://assets/sprites/hud/128x128/mystery.png",
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 0.7,
