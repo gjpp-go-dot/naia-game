@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="2_d1ko2"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="2_ixpyc"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s0poa"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1q8o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3fh5"]
 texture = ExtResource("2_ixpyc")
@@ -195,7 +195,7 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 517
 physics_layer_0/collision_mask = 517
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_s0poa")
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_e1q8o")
 sources/2 = SubResource("TileSetAtlasSource_q3fh5")
 
 [node name="TestSpear" type="Node2D"]
