@@ -1,2 +1,6 @@
 Join lanca (New portrait) 1
-lanca (New portrait): 
+Join rclick 2 [animation="Bounce In"]
+Join lclick 3 [animation="Bounce In"]
+lanca (New portrait): Ah, se algum obstáculo aparecer, você pode clicar com o botão direito do mouse para mirar e depois clique com o botão esquerdo do mouse para me lançar em alguma superfície.
+Leave lclick [animation="Instant In Or Out"]
+lanca (New portrait): Para me pegar de volta, é só clicar com o botão direito do mouse.

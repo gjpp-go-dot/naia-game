@@ -110,13 +110,12 @@ script = ExtResource("5")
 position_index = 1
 
 [node name="PortraitPosition2" type="Marker2D" parent="."]
-position = Vector2(300, 137)
+position = Vector2(457, 66)
 script = ExtResource("5")
 position_index = 2
 
 [node name="PortraitPosition3" type="Marker2D" parent="."]
-visible = false
-position = Vector2(429, 295)
+position = Vector2(547, 66)
 script = ExtResource("5")
 position_index = 3
 

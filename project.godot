@@ -39,10 +39,10 @@ text/autocontinue_delay=1.0
 variables={}
 editor/current_editor=&"Timeline Editor"
 editor/current_resources={
-"Character Editor": "res://sources/hud/dialog/personagens/player.dch",
+"Character Editor": "res://sources/CharactersDiag/Taina.dch",
 "Timeline Editor": "res://sources/hud/dialog/textos/ini.dtl"
 }
-editor/last_resources=["res://sources/hud/dialog/textos/tut1.dtl", "res://sources/hud/dialog/textos/ini.dtl", "res://sources/hud/dialog/personagens/player.dch", "res://sources/hud/dialog/personagens/lanca.dch", "res://sources/CharactersDiag/Taina.dch"]
+editor/last_resources=["res://sources/hud/dialog/textos/ini.dtl", "res://sources/CharactersDiag/Taina.dch", "res://sources/hud/dialog/textos/tut3.dtl", "res://sources/hud/dialog/textos/tut2.dtl", "res://sources/hud/dialog/personagens/W.dch", "res://sources/hud/dialog/personagens/space.dch", "res://sources/hud/dialog/personagens/rclick.dch", "res://sources/hud/dialog/personagens/player.dch", "res://sources/hud/dialog/personagens/middle.dch", "res://sources/hud/dialog/personagens/lclick.dch", "res://sources/hud/dialog/personagens/lanca.dch", "res://sources/hud/dialog/personagens/D.dch", "res://sources/hud/dialog/personagens/A.dch", "res://sources/hud/dialog/textos/tut1.dtl"]
 editor/timeline_editor_mode=0
 editor/character_preview_mode=1
 editor/current_timeline_path="res://sources/hud/dialog/textos/ini.dtl"

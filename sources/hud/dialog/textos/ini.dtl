@@ -1,46 +1,46 @@
-Join player 1
-player (New portrait): Hã? Quem é você? O que faz aqui? 
-Leave player
-Join Taina (Surprised) 1
+Join player 1 [animation="Instant In Or Out"]
+player (New portrait): Hã? Quem é você? O que faz aqui?
+Leave player [animation="Instant In Or Out"]
+Join Taina (Surprised) 1 [animation="Instant In Or Out"]
 Taina (Surprised): Espera, de onde vem essa voz? Tem alguém aqui?
-Leave Taina
-Join player (New portrait) 1
+Leave Taina [animation="Instant In Or Out"]
+Join player (New portrait) 1 [animation="Instant In Or Out"]
 player (New portrait): Hmm, que estranho, não vejo pessoas aqui há tanto tempo... Apenas responda, qual o seu nome?
-Leave player
-Join Taina (Afraid) 1
+Leave player [animation="Instant In Or Out"]
+Join Taina (Afraid) 1 [animation="Instant In Or Out"]
 Taina (Afraid): Isso é muito estranho...
 Update Taina (Neutral) 1
 Taina (Neutral): Bem, meu nome é Tainá, eu nem sei se deveria estar te contando quem eu sou, se não sei quem você é.
-Leave Taina
-Join player (New portrait) 1
+Leave Taina [animation="Instant In Or Out"]
+Join player (New portrait) 1 [animation="Instant In Or Out"]
 player (New portrait): Tainá... Eu sou aquele que foi amaldiçoado com a existência eterna, fui condenado com a missão de acompanhar grandes guerreiras ao longo dos milênios, eu vi a guerra e também a paz.
 player (New portrait): Mas no final, todas têm o mesmo destino.
-Leave player
-Join lanca (New portrait) 1
-lanca (New portrait): Eu sou o espírito que habita esta lança. E o que você faz aqui? 
-Leave lanca
-Join Taina (Neutral) 1
+Leave player [animation="Instant In Or Out"]
+Join lanca (New portrait) 1 [animation="Bounce In"]
+lanca (New portrait): Eu sou o espírito que habita esta lança. E o que você faz aqui?
+Leave lanca [animation="Instant In Or Out"]
+Join Taina (Neutral) 1 [animation="Instant In Or Out"]
 Taina (Neutral): Na verdade, eu não sei... Eu estava a caminho da minha vila mas me perdi, até que eu encontrei este lugar e senti que deveria entrar... como se algo neste lugar me atraísse.
-Leave Taina
-Join lanca (New portrait) 1
+Leave Taina [animation="Instant In Or Out"]
+Join lanca (New portrait) 1 [animation="Instant In Or Out"]
 lanca (New portrait): Não me surpreende, este lugar é sagrado. Uma lenda rege a existência deste lugar... Durante os milênios, sempre que a Lua é ameaçada, uma guerreira é escolhida para defender a nossa sociedade e trazer a paz.
 lanca (New portrait): O meu destino sempre foi acompanhá-las, mas o final da jornada nunca se tornou mais fácil. Existem pedaços de suas histórias perdidas por essa terra, talvez você as encontre em algum momento.
 lanca (New portrait): A verdade é que eu não tenho mais utilidade, minha missão parece ter se encerrado, mas eu continuo aqui.
-Leave lanca
-Join Taina (Surprised) 1
+Join Taina (Surprised) 1 [animation="Instant In Or Out"]
+Leave lanca [animation="Instant In Or Out"]
 Taina (Surprised): Nossa, eu nunca ouvi falar nessa lenda...
 Update Taina (Neutral) 1
 Taina (Neutral): Enfim, já está tarde e eu preciso voltar para minha vila, você quer que eu lhe deixe onde o encontrei?
-Leave Taina
-Join lanca (New portrait) 1
+Leave Taina [animation="Instant In Or Out"]
+Join lanca (New portrait) 1 [animation="Instant In Or Out"]
 lanca (New portrait): Eu não tenho mais utilidade nesse local, seria mais útil ir lhe acompanhando... Sinto que o perigo está se aproximando nessa noite.
-Leave lanca
-Join Taina (Afraid) 1
+Leave lanca [animation="Instant In Or Out"]
+Join Taina (Afraid) 1 [animation="Instant In Or Out"]
 Taina (Afraid): Perigo???... Como assim?
-Leave Taina
-Join lanca (New portrait) 1
-lanca (New portrait): Aconteceram coisas ruins em todas as vezes que despertei. 
-Leave lanca
-Join Taina (Neutral) 1
+Leave Taina [animation="Instant In Or Out"]
+Join lanca (New portrait) 1 [animation="Instant In Or Out"]
+lanca (New portrait): Aconteceram coisas ruins em todas as vezes que despertei.
+Leave lanca [animation="Instant In Or Out"]
+Join Taina (Neutral) 1 [animation="Instant In Or Out"]
 Taina (Neutral): Então levarei você comigo até o meu povo.
 [end_timeline]
