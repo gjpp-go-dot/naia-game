@@ -185,7 +185,6 @@ func _physics_process(delta):
 			get_node("AnimatedSprite2D").set("manual_lock", false)
 			get_node("AnimatedSprite2D").set("lock", false)
 			jump(jump_speed + ((jump_speed * 0.50) * (get_node("Naiui/ProgressBar").get("value") / 100)))
-			print(velocity.y)
 			landed = false
 			in_trampoline = false
 			get_node("Naiui").visible = false
@@ -274,7 +273,6 @@ func _physics_process(delta):
 			wall_jumped = null
 	else:
 		if in_rappel:
-			print(velocity.y)
 			if abs(velocity.y) > 40:
 				bind_set_state(STATES.RAPPEL)
 			else:
@@ -284,11 +282,9 @@ func _physics_process(delta):
 		else:
 			bind_set_state(STATES.FALLING)
 
-	#print(current_state)
 	if not in_rappel:
 		bind_process_event("look_left" if last_direction < 0 else "look_right")
 	elif not is_on_floor():
-		print(vine_x_position, " ", global_position.x)
 		bind_process_event("look_left" if vine_x_position < global_position.x else "look_right")
 
 	match current_state:

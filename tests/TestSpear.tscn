@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://vtuwa715yw85"]
+[gd_scene load_steps=6 format=3 uid="uid://d1ruux3wnvgwl"]
 
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="2_d1ko2"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="2_ixpyc"]
-[ext_resource type="PackedScene" uid="uid://dn541h2uv03tw" path="res://scenes/hud/hud.tscn" id="3_cv2gu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1q8o"]
 
@@ -210,7 +209,3 @@ layer_0/tile_data = PackedInt32Array(393215, 65538, 7, 327679, 65538, 7, 262143,
 
 [node name="Naia" parent="." instance=ExtResource("2_d1ko2")]
 position = Vector2(286, 282)
-
-[node name="Node2D" parent="." instance=ExtResource("3_cv2gu")]
-
-[connection signal="update_spear_type" from="Naia" to="Node2D" method="_on_naia_update_spear_type"]

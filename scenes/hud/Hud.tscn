@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dn541h2uv03tw"]
 
-[ext_resource type="Script" path="res://sources/hud/hud.gd" id="1_mr1nb"]
-[ext_resource type="PackedScene" uid="uid://bf440xprq1itl" path="res://scenes/hud/Control.tscn" id="2_8srtw"]
-[ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://resources/hud/sprite_0.png" id="2_qht6f"]
-[ext_resource type="Texture2D" uid="uid://dwf5yq576m68a" path="res://resources/hud/sprite_1.png" id="3_61ylb"]
+[ext_resource type="Script" path="res://sources/hud/hud.gd" id="1_4tvpl"]
+[ext_resource type="PackedScene" uid="uid://bf440xprq1itl" path="res://scenes/hud/Control.tscn" id="2_a6bej"]
+[ext_resource type="Texture2D" uid="uid://dwf5yq576m68a" path="res://resources/hud/sprite_1.png" id="3_6i1f7"]
+[ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://resources/hud/sprite_0.png" id="4_fekj7"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gcjob"]
 load_path = "res://.godot/imported/sprite_2.png-083845921eba6e81505bcfd9d1df25bc.ctex"
@@ -15,10 +15,10 @@ animations = [{
 "texture": SubResource("CompressedTexture2D_gcjob")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_61ylb")
+"texture": ExtResource("3_6i1f7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_qht6f")
+"texture": ExtResource("4_fekj7")
 }],
 "loop": true,
 "name": &"default",
@@ -26,9 +26,9 @@ animations = [{
 }]
 
 [node name="Hud" type="CanvasLayer"]
-script = ExtResource("1_mr1nb")
+script = ExtResource("1_4tvpl")
 
-[node name="Life" parent="." instance=ExtResource("2_8srtw")]
+[node name="Life" parent="." instance=ExtResource("2_a6bej")]
 
 [node name="CurrentSpear" type="AnimatedSprite2D" parent="."]
 position = Vector2(1210, 660)
