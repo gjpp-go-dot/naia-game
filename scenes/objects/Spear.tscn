@@ -4,16 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://b1nx44lev3j30" path="res://assets/sprites/objects/spear/spear_combat.png" id="2_1dln6"]
 [ext_resource type="Texture2D" uid="uid://3aa1haofcicb" path="res://assets/sprites/objects/spear/nip_collision.png" id="3_pqbxo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygldw"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qu2a5"]
 size = Vector2(55.5, 2)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8j3al"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_navp6"]
 radius = 4.12311
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0oyp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l0dhq"]
 size = Vector2(6, 12)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s5eex"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_nrxgd"]
 radius = 25.02
 
 [node name="Spear" type="RigidBody2D"]
@@ -31,24 +31,24 @@ metadata/_edit_group_ = true
 texture = ExtResource("2_1dln6")
 
 [node name="NipCollision" type="Sprite2D" parent="."]
-visible = false
+modulate = Color(1, 1, 1, 0.882353)
 position = Vector2(0, -35)
 texture = ExtResource("3_pqbxo")
 
 [node name="CollisionShape2DInnerHandle" type="CollisionShape2D" parent="."]
 position = Vector2(-3.60619e-07, 8.25)
 rotation = -1.5708
-shape = SubResource("RectangleShape2D_ygldw")
+shape = SubResource("RectangleShape2D_qu2a5")
 disabled = true
 one_way_collision = true
 
 [node name="CollisionShape2DInnerTip" type="CollisionShape2D" parent="."]
 position = Vector2(0, -32)
-shape = SubResource("CircleShape2D_8j3al")
+shape = SubResource("CircleShape2D_navp6")
 
 [node name="CollisionShape2DOuterTip" type="CollisionShape2D" parent="."]
 position = Vector2(0, -26)
-shape = SubResource("RectangleShape2D_i0oyp")
+shape = SubResource("RectangleShape2D_l0dhq")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
@@ -56,7 +56,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 9)
-shape = SubResource("CircleShape2D_s5eex")
+shape = SubResource("CircleShape2D_nrxgd")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

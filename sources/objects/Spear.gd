@@ -59,9 +59,9 @@ func aim(global_position_mouse, direction):
 	var spear_direction = global_position_mouse - spear_position if direction == 1 else spear_position - global_position_mouse
 	var spear_angle = 0
 	if direction == 1:
-		spear_angle = clamp(spear_direction.angle(), -PI / 3, PI / 32) + PI / 2
+		spear_angle = clamp(spear_direction.angle(), -PI / 3, PI / 12) + PI / 2
 	else:
-		spear_angle = clamp(spear_direction.angle(), -PI / 32, PI / 3) + PI / 2 + PI
+		spear_angle = clamp(spear_direction.angle(), -PI / 12, PI / 3) + PI / 2 + PI
 	set_rotation(spear_angle)
 
 func throw(direction):
@@ -78,12 +78,10 @@ func _ready():
 func _on_area_2d_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_index):
 	if _body.get_name() == "Naia" and trampoline_state and _body.get("global_position").y < global_position.y:
 		_body.set("trampoline", true)
-		print("trampoline: true")
 
 func _on_area_2d_body_shape_exited(_body_rid, _body, _body_shape_index, _local_shape_index):
 	if _body.get_name() == "Naia" and trampoline_state and _body.get("trampoline"):
 		_body.set("trampoline", false)
-		print("trampoline: false")
 
 func _on_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_index):
 	if status == Status.LAUNCHED:

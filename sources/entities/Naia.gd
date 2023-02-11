@@ -47,7 +47,7 @@ var spear_scene = preload("res://scenes/objects/Spear.tscn")
 const SPEAR_OFFSET_RIGHT = Vector2(-29, -9)
 const SPEAR_OFFSET_LEFT = Vector2(29, -9)
 
-const DEFAULT_CAMERA_ZOOM = Vector2(1.1, 1.1)
+var DEFAULT_CAMERA_ZOOM = null
 
 var current_state = STATES.IDLE
 var landed = true
@@ -77,6 +77,9 @@ var last_wall_hold = Time.get_ticks_msec()
 var wall_jumped = null
 var raycast_distance = 40
 var last_seen_direction = 1
+
+func _ready():
+	DEFAULT_CAMERA_ZOOM = get_node("Camera2D").get("zoom")
 
 func bind_process_event(event_name):
 	emit_signal("process_event", event_name)
@@ -153,6 +156,7 @@ func exec_trampoline():
 	get_node("Naiui/ProgressBar").call("start_bounce")
 	set_camera_zoom(Vector2(1.5, 1.5))
 	bind_process_event("prepare_trampoline_jump")
+	get_node("AnimatedSprite2D").call("PREPARE_TRAMPOLINE_JUMP")
 
 func jump(jump_speed_custom = null):
 	if jump_speed_custom:
@@ -178,6 +182,8 @@ func _process(_delta):
 func _physics_process(delta):
 	if in_trampoline:
 		if not Input.is_action_pressed(INPUTS_MAP.JUMP) or get_node("Naiui/ProgressBar").get("value") == 100:
+			get_node("AnimatedSprite2D").set("manual_lock", false)
+			get_node("AnimatedSprite2D").set("lock", false)
 			jump(jump_speed + ((jump_speed * 0.50) * (get_node("Naiui/ProgressBar").get("value") / 100)))
 			print(velocity.y)
 			landed = false
