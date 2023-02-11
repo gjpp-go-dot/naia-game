@@ -59,9 +59,9 @@ func aim(global_position_mouse, direction):
 	var spear_direction = global_position_mouse - spear_position if direction == 1 else spear_position - global_position_mouse
 	var spear_angle = 0
 	if direction == 1:
-		spear_angle = clamp(spear_direction.angle(), -PI / 3, PI / 32) + PI / 2
+		spear_angle = clamp(spear_direction.angle(), -PI / 3, PI / 12) + PI / 2
 	else:
-		spear_angle = clamp(spear_direction.angle(), -PI / 32, PI / 3) + PI / 2 + PI
+		spear_angle = clamp(spear_direction.angle(), -PI / 12, PI / 3) + PI / 2 + PI
 	set_rotation(spear_angle)
 
 func throw(direction):
