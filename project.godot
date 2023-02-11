@@ -37,15 +37,15 @@ text/speed=0.01
 text/skippable=true
 text/autocontinue_delay=1.0
 variables={}
-editor/current_editor=&"Character Editor"
+editor/current_editor=&"Timeline Editor"
 editor/current_resources={
-"Character Editor": "res://sources/hud/dialog/player.dch",
-"Timeline Editor": "res://sources/hud/dialog/ini.dtl"
+"Character Editor": "res://sources/hud/dialog/personagens/player.dch",
+"Timeline Editor": "res://sources/hud/dialog/textos/ini.dtl"
 }
-editor/last_resources=["res://sources/CharactersDiag/Taina.dch", "res://sources/hud/dialog/player.dch", "res://sources/hud/dialog/lanca.dch"]
+editor/last_resources=["res://sources/hud/dialog/textos/tut1.dtl", "res://sources/hud/dialog/textos/ini.dtl", "res://sources/hud/dialog/personagens/player.dch", "res://sources/hud/dialog/personagens/lanca.dch", "res://sources/CharactersDiag/Taina.dch"]
 editor/timeline_editor_mode=0
 editor/character_preview_mode=1
-editor/current_timeline_path="res://sources/hud/dialog/ini.dtl"
+editor/current_timeline_path="res://sources/hud/dialog/textos/ini.dtl"
 
 [display]
 
