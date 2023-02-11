@@ -47,7 +47,7 @@ var spear_scene = preload("res://scenes/objects/Spear.tscn")
 const SPEAR_OFFSET_RIGHT = Vector2(-29, -9)
 const SPEAR_OFFSET_LEFT = Vector2(29, -9)
 
-const DEFAULT_CAMERA_ZOOM = Vector2(1.1, 1.1)
+var DEFAULT_CAMERA_ZOOM = null
 
 var current_state = STATES.IDLE
 var landed = true
@@ -77,6 +77,9 @@ var last_wall_hold = Time.get_ticks_msec()
 var wall_jumped = null
 var raycast_distance = 40
 var last_seen_direction = 1
+
+func _ready():
+	DEFAULT_CAMERA_ZOOM = get_node("Camera2D").get("zoom")
 
 func bind_process_event(event_name):
 	emit_signal("process_event", event_name)
