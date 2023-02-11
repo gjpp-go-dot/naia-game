@@ -5,9 +5,11 @@ func _physics_process(delta):
 
 
 func _on_water_body_entered(body):
-	print("glup glup")
-
+	if body.name == "Naia":
+		print("glup glup")
+	else: print("bloco atingido")
 
 
 func _on_target_body_entered(body):
-	print("alvo atingido")
+	if body.name == "Spear":
+		print("alvo atingido")
