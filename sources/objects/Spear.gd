@@ -78,12 +78,10 @@ func _ready():
 func _on_area_2d_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_index):
 	if _body.get_name() == "Naia" and trampoline_state and _body.get("global_position").y < global_position.y:
 		_body.set("trampoline", true)
-		print("trampoline: true")
 
 func _on_area_2d_body_shape_exited(_body_rid, _body, _body_shape_index, _local_shape_index):
 	if _body.get_name() == "Naia" and trampoline_state and _body.get("trampoline"):
 		_body.set("trampoline", false)
-		print("trampoline: false")
 
 func _on_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_index):
 	if status == Status.LAUNCHED:

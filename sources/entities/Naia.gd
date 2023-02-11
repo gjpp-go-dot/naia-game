@@ -156,6 +156,7 @@ func exec_trampoline():
 	get_node("Naiui/ProgressBar").call("start_bounce")
 	set_camera_zoom(Vector2(1.5, 1.5))
 	bind_process_event("prepare_trampoline_jump")
+	get_node("AnimatedSprite2D").call("PREPARE_TRAMPOLINE_JUMP")
 
 func jump(jump_speed_custom = null):
 	if jump_speed_custom:
@@ -181,6 +182,8 @@ func _process(_delta):
 func _physics_process(delta):
 	if in_trampoline:
 		if not Input.is_action_pressed(INPUTS_MAP.JUMP) or get_node("Naiui/ProgressBar").get("value") == 100:
+			get_node("AnimatedSprite2D").set("manual_lock", false)
+			get_node("AnimatedSprite2D").set("lock", false)
 			jump(jump_speed + ((jump_speed * 0.50) * (get_node("Naiui/ProgressBar").get("value") / 100)))
 			print(velocity.y)
 			landed = false

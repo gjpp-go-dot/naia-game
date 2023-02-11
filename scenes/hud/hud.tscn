@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn541h2uv03tw"]
+[gd_scene load_steps=7 format=3 uid="uid://dn541h2uv03tw"]
 
 [ext_resource type="Script" path="res://sources/hud/hud.gd" id="1_mr1nb"]
+[ext_resource type="PackedScene" uid="uid://bf440xprq1itl" path="res://scenes/hud/Control.tscn" id="2_8srtw"]
 [ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://resources/hud/sprite_0.png" id="2_qht6f"]
 [ext_resource type="Texture2D" uid="uid://dwf5yq576m68a" path="res://resources/hud/sprite_1.png" id="3_61ylb"]
 
@@ -24,10 +25,14 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="HudSpear" type="CanvasLayer"]
+[node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_mr1nb")
 
-[node name="icons" type="AnimatedSprite2D" parent="."]
-position = Vector2(607, 330)
-scale = Vector2(2.58577, 2.18718)
+[node name="Life" parent="." instance=ExtResource("2_8srtw")]
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CurrentSpear" type="AnimatedSprite2D" parent="."]
+position = Vector2(1210, 660)
+scale = Vector2(4, 3.383)
 frames = SubResource("SpriteFrames_ueo45")

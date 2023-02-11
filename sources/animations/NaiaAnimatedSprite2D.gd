@@ -60,6 +60,7 @@ func PREPARE_TRAMPOLINE_JUMP():
 	self.play(ANIMATIONS_MAP.JUMP)
 	self.frame = 0
 	self.stop()
+	manual_lock = true
 
 var event_manager = preload("res://sources/generics/EventManager.gd").new()
 
