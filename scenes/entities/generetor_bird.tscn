@@ -1,15 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://clirv2okaj27s"]
 
-[ext_resource type="PackedScene" uid="uid://bk2wv4obydo75" path="res://scenes/entities/bird_.tscn" id="1_15ji7"]
+[ext_resource type="Script" path="res://sources/entities/generetor_bird.gd" id="1_1ii61"]
 
 [node name="generetor_bird" type="Node2D"]
+script = ExtResource("1_1ii61")
 
-[node name="bird_" parent="." instance=ExtResource("1_15ji7")]
+[node name="Timer" type="Timer" parent="."]
 
-[node name="bird_2" parent="." instance=ExtResource("1_15ji7")]
-position = Vector2(33, 47)
-scale = Vector2(0.8, 0.8)
-
-[node name="bird_3" parent="." instance=ExtResource("1_15ji7")]
-position = Vector2(-44, 39)
-scale = Vector2(0.5, 0.5)
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
