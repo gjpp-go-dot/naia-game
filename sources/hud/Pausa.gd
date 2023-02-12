@@ -17,7 +17,7 @@ func _ready():
 	$SlideMas.value = master
 	$SlideMus.value = music
 	$SlideSFX.value = sfx
-	$Continuar.pressed.connect(unpause)
+	$Continuar.pressed.connect(resume)
 	$AjuVol.pressed.connect(altVolume)
 	$Voltar.pressed.connect(retornar)
 	$VoltarMenu.pressed.connect(quit)
@@ -25,7 +25,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("pause"):
 		if get_tree().paused:
-			unpause()
+			resume()
 		else:
 			pause()
 
@@ -36,8 +36,6 @@ func quit():
 func altVolume():
 	$AnimationPlayer.play("Pausa")
 
-
-
 func retornar():
 	$Continuar.position = Vector2(477,220)
 	$AnimationPlayer.play_backwards("Pausa")
@@ -47,7 +45,7 @@ func pause():
 	$AnimationPlayer.play("Appear")
 	get_tree().paused = true
 
-func unpause():
+func resume():
 	$AnimationPlayer.play_backwards("Appear")
 	get_tree().paused = false
 

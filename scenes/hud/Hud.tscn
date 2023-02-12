@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn541h2uv03tw"]
+[gd_scene load_steps=8 format=3 uid="uid://dn541h2uv03tw"]
 
 [ext_resource type="Script" path="res://sources/hud/hud.gd" id="1_4tvpl"]
 [ext_resource type="PackedScene" uid="uid://bf440xprq1itl" path="res://scenes/hud/Control.tscn" id="2_a6bej"]
 [ext_resource type="Texture2D" uid="uid://dwf5yq576m68a" path="res://resources/hud/sprite_1.png" id="3_6i1f7"]
 [ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://resources/hud/sprite_0.png" id="4_fekj7"]
+[ext_resource type="PackedScene" uid="uid://bc1j0tnlnf6p2" path="res://scenes/hud/Pausa.tscn" id="5_pt4fd"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gcjob"]
 load_path = "res://.godot/imported/sprite_2.png-083845921eba6e81505bcfd9d1df25bc.ctex"
@@ -34,3 +35,5 @@ script = ExtResource("1_4tvpl")
 position = Vector2(1210, 660)
 scale = Vector2(4, 3.383)
 frames = SubResource("SpriteFrames_ueo45")
+
+[node name="Pausa" parent="." instance=ExtResource("5_pt4fd")]
