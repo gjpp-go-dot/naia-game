@@ -14,8 +14,8 @@ func _on_water_body_entered(body):
 		contador = 0
 		$Naia.position.x = -289
 		$Naia.position.y = 24
-		$target.position.x = 92
-		$target.position.y = -199
+		$target.position.x = 95
+		$target.position.y = -328
 		$water.position.x = -244
 		$water.position.y = 120
 		
