@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 Constants="*res://sources/globals/contants.gd"
-Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -56,10 +55,6 @@ window/size/window_height_override=720
 window/stretch/mode="viewport"
 window/main_scene="res://tests/TestSpear.tscn"
 window/screen_space_roughness_limiter/enabled=true
-
-[editor_plugins]
-
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 
