@@ -42,11 +42,15 @@ func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel") and get_tree().paused == true:
 		get_node("MenuSFX").call("confirm")
 		$AnimationPlayer.play_backwards("Appear")
+		$menu_soundtrack.stop()
 		resume()
+
+
 	elif Input.is_action_just_pressed("ui_cancel") and get_tree().paused== false:
 		get_node("MenuSFX").call("confirm")
 		$AnimationPlayer.play("Appear")
 		pause()
+		$menu_soundtrack.play()
 			
 	print(get_tree().paused)
 
@@ -88,6 +92,7 @@ func resume():
 	print()
 	$AnimationPlayer.play_backwards("Appear")
 	get_tree().paused = false
+	$menu_soundtrack.stop()
 
 func _on_voltar_pressed():
 	$Voltar.disabled = true

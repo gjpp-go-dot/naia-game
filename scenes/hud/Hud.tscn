@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://rww8jwenbx6b"]
+[gd_scene load_steps=9 format=3 uid="uid://rww8jwenbx6b"]
 
 [ext_resource type="Script" path="res://sources/hud/hud.gd" id="1_4tvpl"]
 [ext_resource type="PackedScene" uid="uid://bf440xprq1itl" path="res://scenes/hud/Control.tscn" id="2_a6bej"]
 [ext_resource type="Texture2D" uid="uid://dwf5yq576m68a" path="res://assets/sprites/hud/sprite_1.png" id="3_kxcni"]
 [ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://assets/sprites/hud/sprite_0.png" id="4_don06"]
 [ext_resource type="PackedScene" uid="uid://bc1j0tnlnf6p2" path="res://scenes/hud/Pausa.tscn" id="5_pt4fd"]
+[ext_resource type="Texture2D" uid="uid://mjs7shflfakq" path="res://assets/sprites/hud/New Piskel (3).png" id="6_gtvrf"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gcjob"]
 load_path = "res://.godot/imported/sprite_2.png-083845921eba6e81505bcfd9d1df25bc.ctex"
@@ -31,10 +32,17 @@ layer = 11
 script = ExtResource("1_4tvpl")
 
 [node name="Life" parent="." instance=ExtResource("2_a6bej")]
+offset_left = 1.0
+offset_right = 1.0
 
 [node name="CurrentSpear" type="AnimatedSprite2D" parent="."]
-position = Vector2(1210, 660)
-scale = Vector2(4, 3.383)
+position = Vector2(119, 74)
+scale = Vector2(1.8, 1.8)
 frames = SubResource("SpriteFrames_ueo45")
 
 [node name="Pausa" parent="." instance=ExtResource("5_pt4fd")]
+
+[node name="NewPiskel(3)" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(98, 72)
+texture = ExtResource("6_gtvrf")
