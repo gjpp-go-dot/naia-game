@@ -22,8 +22,7 @@ var text1 = ["Hã? Quem é você? O que faz aqui?","Espera, de onde vem essa voz
 "Nossa, eu nunca ouvi falar nessa lenda...","Enfim, já está tarde e eu preciso voltar para minha vila, você quer que eu lhe deixe onde o encontrei?",
 "Eu não tenho mais utilidade nesse local, seria mais útil ir lhe acompanhando... Sinto que o perigo está se aproximando nessa noite.",
 "Perigo???... Como assim?","Aconteceram coisas ruins em todas as vezes que despertei.",
-"Então levarei você comigo até o meu povo.","."
-]
+"Então levarei você comigo até o meu povo.","."]
 var image1 = [mys,surprise,mys,fear,neutral,mys,mys,spear,neutral,spear,spear,spear,surprise,neutral,spear,
 fear,spear,neutral,mys]
 
@@ -64,10 +63,6 @@ func sub(name,text,img):
 	$Box/Image.visible = true
 	
 func _process(delta):
-	if $Box.visible ==  true:
-		get_tree().paused = true
-	else:
-		get_tree().paused = false
 	if t == 1 and first[0] == true:
 		d1()
 	elif t == 2 and first[1] == true:
@@ -81,6 +76,7 @@ func _process(delta):
 	
 func d1():
 	$Box.visible = true
+	get_tree().paused = true
 	if name1[click] != ".":
 		sub(name1[click],text1[click],image1[click])
 		apertou()
@@ -89,10 +85,12 @@ func d1():
 		click = 0
 		t = 0
 		first[0] = false
+		get_tree().paused = false
 		
 
 func d2():
 	$Box.visible = true
+	get_tree().paused = true
 	if name2[click] != ".":
 		sub(name2[click],text2[click],image2[click])
 		apertou()
@@ -101,9 +99,11 @@ func d2():
 		click = 0
 		t = 0
 		first[1] = false
+		get_tree().paused = false
 
 func d3():
 	$Box.visible = true
+	get_tree().paused = true
 	if name3[click] != ".":
 		sub(name3[click],text3[click],image3[click])
 		apertou()
@@ -112,9 +112,11 @@ func d3():
 		click = 0
 		t = 0
 		first[2]
+		get_tree().paused = false
 	
 func d4():
 	$Box.visible = true
+	get_tree().paused = true
 	if name4[click] != ".":
 		sub(name4[click],text4[click],image4[click])
 		apertou()
@@ -123,8 +125,10 @@ func d4():
 		click = 0
 		t = 0
 		first[3]
+		get_tree().paused = false
 
 func d5():
+	get_tree().paused = true
 	$Box.visible = true
 	if name5[click] != ".":
 		sub(name5[click],text5[click],image5[click])
@@ -134,6 +138,7 @@ func d5():
 		click = 0
 		t = 0
 		first[4] = false
+		get_tree().paused = false
 
 func _on_area_2d_2_body_entered(body):
 	t = 1

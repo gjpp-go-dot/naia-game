@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://rww8jwenbx6b"]
+[gd_scene load_steps=8 format=3 uid="uid://rww8jwenbx6b"]
 
 [ext_resource type="Script" path="res://sources/hud/hud.gd" id="1_4tvpl"]
 [ext_resource type="PackedScene" uid="uid://bf440xprq1itl" path="res://scenes/hud/Control.tscn" id="2_a6bej"]
@@ -27,6 +27,7 @@ animations = [{
 }]
 
 [node name="Hud" type="CanvasLayer"]
+layer = 11
 script = ExtResource("1_4tvpl")
 
 [node name="Life" parent="." instance=ExtResource("2_a6bej")]

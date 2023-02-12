@@ -38,14 +38,18 @@ func _ready():
 	$Voltar.pressed.connect(retornar)
 	$VoltarMenu.pressed.connect(quit)
 
-func _input(event):
-	if event.is_action_pressed("pause"):
-		if get_tree().paused:
-			resume()
-			$menu_soundtrack.stop()
-		else:
-			$menu_soundtrack.play()
-			pause()
+func _process(delta):
+	if Input.is_action_just_pressed("ui_cancel") and get_tree().paused == true:
+		get_node("MenuSFX").call("confirm")
+		$AnimationPlayer.play_backwards("Appear")
+		resume()
+	elif Input.is_action_just_pressed("ui_cancel") and get_tree().paused== false:
+		get_node("MenuSFX").call("confirm")
+		$AnimationPlayer.play("Appear")
+		pause()
+			
+	print(get_tree().paused)
+
 
 func quit():
 	get_tree().paused = false
@@ -81,6 +85,7 @@ func resume():
 	$Voltar.disabled = true
 	get_node("MenuSFX").call("confirm")
 	volume()
+	print()
 	$AnimationPlayer.play_backwards("Appear")
 	get_tree().paused = false
 
@@ -103,3 +108,7 @@ func _on_slide_mus_changed():
 func _on_slide_sfx_changed():
 	AudioServer.set_bus_volume_db(2,sfx)
 	volume()
+
+
+func _on_continuar_pressed():
+	resume()
