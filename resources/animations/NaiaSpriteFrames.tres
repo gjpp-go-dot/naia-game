@@ -74,10 +74,10 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("5_hkb8u")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": ExtResource("6_cvhpm")
 }, {
 "duration": 1.0,
