@@ -673,6 +673,7 @@ offset_top = 248.0
 offset_right = 696.0
 offset_bottom = 265.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 theme = ExtResource("5_je7dk")
 min_value = -50.0
 max_value = 0.0
@@ -696,6 +697,7 @@ offset_top = 347.0
 offset_right = 696.0
 offset_bottom = 364.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 theme = ExtResource("5_je7dk")
 min_value = -50.0
 max_value = 0.0
@@ -719,6 +721,7 @@ offset_top = 453.0
 offset_right = 696.0
 offset_bottom = 470.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 theme = ExtResource("5_je7dk")
 min_value = -50.0
 max_value = 0.0
@@ -741,6 +744,7 @@ offset_left = 986.0
 offset_top = 609.0
 offset_right = 1152.0
 offset_bottom = 655.0
+focus_mode = 0
 texture_normal = ExtResource("8_gw2vr")
 
 [node name="Label2" type="Sprite2D" parent="."]
@@ -755,6 +759,7 @@ offset_top = 220.0
 offset_right = 699.0
 offset_bottom = 274.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 texture_normal = ExtResource("7_2anqu")
 
 [node name="AjuVol" type="TextureButton" parent="."]
@@ -764,6 +769,7 @@ offset_top = 370.0
 offset_right = 699.0
 offset_bottom = 429.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 texture_normal = ExtResource("8_av71t")
 
 [node name="VoltarMenu" type="TextureButton" parent="."]
@@ -773,6 +779,7 @@ offset_top = 520.0
 offset_right = 702.0
 offset_bottom = 579.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 texture_normal = ExtResource("9_hcr0a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

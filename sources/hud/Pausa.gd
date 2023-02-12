@@ -41,11 +41,16 @@ func retornar():
 	$AnimationPlayer.play_backwards("Pausa")
 
 func pause():
+	if get_tree().paused:
+		return
 	volume()
 	$AnimationPlayer.play("Appear")
 	get_tree().paused = true
 
 func resume():
+	if not get_tree().paused:
+		return
+	volume()
 	$AnimationPlayer.play_backwards("Appear")
 	get_tree().paused = false
 
