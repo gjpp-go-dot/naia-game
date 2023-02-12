@@ -165,7 +165,11 @@ func jump(jump_speed_custom = null):
 		velocity.y = jump_speed
 	landed = false
 
-## JUST FOR TESTS !!!
+func check_jump_area(area_name):
+	if get_node(area_name).call("get_overlapping_bodies").filter(func(body): return body != self).size() > 0:
+		return true
+	return false
+
 func _process(_delta):
 	if Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_UP) or Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_DOWN):
 		# range 0 to 2
@@ -257,8 +261,8 @@ func _physics_process(delta):
 		if velocity.y > 0:
 			velocity.y = velocity.y + acceleration if velocity.y < max_wall_jump_speed else max_wall_jump_speed
 
-	if can["jump"] and Input.is_action_just_pressed(INPUTS_MAP.JUMP) and (get_node("RayCast2DLeft").call("is_colliding") or get_node("RayCast2DRight").call("is_colliding")) and not is_on_floor():
-		var wall_jumped_direction = 1 if get_node("RayCast2DLeft").call("is_colliding") else -1
+	if can["jump"] and Input.is_action_just_pressed(INPUTS_MAP.JUMP) and (check_jump_area("LeftArea") or check_jump_area("RightArea")) and not is_on_floor():
+		var wall_jumped_direction = 1 if check_jump_area("LeftArea") else -1
 		if (wall_jumped == null) or (wall_jumped != wall_jumped_direction):
 			wall_jumped = wall_jumped_direction
 			velocity.x = wall_jumped_direction * (max_wall_jump_speed * 2.75)
