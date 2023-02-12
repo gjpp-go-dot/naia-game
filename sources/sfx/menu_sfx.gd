@@ -8,15 +8,13 @@ var cancel_sfx = load("res://assets/sounds/menu/menu_cancelar.mp3")
 
 func select():
 	self.stream = select_sfx
+	self.play()
 
 func confirm():
 	self.stream = confirm_sfx
+	self.play()
 
 func cancel():
 	self.stream = cancel_sfx
+	self.play()
 
-
-func _process(delta):
-	if Input.is_action_pressed("jump"):
-		cancel()
-		self.play()

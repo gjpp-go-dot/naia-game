@@ -9,17 +9,16 @@ var to_aim_sfx = load("res://assets/sounds/spear_sfx/537765__kostas17__wooden-ob
 
 func trow():
 	self.stream = trow_sfx
+	self.play()
 
 func get_spear():
 	self.stream = get_spear_sfx
+	self.play()
 
 func hit():
 	self.stream = hit_sfx
-	
+	self.play()
+
 func to_aim():
 	self.stream = to_aim_sfx
-
-func _process(delta):
-	if Input.is_action_pressed("jump"):
-		trow()
-		self.play()
+	self.play()

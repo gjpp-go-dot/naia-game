@@ -28,5 +28,5 @@ func _process(delta):
 		self.play()
 "
 
-[node name="naia_sfx" type="AudioStreamPlayer"]
+[node name="NaiaSFX" type="AudioStreamPlayer"]
 script = SubResource("GDScript_p72r7")
