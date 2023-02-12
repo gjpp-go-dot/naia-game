@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bg8runwdrhd0b"]
+
+[ext_resource type="Script" path="res://sources/sfx/spear_sfx.gd" id="1_neirm"]
+
+[node name="spear_sfx" type="AudioStreamPlayer"]
+script = ExtResource("1_neirm")

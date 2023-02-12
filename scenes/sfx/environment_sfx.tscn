@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://3uavya8g7s5c"]
+
+[ext_resource type="Script" path="res://sources/sfx/environment_sfx.gd" id="1_d8njs"]
+
+[node name="environment" type="AudioStreamPlayer"]
+volume_db = -30.0
+script = ExtResource("1_d8njs")

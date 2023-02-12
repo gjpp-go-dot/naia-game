@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8c6drre0bio3"
+path="res://.godot/imported/Drifting at 432 Hz - Unicorn Heads.mp3-660077472d3e03b15275849525e6b87a.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/environment/Drifting at 432 Hz - Unicorn Heads.mp3"
+dest_files=["res://.godot/imported/Drifting at 432 Hz - Unicorn Heads.mp3-660077472d3e03b15275849525e6b87a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
