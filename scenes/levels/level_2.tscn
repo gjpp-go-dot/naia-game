@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://186ad82shn2e"]
+[gd_scene load_steps=14 format=3 uid="uid://186ad82shn2e"]
 
 [ext_resource type="Script" path="res://puzzle.gd" id="1_c3y68"]
 [ext_resource type="PackedScene" uid="uid://bprcs25t8mnlk" path="res://scenes/levels/background_1.tscn" id="2_4p1mi"]
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="3_17hmy"]
 [ext_resource type="Texture2D" uid="uid://b3oqihod2qyj3" path="res://assets/sprites/objects/brick_block/01.png" id="4_vsxkk"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="5_he6xi"]
+[ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="6_7mx06"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ua87"]
 size = Vector2(1454.11, 33.25)
@@ -374,6 +375,9 @@ cell_quadrant_size = 1
 collision_animatable = true
 format = 2
 layer_0/tile_data = PackedInt32Array(-524285, 786434, 7, -524286, 1048578, 5, -524287, 655362, 7, 65544, 1114114, 5, 65545, 1179650, 5, 65546, 1245186, 5, -458746, 786434, 3, -524291, 917506, 11, -524292, 917506, 11, -524293, 917506, 11, -524290, 983042, 11)
+
+[node name="Naia" parent="." instance=ExtResource("6_7mx06")]
+position = Vector2(-250, -8)
 
 [connection signal="body_entered" from="water" to="." method="_on_water_body_entered"]
 [connection signal="body_entered" from="target" to="." method="_on_target_body_entered"]
