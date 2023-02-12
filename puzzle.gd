@@ -8,12 +8,18 @@ func _physics_process(delta):
 
 func _on_water_body_entered(body):
 	if body.name == "Naia":
-		print("glup glup")
-		breakpoint
+		contador = 0
+		$Naia.position.x = -289
+		$Naia.position.y = 24
+		$target.position.x = 92
+		$target.position.y = -199
+		$water.position.x = -244
+		$water.position.y = 120
+		
+		
 
 func _on_target_body_entered(body):
 	if body.name == "Spear":
-		print("alvo atingido")
 		contador += 1
 		if contador == 1:
 			$target.position.x = 997
