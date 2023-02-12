@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d20iwws13spdm"
-path="res://.godot/imported/sprite_2.png-083845921eba6e81505bcfd9d1df25bc.ctex"
+uid="uid://cupdu168g7roe"
+path="res://.godot/imported/Orquídea 4.png-593ff147211bbeee8ff5a903f0c93685.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/hud/sprite_2.png"
-dest_files=["res://.godot/imported/sprite_2.png-083845921eba6e81505bcfd9d1df25bc.ctex"]
+source_file="res://assets/sprites/ambient_sprites/Orquídea 4.png"
+dest_files=["res://.godot/imported/Orquídea 4.png-593ff147211bbeee8ff5a903f0c93685.ctex"]
 
 [params]
 

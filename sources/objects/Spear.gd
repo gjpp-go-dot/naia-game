@@ -63,6 +63,7 @@ func aim(global_position_mouse, direction):
 	set_rotation(spear_angle)
 
 func throw(direction):
+	get_node("SpearSFX").call("throw")
 	status = Status.LAUNCHED
 	freeze = false
 	angular_damp = -1
@@ -72,6 +73,7 @@ func throw(direction):
 func _ready():
 	freeze = true
 	set_spear_type(spear_type)
+	get_node("SpearSFX").call("to_aim")
 
 func _on_area_2d_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_index):
 	if _body.get_name() == "Naia" and trampoline_state and _body.get("global_position").y < global_position.y:
@@ -91,6 +93,7 @@ func _on_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_in
 		get_node("CollisionShape2DInnerHandle").rotation_degrees = -90 if rad_to_deg(rotation) > 0 else 90
 		get_node("CollisionShape2DInnerHandle").set_deferred("disabled", false)
 		get_node("NipCollision").visible = true
+		get_node("SpearSFX").call("hit")
 		run_hability()
 
 func _physics_process(delta):
@@ -113,3 +116,4 @@ func call_back(node):
 	callback_tween.tween_property(self, "modulate", Color(1,1,1,0), 0.5)
 	if is_instance_valid(vine_object):
 		vine_object.call("kill_vine")
+	get_node("SpearSFX").call("get_spear")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://os16xsiebbea"]
+
+[ext_resource type="Script" path="res://sources/sfx/MenuSFX.gd" id="1_kw8e8"]
+
+[node name="MenuSFX" type="AudioStreamPlayer"]
+script = ExtResource("1_kw8e8")

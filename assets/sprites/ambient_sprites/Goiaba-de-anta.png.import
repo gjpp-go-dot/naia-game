@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwf5yq576m68a"
-path="res://.godot/imported/sprite_1.png-5caab437e7480c19f24e65df5f55d3fd.ctex"
+uid="uid://ce1h16fstpq37"
+path="res://.godot/imported/Goiaba-de-anta.png-5ae34c97562a9bb7f90f6de11b174b15.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/hud/sprite_1.png"
-dest_files=["res://.godot/imported/sprite_1.png-5caab437e7480c19f24e65df5f55d3fd.ctex"]
+source_file="res://assets/sprites/ambient_sprites/Goiaba-de-anta.png"
+dest_files=["res://.godot/imported/Goiaba-de-anta.png-5ae34c97562a9bb7f90f6de11b174b15.ctex"]
 
 [params]
 

@@ -3,6 +3,9 @@ extends Node2D
 var contador = 0
 var tile = ""
 
+func _on_ready():
+	$transition/fill/anim.play("transition_out")
+
 func _physics_process(delta):
 	$water.position.y -= 0.2
 

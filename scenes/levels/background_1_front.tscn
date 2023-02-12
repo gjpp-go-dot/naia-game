@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://4wuaegl04pi1"]
+
+[ext_resource type="Texture2D" uid="uid://b8e5747726c3n" path="res://assets/sprites/ambient_sprites/castanheira.png" id="1_1cwn8"]
+
+[node name="background_1_front" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+z_index = 10
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(1275, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+modulate = Color(0.180392, 0.180392, 0.180392, 1)
+position = Vector2(-12, 461)
+texture = ExtResource("1_1cwn8")
+offset = Vector2(300, -100)
