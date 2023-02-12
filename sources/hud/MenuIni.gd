@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 var settings_scene = load("res://scenes/hud/Ajustes.tscn")
 var settings_node = null
