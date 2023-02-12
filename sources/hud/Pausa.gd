@@ -10,10 +10,10 @@ func volume():
 	master = $SlideMas.value
 	music = $SlideMus.value
 	sfx = $SlideSFX.value
-	
+
 
 func _ready():
-	
+
 	$SlideMas.value = master
 	$SlideMus.value = music
 	$SlideSFX.value = sfx
@@ -22,13 +22,12 @@ func _ready():
 	$Voltar.pressed.connect(retornar)
 	$VoltarMenu.pressed.connect(quit)
 
-func _process(delta):
-	volume()
-	AudioServer.set_bus_volume_db(0,master)
-	AudioServer.set_bus_volume_db(1,music)
-	AudioServer.set_bus_volume_db(2,sfx)
-	if Input.is_action_pressed("Pausa"):
-		self.pause()
+func _input(event):
+	if event.is_action_pressed("pause"):
+		if get_tree().paused:
+			unpause()
+		else:
+			pause()
 
 func quit():
 	get_tree().paused = false
@@ -42,11 +41,12 @@ func altVolume():
 func retornar():
 	$Continuar.position = Vector2(477,220)
 	$AnimationPlayer.play_backwards("Pausa")
-	
+
 func pause():
+	volume()
 	$AnimationPlayer.play("Appear")
 	get_tree().paused = true
-	
+
 func unpause():
 	$AnimationPlayer.play_backwards("Appear")
 	get_tree().paused = false
@@ -57,12 +57,15 @@ func _on_voltar_pressed():
 
 
 func _on_slide_mas_changed():
-	pass # Replace with function body.
+	AudioServer.set_bus_volume_db(0,master)
+	volume()
 
 
 func _on_slide_mus_changed():
-	pass # Replace with function body.
+	AudioServer.set_bus_volume_db(1,music)
+	volume()
 
 
 func _on_slide_sfx_changed():
-	pass # Replace with function body.
+	AudioServer.set_bus_volume_db(2,sfx)
+	volume()

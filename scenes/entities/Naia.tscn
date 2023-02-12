@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://sources/entities/Naia.gd" id="1_mof0k"]
 [ext_resource type="SpriteFrames" uid="uid://bfnq5yiqi7axf" path="res://resources/animations/NaiaSpriteFrames.tres" id="2_aygsa"]
 [ext_resource type="Script" path="res://sources/animations/NaiaAnimatedSprite2D.gd" id="3_nrcns"]
+[ext_resource type="PackedScene" uid="uid://dn541h2uv03tw" path="res://scenes/hud/Hud.tscn" id="4_cunqg"]
 [ext_resource type="Script" path="res://sources/ui/ProgressBar.gd" id="4_w8isn"]
-[ext_resource type="PackedScene" uid="uid://bc1j0tnlnf6p2" path="res://scenes/hud/Pausa.tscn" id="5_ob763"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yr7c"]
 size = Vector2(24, 57)
@@ -61,7 +61,6 @@ position = Vector2(-20.25, -3.5)
 shape = SubResource("RectangleShape2D_edgou")
 
 [node name="Naiui" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -53.0
@@ -70,6 +69,7 @@ offset_right = 53.0
 offset_bottom = 36.0
 
 [node name="ProgressBar" type="ProgressBar" parent="Naiui"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,9 +86,7 @@ fill_mode = 3
 show_percentage = false
 script = ExtResource("4_w8isn")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Pausa" parent="CanvasLayer" instance=ExtResource("5_ob763")]
+[node name="Hud" parent="Naiui" instance=ExtResource("4_cunqg")]
 
 [connection signal="process_event" from="." to="AnimatedSprite2D" method="_on_naia_process_event"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]

@@ -150,7 +150,7 @@ func set_type_spear(type = null):
 
 func exec_trampoline():
 	in_trampoline = true
-	get_node("Naiui").visible = true
+	get_node("Naiui/ProgressBar").visible = true
 	get_node("Naiui/ProgressBar").call("start_bounce")
 	set_camera_zoom(Vector2(1.5, 1.5))
 	bind_process_event("prepare_trampoline_jump")
@@ -192,7 +192,7 @@ func _physics_process(delta):
 			jump(jump_speed + ((jump_speed * 0.50) * (get_node("Naiui/ProgressBar").get("value") / 100)))
 			landed = false
 			in_trampoline = false
-			get_node("Naiui").visible = false
+			get_node("Naiui/ProgressBar").visible = false
 			get_node("Naiui/ProgressBar").call("stop_bounce")
 			set_camera_zoom(DEFAULT_CAMERA_ZOOM)
 		else:
