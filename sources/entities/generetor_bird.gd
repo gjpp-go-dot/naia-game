@@ -14,15 +14,16 @@ func birds(range, scale):
 	var obstaculo = MyNode.instantiate()
 	obstaculo.position.y = range
 	obstaculo.scale = Vector2(scale, scale)
+	self.modulate = Color(1, 1, 1, scale)
 	add_child(obstaculo)
 	time()
 
 func scale():
 	randomize()
-	var obj_scale = [float(2.0), float(5.0)]
+	var obj_scale = [float(0.4), float(2)]
 	var scale = randi() % int(obj_scale[1]-obj_scale[0]) + 1 + obj_scale[0]
 	return scale
-	
+
 func random():
 	randomize()
 	var y_range = Vector2(-200, 600)

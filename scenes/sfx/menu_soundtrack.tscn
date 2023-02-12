@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ia20e71f3rcv"]
+[gd_scene load_steps=3 format=3 uid="uid://wh40jdi1mhqu"]
 
 [ext_resource type="AudioStream" uid="uid://ct5ek6o82530f" path="res://assets/sounds/menu/bosquenocturno-120185.mp3" id="1_rga7r"]
 [ext_resource type="AudioStream" uid="uid://beol5mpjtj2rr" path="res://assets/sounds/menu/inspiring-cinematic-ambient-116199.mp3" id="2_20bp7"]

@@ -361,6 +361,7 @@ layer = 10
 
 [node name="generetor_bird" parent="." instance=ExtResource("3_4jmwo")]
 z_index = -1
+position = Vector2(-554, 1)
 
 [node name="brick_block" parent="." instance=ExtResource("5_dn0m1")]
 position = Vector2(8447, -385)
