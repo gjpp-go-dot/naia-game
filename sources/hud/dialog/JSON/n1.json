@@ -1,0 +1,20 @@
+[
+    {"name":"...","text":"Hã? Quem é você? O que faz aqui?","image":"mys"},
+    {"name":"Tainá","text":"Espera, de onde vem essa voz? Tem alguém aqui?","image":"surprise"},
+    {"name":"...","text":"Hmm, que estranho, não vejo pessoas aqui há tanto tempo... Apenas responda, qual o seu nome?","image":"mys"},
+    {"name":"Tainá","text":"Isso é muito estranho...","image":"fear"},
+    {"name":"Tainá","text":"Bem, meu nome é Tainá, eu nem sei se deveria estar te contando quem eu sou, se não sei quem você é.","image":"neutral"},
+    {"name":"...","text":"Tainá... Eu sou aquele que foi amaldiçoado com a existência eterna, fui condenado com a missão de acompanhar grandes guerreiras ao longo dos milênios, eu vi a guerra e também a paz.","image":"mys"},
+    {"name":"...","text":"Mas no final, todas têm o mesmo destino.","image":"mys"},
+    {"name":"Lança","text":"Eu sou o espírito que habita esta lança. E o que você faz aqui?","image":"spear"},
+    {"name":"Tainá","text":"Na verdade, eu não sei... Eu estava a caminho da minha vila mas me perdi, até que eu encontrei este lugar e senti que deveria entrar... como se algo neste lugar me atraísse.","image":"neutral"},
+    {"name":"Lança","text":"Não me surpreende, este lugar é sagrado. Uma lenda rege a existência deste lugar... Durante os milênios, sempre que a Lua é ameaçada, uma guerreira é escolhida para defender a nossa sociedade e trazer a paz.","image":"spear"},
+    {"name":"Lança","text":"O meu destino sempre foi acompanhá-las, mas o final da jornada nunca se tornou mais fácil. Existem pedaços de suas histórias perdidas por essa terra, talvez você as encontre em algum momento.","image":"spear"},
+    {"name":"Lança","text":"A verdade é que eu não tenho mais utilidade, minha missão parece ter se encerrado, mas eu continuo aqui.","image":"spear"},
+    {"name":"Tainá","text":"Nossa, eu nunca ouvi falar nessa lenda...","image":"surprise"},
+    {"name":"Tainá","text":"Enfim, já está tarde e eu preciso voltar para minha vila, você quer que eu lhe deixe onde o encontrei?","image":"neutral"},
+    {"name":"Lança","text":"Eu não tenho mais utilidade nesse local, seria mais útil ir lhe acompanhando... Sinto que o perigo está se aproximando nessa noite.","image":"spear"},
+    {"name":"Tainá","text":"Perigo???... Como assim?","image":"fear"},
+    {"name":"Lança","text":"Aconteceram coisas ruins em todas as vezes que despertei.","image":"spear"},
+    {"name":"Tainá","text":"Então levarei você comigo até o meu povo.","image":"neutral"}
+]

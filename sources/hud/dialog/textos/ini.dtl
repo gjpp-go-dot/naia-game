@@ -26,8 +26,8 @@ Join lanca (New portrait) 1 [animation="Instant In Or Out"]
 lanca (New portrait): Não me surpreende, este lugar é sagrado. Uma lenda rege a existência deste lugar... Durante os milênios, sempre que a Lua é ameaçada, uma guerreira é escolhida para defender a nossa sociedade e trazer a paz.
 lanca (New portrait): O meu destino sempre foi acompanhá-las, mas o final da jornada nunca se tornou mais fácil. Existem pedaços de suas histórias perdidas por essa terra, talvez você as encontre em algum momento.
 lanca (New portrait): A verdade é que eu não tenho mais utilidade, minha missão parece ter se encerrado, mas eu continuo aqui.
-Join Taina (Surprised) 1 [animation="Instant In Or Out"]
 Leave lanca [animation="Instant In Or Out"]
+Join Taina (Surprised) 1 [animation="Instant In Or Out"]
 Taina (Surprised): Nossa, eu nunca ouvi falar nessa lenda...
 Update Taina (Neutral) 1
 Taina (Neutral): Enfim, já está tarde e eu preciso voltar para minha vila, você quer que eu lhe deixe onde o encontrei?

@@ -1,21 +1,22 @@
-[gd_scene load_steps=23 format=3 uid="uid://dcbkol4dj3mbw"]
+[gd_scene load_steps=29 format=3 uid="uid://dcbkol4dj3mbw"]
 
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
 [ext_resource type="Script" path="res://sources/scenarios/level_1.gd" id="1_15fhq"]
 [ext_resource type="Texture2D" uid="uid://dgvgr3exovfmw" path="res://assets/sprites/ambient_sprites/moon_structure.png" id="2_3yvyn"]
-[ext_resource type="PackedScene" uid="uid://cc4qbtukyq43h" path="res://scenes/levels/transition.tscn" id="2_8dqoe"]
+[ext_resource type="PackedScene" path="res://scenes/levels/transition.tscn" id="2_8dqoe"]
 [ext_resource type="PackedScene" uid="uid://clirv2okaj27s" path="res://scenes/entities/generetor_bird.tscn" id="3_4jmwo"]
 [ext_resource type="Texture2D" uid="uid://tin4l5lywruw" path="res://assets/sprites/ambient_sprites/moon_structure1.png" id="3_ktax8"]
 [ext_resource type="Texture2D" uid="uid://dsn2v0by2bivi" path="res://assets/sprites/tilemaps/TileSetNaia_noite.png" id="4_8pgxa"]
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="4_iuxil"]
 [ext_resource type="Texture2D" uid="uid://cl4xci5i6e6km" path="res://assets/sprites/ambient_sprites/naia_statue.png" id="4_ped7g"]
-[ext_resource type="PackedScene" uid="uid://bb30vr5qkxmar" path="res://scenes/levels/background_night.tscn" id="5_1lsco"]
+[ext_resource type="PackedScene" path="res://scenes/levels/background_night.tscn" id="5_1lsco"]
 [ext_resource type="PackedScene" uid="uid://dcmj1spqre5ho" path="res://scenes/objects/brick_block.tscn" id="5_dn0m1"]
-[ext_resource type="PackedScene" uid="uid://4wuaegl04pi1" path="res://scenes/levels/background_1_front.tscn" id="6_adpxk"]
+[ext_resource type="PackedScene" path="res://scenes/levels/background_1_front.tscn" id="6_adpxk"]
 [ext_resource type="PackedScene" uid="uid://dtx84oact8xl1" path="res://scenes/sfx/bg_music.tscn" id="8_nywea"]
 [ext_resource type="PackedScene" uid="uid://k0uv7wptnk63" path="res://scenes/sfx/EnviromentSFX.tscn" id="8_x70xg"]
 [ext_resource type="Texture2D" uid="uid://cme8htyv6cwru" path="res://assets/sprites/ambient_sprites/diamond_house.png" id="12_m1o2u"]
 [ext_resource type="Texture2D" uid="uid://sgdtn2tm7hn4" path="res://assets/sprites/ambient_sprites/Lotus-flower 5.png" id="16_kpkyq"]
+[ext_resource type="PackedScene" uid="uid://c87blnt3cv50e" path="res://scenes/hud/Dialog.tscn" id="17_q7eta"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bv0ef"]
 texture = ExtResource("1_7lwaw")
@@ -332,6 +333,21 @@ sources/2 = SubResource("TileSetAtlasSource_q3fh5")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qrxm"]
 size = Vector2(63, 808)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4m6tb"]
+size = Vector2(55, 205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7lvh"]
+size = Vector2(183, 213.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jlkv"]
+size = Vector2(54, 330.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4c0qd"]
+size = Vector2(70, 330)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojvq0"]
+size = Vector2(46, 171)
+
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_15fhq")
 
@@ -413,6 +429,43 @@ z_index = 1
 position = Vector2(5058, 312)
 texture = ExtResource("16_kpkyq")
 
+[node name="CanvasLayer" parent="." instance=ExtResource("17_q7eta")]
+
+[node name="Area2D2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1, 87)
+shape = SubResource("RectangleShape2D_4m6tb")
+
+[node name="Area2D3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
+position = Vector2(2212, -46.25)
+shape = SubResource("RectangleShape2D_b7lvh")
+
+[node name="Area2D4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
+position = Vector2(3499, 281)
+shape = SubResource("RectangleShape2D_1jlkv")
+
+[node name="Area2D5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5"]
+position = Vector2(7215, -171)
+shape = SubResource("RectangleShape2D_4c0qd")
+
+[node name="Area2D6" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6"]
+position = Vector2(8283, -412)
+shape = SubResource("RectangleShape2D_ojvq0")
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area2D2" to="CanvasLayer" method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="CanvasLayer" method="_on_area_2d_3_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="CanvasLayer" method="_on_area_2d_4_body_entered"]
+[connection signal="body_entered" from="Area2D5" to="CanvasLayer" method="_on_area_2d_5_body_entered"]
+[connection signal="body_entered" from="Area2D6" to="CanvasLayer" method="_on_area_2d_6_body_entered"]
