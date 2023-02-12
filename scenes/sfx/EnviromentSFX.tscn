@@ -5,3 +5,5 @@
 [node name="EnvironmentSFX" type="AudioStreamPlayer"]
 volume_db = -30.0
 script = ExtResource("1_d8njs")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
