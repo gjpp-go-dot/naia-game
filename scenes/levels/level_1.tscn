@@ -1,6 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://3187xenn1xg2"]
+[gd_scene load_steps=14 format=3 uid="uid://3187xenn1xg2"]
 
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
+[ext_resource type="Script" path="res://sources/scenarios/level_1.gd" id="1_15fhq"]
+[ext_resource type="PackedScene" uid="uid://cc4qbtukyq43h" path="res://scenes/levels/transition.tscn" id="2_8dqoe"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="2_12g02"]
 [ext_resource type="PackedScene" uid="uid://bprcs25t8mnlk" path="res://scenes/levels/background_1.tscn" id="3_6ciyk"]
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="4_iuxil"]
@@ -297,7 +299,13 @@ physics_layer_0/collision_mask = 517
 physics_layer_0/physics_material = SubResource("PhysicsMaterial_q307a")
 sources/2 = SubResource("TileSetAtlasSource_q3fh5")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qrxm"]
+size = Vector2(63, 808)
+
 [node name="level_1" type="Node2D"]
+script = ExtResource("1_15fhq")
+
+[node name="transition" parent="." instance=ExtResource("2_8dqoe")]
 
 [node name="map" type="TileMap" parent="."]
 modulate = Color(1, 1, 1, 0.431373)
@@ -321,4 +329,18 @@ layer_0/tile_data = PackedInt32Array(262142, 1048578, 5, 262143, 1048578, 5, 196
 position = Vector2(2977, 384)
 
 [node name="Naia" parent="." instance=ExtResource("4_iuxil")]
-position = Vector2(-25, 27)
+position = Vector2(-55, 150)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(9784, -859)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-92, -392)
+shape = SubResource("RectangleShape2D_4qrxm")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

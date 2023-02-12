@@ -7,7 +7,7 @@ uniform vec2 center = vec2(0.5f);
 uniform vec2 player = vec2(0.5f);
 
 uniform float progress : hint_range(-1,2.5);
-uniform float pixel_size = 15;
+uniform float pixel_size = 30;
 uniform float circle_size : hint_range(0,2) = 1.5f;
 uniform float curtains : hint_range(0,1) = 1;
 

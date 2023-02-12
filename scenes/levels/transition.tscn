@@ -41,7 +41,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [null, 1.0]
+"values": [-1.0, 2.5]
 }
 
 [sub_resource type="Animation" id="Animation_thhvt"]
@@ -75,7 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0.0509804, 0, 1)
 
 [node name="anim" type="AnimationPlayer" parent="fill"]
 root_node = NodePath("../..")
