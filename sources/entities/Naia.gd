@@ -128,8 +128,6 @@ func summon_new_spear():
 
 	spear_object = spear_scene.instantiate()
 	spear_object.set("position", get_global_position() + (SPEAR_OFFSET_RIGHT if last_direction > 0 else SPEAR_OFFSET_LEFT))
-	spear_object.call("set_spear_type", current_spear_type)
-
 	get_parent().add_child(spear_object)
 
 	focus_horizon(last_direction)
@@ -171,7 +169,10 @@ func check_jump_area(area_name):
 	return false
 
 func _process(_delta):
-	if Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_UP) or Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_DOWN):
+	if is_instance_valid(spear_object):
+		print(spear_object.get("status"))
+
+	if is_instance_valid(spear_object) and spear_object.get("status") == 0 and (Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_UP) or Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_DOWN)):
 		# range 0 to 2
 		var new_type = current_spear_type + (1 if Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_UP) else -1)
 		if new_type < 0:
