@@ -6,6 +6,8 @@ var sfx = AudioServer.get_bus_volume_db(2)
 
 signal close
 
+var closing = false
+
 func volume():
 	master = $SlideMas.value
 	music = $SlideMus.value
@@ -22,16 +24,17 @@ func _process(delta):
 	AudioServer.set_bus_volume_db(0,master)
 	AudioServer.set_bus_volume_db(1,music)
 	AudioServer.set_bus_volume_db(2,sfx)
+	if closing and z_index == 0:
+		emit_signal("close")
 
 func show():
+	closing = false
 	get_node("Background").visible = true
 	$AnimationPlayer.playback_speed = 1.5
 	get_node("AnimationPlayer").play("AJus")
 
 func _on_voltar_pressed():
+	closing = true
 	$AnimationPlayer.playback_speed = 2
 	$AnimationPlayer.play_backwards("AJus")
 
-func _on_animation_player_animation_finished(anim):
-	if anim == "AJus" and $AnimationPlayer.playback_speed == 2:
-		emit_signal("close")

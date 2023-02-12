@@ -26,13 +26,10 @@ func close_settings():
 		settings_node.queue_free()
 
 func _on_ajustes_pressed():
-	if is_instance_valid(settings_node):
-		settings_node.queue_free()
 	settings_node = settings_scene.instantiate()
 	add_child(settings_node)
 	settings_node.call("show")
 	settings_node.close.connect(close_settings)
-
 
 func _on_sair_pressed():
 	get_tree().quit()
