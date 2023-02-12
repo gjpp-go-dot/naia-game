@@ -4,6 +4,8 @@ var master = AudioServer.get_bus_volume_db(0)
 var music = AudioServer.get_bus_volume_db(1)
 var sfx = AudioServer.get_bus_volume_db(2)
 
+
+
 func volume():
 	master = $SlideMas.value
 	music = $SlideMus.value
@@ -25,6 +27,8 @@ func _process(delta):
 	AudioServer.set_bus_volume_db(0,master)
 	AudioServer.set_bus_volume_db(1,music)
 	AudioServer.set_bus_volume_db(2,sfx)
+	if Input.is_action_pressed("Pausa"):
+		self.pause()
 
 func quit():
 	get_tree().paused = false

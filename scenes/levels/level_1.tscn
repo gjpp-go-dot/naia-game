@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://3187xenn1xg2"]
 
-[ext_resource type="Texture2D" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
+[ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="2_12g02"]
 [ext_resource type="PackedScene" uid="uid://bprcs25t8mnlk" path="res://scenes/levels/background_1.tscn" id="3_6ciyk"]
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="4_iuxil"]

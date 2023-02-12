@@ -258,6 +258,7 @@ libraries = {
 
 [connection signal="mouse_entered" from="Iniciar" to="." method="_on_iniciar_mouse_entered"]
 [connection signal="mouse_exited" from="Iniciar" to="." method="_on_iniciar_mouse_exited"]
+[connection signal="pressed" from="Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="mouse_entered" from="Ajustes" to="." method="_on_ajustes_mouse_entered"]
 [connection signal="mouse_exited" from="Ajustes" to="." method="_on_ajustes_mouse_exited"]
 [connection signal="pressed" from="Ajustes" to="." method="_on_ajustes_pressed"]
