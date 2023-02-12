@@ -1,7 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://rww8jwenbx6b"]
 
 [ext_resource type="Script" path="res://sources/hud/hud.gd" id="1_4tvpl"]
-[ext_resource type="Texture2D" uid="uid://mjs7shflfakq" path="res://assets/sprites/hud/New Piskel (3).png" id="2_1gaqq"]
 [ext_resource type="PackedScene" uid="uid://bf440xprq1itl" path="res://scenes/hud/Control.tscn" id="2_a6bej"]
 [ext_resource type="Texture2D" uid="uid://dwf5yq576m68a" path="res://assets/sprites/hud/sprite_1.png" id="3_kxcni"]
 [ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://assets/sprites/hud/sprite_0.png" id="4_don06"]
@@ -30,16 +29,11 @@ animations = [{
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_4tvpl")
 
-[node name="NewPiskel(2)" type="Sprite2D" parent="."]
-position = Vector2(134, 71)
-scale = Vector2(2, 2)
-texture = ExtResource("2_1gaqq")
-
 [node name="Life" parent="." instance=ExtResource("2_a6bej")]
 
 [node name="CurrentSpear" type="AnimatedSprite2D" parent="."]
-position = Vector2(177, 75)
-scale = Vector2(3, 2.537)
+position = Vector2(1210, 660)
+scale = Vector2(4, 3.383)
 frames = SubResource("SpriteFrames_ueo45")
 
 [node name="Pausa" parent="." instance=ExtResource("5_pt4fd")]
