@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn541h2uv03tw"]
+[gd_scene load_steps=8 format=3 uid="uid://rww8jwenbx6b"]
 
 [ext_resource type="Script" path="res://sources/hud/hud.gd" id="1_4tvpl"]
 [ext_resource type="PackedScene" uid="uid://bf440xprq1itl" path="res://scenes/hud/Control.tscn" id="2_a6bej"]
-[ext_resource type="Texture2D" uid="uid://dwf5yq576m68a" path="res://resources/hud/sprite_1.png" id="3_6i1f7"]
-[ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://resources/hud/sprite_0.png" id="4_fekj7"]
+[ext_resource type="Texture2D" uid="uid://dwf5yq576m68a" path="res://assets/sprites/hud/sprite_1.png" id="3_kxcni"]
+[ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://assets/sprites/hud/sprite_0.png" id="4_don06"]
 [ext_resource type="PackedScene" uid="uid://bc1j0tnlnf6p2" path="res://scenes/hud/Pausa.tscn" id="5_pt4fd"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gcjob"]
@@ -16,10 +16,10 @@ animations = [{
 "texture": SubResource("CompressedTexture2D_gcjob")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_6i1f7")
+"texture": ExtResource("3_kxcni")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fekj7")
+"texture": ExtResource("4_don06")
 }],
 "loop": true,
 "name": &"default",

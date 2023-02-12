@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Until It Blooms"
-run/main_scene="res://tests/TestSpear.tscn"
+run/main_scene="res://scenes/hud/MenuIni.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 config/icon="res://icon.svg"
 

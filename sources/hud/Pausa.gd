@@ -54,7 +54,6 @@ func resume():
 	$AnimationPlayer.play_backwards("Appear")
 	get_tree().paused = false
 
-
 func _on_voltar_pressed():
 	retornar()
 
