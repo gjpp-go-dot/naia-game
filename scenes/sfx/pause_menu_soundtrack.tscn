@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ck04lpt3n2o48"]
+
+[ext_resource type="AudioStream" uid="uid://dshq3pjql6iq8" path="res://assets/sounds/menu/the-beat-of-nature-122841.mp3" id="1_uprib"]
+
+[node name="menu_soundtrack" type="AudioStreamPlayer"]
+stream = ExtResource("1_uprib")
+volume_db = -44.629
+pitch_scale = 0.57

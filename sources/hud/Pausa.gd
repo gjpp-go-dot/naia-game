@@ -42,7 +42,9 @@ func _input(event):
 	if event.is_action_pressed("pause"):
 		if get_tree().paused:
 			resume()
+			$menu_soundtrack.stop()
 		else:
+			$menu_soundtrack.play()
 			pause()
 
 func quit():
