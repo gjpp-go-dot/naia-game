@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://res5v7heprty"]
+[gd_scene load_steps=10 format=3 uid="uid://res5v7heprty"]
 
 [ext_resource type="Script" path="res://sources/entities/Naia.gd" id="1_mof0k"]
 [ext_resource type="SpriteFrames" uid="uid://bfnq5yiqi7axf" path="res://resources/animations/NaiaSpriteFrames.tres" id="2_aygsa"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yr7c"]
 size = Vector2(24, 57)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edgou"]
+size = Vector2(15, 55)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_be51w"]
 bg_color = Color(0.2, 0.2, 0.2, 1)
@@ -40,12 +43,21 @@ script = ExtResource("3_nrcns")
 position = Vector2(-1, -3.5)
 shape = SubResource("RectangleShape2D_4yr7c")
 
-[node name="RayCast2DRight" type="RayCast2D" parent="."]
-target_position = Vector2(30, 0)
+[node name="RightArea" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
 
-[node name="RayCast2DLeft" type="RayCast2D" parent="."]
-rotation = -3.14159
-target_position = Vector2(30, 0)
+[node name="RightCollision" type="CollisionShape2D" parent="RightArea"]
+position = Vector2(18.75, -3.5)
+shape = SubResource("RectangleShape2D_edgou")
+
+[node name="LeftArea" type="Area2D" parent="."]
+collision_layer = 0
+monitorable = false
+
+[node name="LeftCollision" type="CollisionShape2D" parent="LeftArea"]
+position = Vector2(-20.25, -3.5)
+shape = SubResource("RectangleShape2D_edgou")
 
 [node name="Naiui" type="Control" parent="."]
 visible = false

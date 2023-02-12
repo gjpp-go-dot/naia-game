@@ -31,13 +31,11 @@ var vine_object = null
 var trampoline_state = false
 
 func trampoline_exec():
-	print("trampoline")
 	trampoline_state = true
 	get_node("Area2D").monitoring = true
 	get_node("Area2D").monitorable = true
 
 func rappel_exec():
-	print("rappel")
 	vine_object = vine_scene.instantiate()
 	vine_object.set("global_position", global_position)
 	get_parent().add_child(vine_object)
@@ -90,7 +88,6 @@ func _on_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_in
 		set_deferred("sleeping", true)
 		collision_layer = 1
 		collision_mask = 1
-		print(rotation)
 		get_node("CollisionShape2DInnerHandle").rotation_degrees = -90 if rad_to_deg(rotation) > 0 else 90
 		get_node("CollisionShape2DInnerHandle").set_deferred("disabled", false)
 		get_node("NipCollision").visible = true
