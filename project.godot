@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Constants="*res://sources/globals/contants.gd"
 Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
 [dialogic]
 
@@ -40,9 +41,9 @@ variables={}
 editor/current_editor=&"Timeline Editor"
 editor/current_resources={
 "Character Editor": "res://sources/hud/dialog/personagens/W.dch",
-"Timeline Editor": "res://sources/hud/dialog/textos/tut3.dtl"
+"Timeline Editor": "res://sources/hud/dialog/textos/tut1.dtl"
 }
-editor/last_resources=["res://sources/hud/dialog/textos/tut3.dtl", "res://sources/hud/dialog/personagens/W.dch", "res://sources/CharactersDiag/Taina.dch", "res://sources/hud/dialog/personagens/D.dch", "res://sources/hud/dialog/personagens/A.dch", "res://sources/hud/dialog/textos/tut2.dtl", "res://sources/hud/dialog/textos/tut1.dtl", "res://sources/hud/dialog/textos/ini.dtl", "res://sources/hud/dialog/personagens/space.dch", "res://sources/hud/dialog/personagens/rclick.dch", "res://sources/hud/dialog/personagens/player.dch", "res://sources/hud/dialog/personagens/middle.dch", "res://sources/hud/dialog/personagens/lclick.dch", "res://sources/hud/dialog/personagens/lanca.dch"]
+editor/last_resources=["res://sources/hud/dialog/textos/tut2.dtl", "res://sources/hud/dialog/textos/tut1.dtl", "res://sources/hud/dialog/textos/tut3.dtl", "res://sources/hud/dialog/personagens/W.dch", "res://sources/CharactersDiag/Taina.dch", "res://sources/hud/dialog/personagens/D.dch", "res://sources/hud/dialog/personagens/A.dch", "res://sources/hud/dialog/textos/ini.dtl", "res://sources/hud/dialog/personagens/space.dch", "res://sources/hud/dialog/personagens/rclick.dch", "res://sources/hud/dialog/personagens/player.dch", "res://sources/hud/dialog/personagens/middle.dch", "res://sources/hud/dialog/personagens/lclick.dch", "res://sources/hud/dialog/personagens/lanca.dch"]
 editor/timeline_editor_mode=0
 editor/character_preview_mode=1
 editor/current_timeline_path="res://sources/hud/dialog/textos/tut3.dtl"
@@ -59,7 +60,7 @@ window/screen_space_roughness_limiter/enabled=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/dialogue_manager/plugin.cfg")
 
 [input]
 

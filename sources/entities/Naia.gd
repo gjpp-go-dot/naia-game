@@ -183,6 +183,7 @@ func _process(_delta):
 		current_spear_type = new_type
 
 		set_type_spear()
+		$Naiui/Hud.update_spear_type(current_spear_type)
 
 func _physics_process(delta):
 	if in_trampoline:
