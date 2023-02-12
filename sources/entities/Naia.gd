@@ -157,6 +157,7 @@ func exec_trampoline():
 	get_node("AnimatedSprite2D").call("PREPARE_TRAMPOLINE_JUMP")
 
 func jump(jump_speed_custom = null):
+	get_node("NaiaSFX").call("jump")
 	if jump_speed_custom:
 		velocity.y = jump_speed_custom
 	else:
@@ -273,6 +274,7 @@ func _physics_process(delta):
 
 	if is_on_floor():
 		if (not landed) and (velocity.y > jump_speed * 0.5):
+			get_node("NaiaSFX").call("landing")
 			bind_set_state(STATES.LANDING)
 			landed = true
 			wall_jumped = null

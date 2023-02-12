@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3gkpi0e3an8w"]
+[gd_scene load_steps=13 format=3 uid="uid://b3gkpi0e3an8w"]
 
 [ext_resource type="Script" path="res://sources/hud/MenuIni.gd" id="1_po4lr"]
+[ext_resource type="PackedScene" uid="uid://os16xsiebbea" path="res://scenes/sfx/MenuSFX.tscn" id="2_3vghn"]
 [ext_resource type="Texture2D" uid="uid://dqdfq51bmfd5e" path="res://assets/sprites/ui/mainmenu.png" id="2_675vo"]
 [ext_resource type="Texture2D" uid="uid://dj2asclkj47na" path="res://assets/sprites/hud/botões/hud_logo.png" id="4_7ogs6"]
 [ext_resource type="LabelSettings" uid="uid://7ypxd7a7dioj" path="res://resources/hud/menu_label_settings.tres" id="5_bdsu1"]
@@ -173,6 +174,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_po4lr")
+
+[node name="MenuSFX" parent="." instance=ExtResource("2_3vghn")]
 
 [node name="Background" type="TextureRect" parent="."]
 process_mode = 1

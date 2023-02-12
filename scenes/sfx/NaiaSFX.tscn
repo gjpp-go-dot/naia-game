@@ -1,32 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bwgdrgbm25kht"]
 
-[sub_resource type="GDScript" id="GDScript_p72r7"]
-script/source = "extends AudioStreamPlayer
-
-
-var jump_sfx = load(\"res://assets/sounds/character/jump_breath.mp3\")
-var landing_sfx = load(\"res://assets/sounds/character/landing.wav\")
-var jump_wather_sfx = load(\"res://assets/sounds/character/jump_wather.wav\")
-var jump_spear_sfx = load(\"res://assets/sounds/character/jump_spear.wav\")
-
-func jump():
-	self.stream = jump_sfx
-
-func landing():
-	self.stream = landing_sfx
-
-func jump_wather():
-	self.stream = jump_wather_sfx
-
-func jump_spear():
-	self.stream = jump_spear_sfx
-
-
-func _process(delta):
-	if Input.is_action_pressed(\"jump\"):
-		jump()
-		self.play()
-"
+[ext_resource type="Script" path="res://sources/sfx/NaiaSFX.gd" id="1_og3uk"]
 
 [node name="NaiaSFX" type="AudioStreamPlayer"]
-script = SubResource("GDScript_p72r7")
+script = ExtResource("1_og3uk")

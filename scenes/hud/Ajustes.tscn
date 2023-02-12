@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://rwuxnsmrn1rb"]
+[gd_scene load_steps=15 format=3 uid="uid://rwuxnsmrn1rb"]
 
 [ext_resource type="Script" path="res://sources/hud/Ajustes.gd" id="1_ox2ix"]
 [ext_resource type="Texture2D" uid="uid://dkjo6y2t6db5d" path="res://assets/sprites/hud/caixas e bg/hud_bg_flores.png" id="2_4qsjn"]
+[ext_resource type="PackedScene" uid="uid://os16xsiebbea" path="res://scenes/sfx/MenuSFX.tscn" id="2_46oyt"]
 [ext_resource type="Texture2D" uid="uid://dwwvch5bylion" path="res://assets/sprites/hud/caixas e bg/hud_caixa_ajustes.png" id="3_bf35r"]
 [ext_resource type="Texture2D" uid="uid://rjmba0u81awr" path="res://assets/sprites/hud/botões/hud_botão_ajustespixel.png" id="4_sebgo"]
 [ext_resource type="Theme" uid="uid://cut60d1txe8do" path="res://new_theme.tres" id="5_lvy4l"]
@@ -463,6 +464,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ox2ix")
 
+[node name="MenuSFX" parent="." instance=ExtResource("2_46oyt")]
+
 [node name="Background" type="TextureRect" parent="."]
 modulate = Color(1, 1, 1, 0.239216)
 layout_mode = 0
@@ -588,4 +591,5 @@ libraries = {
 "": SubResource("AnimationLibrary_qhi2l")
 }
 
+[connection signal="mouse_entered" from="Voltar" to="." method="_on_voltar_mouse_entered"]
 [connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://res5v7heprty"]
+[gd_scene load_steps=11 format=3 uid="uid://res5v7heprty"]
 
 [ext_resource type="Script" path="res://sources/entities/Naia.gd" id="1_mof0k"]
+[ext_resource type="PackedScene" uid="uid://bwgdrgbm25kht" path="res://scenes/sfx/NaiaSFX.tscn" id="2_8ptua"]
 [ext_resource type="SpriteFrames" uid="uid://bfnq5yiqi7axf" path="res://resources/animations/NaiaSpriteFrames.tres" id="2_aygsa"]
 [ext_resource type="Script" path="res://sources/animations/NaiaAnimatedSprite2D.gd" id="3_nrcns"]
 [ext_resource type="PackedScene" uid="uid://rww8jwenbx6b" path="res://scenes/hud/Hud.tscn" id="4_cunqg"]
@@ -22,6 +23,8 @@ bg_color = Color(0.662745, 0.862745, 0.462745, 1)
 collision_layer = 513
 collision_mask = 513
 script = ExtResource("1_mof0k")
+
+[node name="NaiaSFX" parent="." instance=ExtResource("2_8ptua")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -50)
@@ -89,5 +92,6 @@ script = ExtResource("4_w8isn")
 [node name="Hud" parent="Naiui" instance=ExtResource("4_cunqg")]
 
 [connection signal="process_event" from="." to="AnimatedSprite2D" method="_on_naia_process_event"]
+[connection signal="update_spear_type" from="." to="Naiui/Hud" method="_on_naia_update_spear_type"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="AnimatedSprite2D" method="_on_animation_finished"]
 [connection signal="animation_finished_component" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished_component"]

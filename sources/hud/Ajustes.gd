@@ -8,6 +8,9 @@ signal close
 
 var closing = false
 
+func _on_voltar_mouse_entered():
+	get_node("MenuSFX").call("select")
+
 func volume():
 	master = $SlideMas.value
 	music = $SlideMus.value
@@ -34,6 +37,7 @@ func show():
 	get_node("AnimationPlayer").play("AJus")
 
 func _on_voltar_pressed():
+	get_node("MenuSFX").call("confirm")
 	closing = true
 	$AnimationPlayer.playback_speed = 2
 	$AnimationPlayer.play_backwards("AJus")
