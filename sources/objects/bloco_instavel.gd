@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-var timer = $Timer
-var respawn_timer = $Respawn
+@onready var timer = $Timer
+@onready var respawn_timer = $Respawn
 
 var gravity = 30000
 var is_triggered = false
