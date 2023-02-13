@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://dcbkol4dj3mbw"]
+[gd_scene load_steps=44 format=3 uid="uid://dcbkol4dj3mbw"]
 
 [ext_resource type="Texture2D" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
 [ext_resource type="Script" path="res://sources/scenarios/level_1.gd" id="1_15fhq"]
@@ -21,6 +21,7 @@
 [ext_resource type="FontFile" uid="uid://k5hc5clgka41" path="res://assets/fonts/joystix monospace.otf" id="19_luwmn"]
 [ext_resource type="Texture2D" uid="uid://ck052hjm48src" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/A.png" id="20_frtdx"]
 [ext_resource type="Texture2D" uid="uid://blq52d6gw5xg7" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/D.png" id="21_3pjsh"]
+[ext_resource type="Texture2D" uid="uid://bdsp6h1lg0o0q" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/W.png" id="21_dwko7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bv0ef"]
 texture = ExtResource("1_7lwaw")
@@ -382,6 +383,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_guqrm"]
+atlas = ExtResource("21_dwko7")
+region = Rect2(0, 0, 17, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwo7o"]
+atlas = ExtResource("21_dwko7")
+region = Rect2(17, 0, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6keav"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_guqrm")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_mwo7o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_o8jyj"]
 atlas = ExtResource("21_3pjsh")
 region = Rect2(0, 0, 17, 16)
@@ -533,12 +556,26 @@ offset_top = 220.0
 offset_right = 534.0
 offset_bottom = 263.0
 scale = Vector2(0.25, 0.25)
-text = "Use       para se mover"
+text = "Use       para se mover e"
 label_settings = SubResource("LabelSettings_2f53d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorials/Start"]
 position = Vector2(-96, 226)
 frames = SubResource("SpriteFrames_ihxew")
+playing = true
+
+[node name="Label2" type="Label" parent="Tutorials/Start"]
+offset_left = 49.0
+offset_top = 221.0
+offset_right = 716.0
+offset_bottom = 264.0
+scale = Vector2(0.25, 0.25)
+text = "    para pular"
+label_settings = SubResource("LabelSettings_2f53d")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Tutorials/Start"]
+position = Vector2(63, 226)
+frames = SubResource("SpriteFrames_6keav")
 playing = true
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Tutorials/Start"]
