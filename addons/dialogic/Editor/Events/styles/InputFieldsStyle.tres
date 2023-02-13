@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://d3g4i4dshtdpu"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4dx2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_55m2u"]
 content_margin_left = 30.0
 content_margin_top = 5.0
 content_margin_right = 20.0
@@ -16,7 +16,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nx8vv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ln4m2"]
 content_margin_left = 11.0
 content_margin_top = 5.0
 content_margin_right = 20.0
@@ -43,8 +43,8 @@ LineEdit/colors/selection_color = Color(1, 1, 1, 0.235294)
 LineEdit/constants/minimum_spaces = 10
 LineEdit/fonts/font = null
 LineEdit/icons/clear = null
-LineEdit/styles/focus = SubResource("StyleBoxFlat_o4dx2")
-LineEdit/styles/normal = SubResource("StyleBoxFlat_nx8vv")
-LineEdit/styles/read_only = SubResource("StyleBoxFlat_o4dx2")
+LineEdit/styles/focus = SubResource("StyleBoxFlat_55m2u")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_ln4m2")
+LineEdit/styles/read_only = SubResource("StyleBoxFlat_55m2u")
 LineEditWithIcon/base_type = &"LineEdit"
-LineEditWithIcon/styles/normal = SubResource("StyleBoxFlat_o4dx2")
+LineEditWithIcon/styles/normal = SubResource("StyleBoxFlat_55m2u")

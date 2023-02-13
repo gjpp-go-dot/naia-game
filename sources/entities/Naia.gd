@@ -129,7 +129,7 @@ func summon_new_spear():
 	spear_object = spear_scene.instantiate()
 	spear_object.set("position", get_global_position() + (SPEAR_OFFSET_RIGHT if last_direction > 0 else SPEAR_OFFSET_LEFT))
 	get_parent().add_child(spear_object)
-
+	set_type_spear()
 	focus_horizon(last_direction)
 
 func call_spear_back():
