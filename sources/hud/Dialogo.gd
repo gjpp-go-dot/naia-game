@@ -43,9 +43,13 @@ var name5 = ["[color=#177e75]Lança[/color]","."]
 var text5 = ["Para você saber, caso você tenha que quebrar obstáculos, jogue a lança branca neles","."]
 var image5 = [spear,mys]
 
+var name6 = ["[color=#177e75]Lança[/color]","."]
+var text6 = ["Você sabia que com o meu poder, agora você pode pular entre paredes? Basta pular em uma parede e [color=blue][wave amp=40 freq=2]apertar espaço[/wave][/color]! Sorte sua que estou aqui! ","."]
+var image6 = [spear,mys]
+
 var click = 0
 var t = 0
-var first = [true,true,true,true,true]
+var first = [true,true,true,true,true,true]
 
 func apertou():
 	if Input.is_action_just_pressed("spear_throw") and $Box.visible == true:
@@ -73,8 +77,11 @@ func _process(delta):
 		d4()
 	elif t == 5 and first[4] == true:
 		d5()
+	elif t == 6 and first[5] == true:
+		d6()
 	
 func d1():
+	
 	$Box.visible = true
 	get_tree().paused = true
 	if name1[click] != ".":
@@ -139,6 +146,19 @@ func d5():
 		t = 0
 		first[4] = false
 		get_tree().paused = false
+		
+func d6():
+	get_tree().paused = true
+	$Box.visible = true
+	if name6[click] != ".":
+		sub(name6[click],text6[click],image6[click])
+		apertou()
+	else:
+		$Box.visible = false
+		click = 0
+		t = 0
+		first[5] = false
+		get_tree().paused = false
 
 func _on_area_2d_2_body_entered(body):
 	t = 1
@@ -158,3 +178,7 @@ func _on_area_2d_5_body_entered(body):
 
 func _on_area_2d_6_body_entered(body):
 	t = 5
+
+
+func _on_area_2d_7_body_entered(body):
+	t = 6

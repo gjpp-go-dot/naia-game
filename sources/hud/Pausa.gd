@@ -52,7 +52,7 @@ func _process(delta):
 		pause()
 		$menu_soundtrack.play()
 
-	print(get_tree().paused)
+
 
 
 func quit():
