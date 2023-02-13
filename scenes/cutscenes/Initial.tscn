@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://whvvddfv3lle"]
+[gd_scene load_steps=3 format=3 uid="uid://whvvddfv3lle"]
 
 [ext_resource type="VideoStream" path="res://assets/cutscenes/main_cutscene.ogv" id="1_pfwxu"]
+[ext_resource type="Script" path="res://sources/cutscenes/InitialCutscene.gd" id="2_nnslo"]
 
 [node name="Initial" type="VideoStreamPlayer"]
 anchors_preset = 15
@@ -12,3 +13,6 @@ grow_vertical = 2
 stream = ExtResource("1_pfwxu")
 autoplay = true
 expand = true
+script = ExtResource("2_nnslo")
+
+[connection signal="finished" from="." to="." method="_on_finished"]

@@ -42,4 +42,4 @@ func _on_sair_pressed():
 
 func _on_iniciar_pressed():
 	get_node("MenuSFX").call("confirm")
-	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/cutscenes/Initial.tscn")
