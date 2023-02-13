@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bwgdrgbm25kht" path="res://scenes/sfx/NaiaSFX.tscn" id="2_8ptua"]
 [ext_resource type="SpriteFrames" uid="uid://q3fxyv4ki3sb" path="res://resources/animations/NaiaSpriteFrames.tres" id="2_aygsa"]
 [ext_resource type="Script" path="res://sources/animations/NaiaAnimatedSprite2D.gd" id="3_nrcns"]
-[ext_resource type="PackedScene" uid="uid://rww8jwenbx6b" path="res://scenes/hud/hud.tscn" id="4_cunqg"]
+[ext_resource type="PackedScene" uid="uid://rww8jwenbx6b" path="res://scenes/hud/Hud.tscn" id="4_cunqg"]
 [ext_resource type="Script" path="res://sources/ui/ProgressBar.gd" id="4_w8isn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yr7c"]

@@ -18,6 +18,9 @@ func _on_water_body_entered(body):
 		$target.position.y = -328
 		$water.position.x = -244
 		$water.position.y = 120
+		$tiles1.hide()
+		$tiles2.hide()
+		$tiles3.hide()
 		
 		
 
@@ -38,4 +41,3 @@ func _on_target_body_entered(body):
 			$tiles3.show()
 		elif contador == 4:
 			$target.hide()
-			print("ganhou")
