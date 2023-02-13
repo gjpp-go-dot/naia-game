@@ -620,7 +620,7 @@ offset_right = 1592.0
 offset_bottom = 123.0
 scale = Vector2(0.25, 0.25)
 text = "Segurar        fará você correr
-podendo pular mais alto!"
+podendo pular mais longe!"
 label_settings = SubResource("LabelSettings_2f53d")
 horizontal_alignment = 1
 
