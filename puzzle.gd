@@ -21,7 +21,7 @@ func _on_water_body_entered(body):
 		$tiles1.hide()
 		$tiles2.hide()
 		$tiles3.hide()
-		
+		$target.show()
 		
 
 func _on_target_body_entered(body):
@@ -36,8 +36,8 @@ func _on_target_body_entered(body):
 			$target.position.y = -476
 			$tiles2.show()
 		elif contador == 3:
-			$target.position.x = -296
-			$target.position.y = -670
+			$target.position.x = -651
+			$target.position.y = -643
 			$tiles3.show()
 		elif contador == 4:
 			$target.hide()
