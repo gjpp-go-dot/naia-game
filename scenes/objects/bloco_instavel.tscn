@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://umpfqks2axpm"]
+[gd_scene load_steps=5 format=3 uid="uid://umpfqks2axpm"]
 
 [ext_resource type="Script" path="res://sources/objects/bloco_instavel.gd" id="1_p24xf"]
 [ext_resource type="Texture2D" uid="uid://hbptxmv8q17e" path="res://assets/sprites/objects/stavel_block.png" id="2_4admv"]
+[ext_resource type="AudioStream" uid="uid://bs7krlbysa8j6" path="res://assets/sounds/objects/block.wav" id="3_85ggt"]
 
 [sub_resource type="RectangleShape2D" id="1"]
 size = Vector2(64, 40)
@@ -29,9 +30,8 @@ one_shot = true
 [node name="Respawn" type="Timer" parent="."]
 wait_time = 3.0
 
-[node name="instableblockfx" type="AudioStreamPlayer2D" parent="."]
-volume_db = -21.556
-pitch_scale = 1.78
+[node name="instableblockfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_85ggt")
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Respawn" to="." method="_on_Respawn_timeout"]

@@ -184,6 +184,10 @@ func _process(_delta):
 		$Naiui/Hud.update_spear_type(current_spear_type)
 
 func _physics_process(delta):
+	for platforms in get_slide_collision_count():
+		var collision = get_slide_collision(platforms)
+		if collision.get_collider().has_method("collide_with"):
+			collision.get_collider().collide_with(collision,self)
 	if in_trampoline:
 		if not Input.is_action_pressed(INPUTS_MAP.JUMP) or get_node("Naiui/ProgressBar").get("value") == 100:
 			get_node("AnimatedSprite2D").set("manual_lock", false)
