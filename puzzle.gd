@@ -22,7 +22,7 @@ func _on_water_body_entered(body):
 		$tiles2.hide()
 		$tiles3.hide()
 		$target.show()
-		
+
 
 func _on_target_body_entered(body):
 	if body.name == "Spear":
@@ -41,3 +41,6 @@ func _on_target_body_entered(body):
 			$tiles3.show()
 		elif contador == 4:
 			$target.hide()
+
+func _on_area_2d_5_body_entered(body):
+	get_tree().change_scene_to_file("res://scenes/cutscenes/Final.tscn")
