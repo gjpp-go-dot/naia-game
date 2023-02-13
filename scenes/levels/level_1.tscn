@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dcbkol4dj3mbw"]
+[gd_scene load_steps=51 format=3 uid="uid://dcbkol4dj3mbw"]
 
 [ext_resource type="Texture2D" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
 [ext_resource type="Script" path="res://sources/scenarios/level_1.gd" id="1_15fhq"]
@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://k0uv7wptnk63" path="res://scenes/sfx/EnviromentSFX.tscn" id="8_x70xg"]
 [ext_resource type="Texture2D" uid="uid://cme8htyv6cwru" path="res://assets/sprites/ambient_sprites/diamond_house.png" id="12_m1o2u"]
 [ext_resource type="Texture2D" uid="uid://sgdtn2tm7hn4" path="res://assets/sprites/ambient_sprites/Lotus-flower 5.png" id="16_kpkyq"]
-[ext_resource type="PackedScene" uid="uid://c87blnt3cv50e" path="res://scenes/hud/Dialog.tscn" id="17_q7eta"]
+[ext_resource type="PackedScene" path="res://scenes/hud/Dialog.tscn" id="17_q7eta"]
 [ext_resource type="Texture2D" uid="uid://b13pkpwj1lkhq" path="res://resources/environment/sumaúmatecnologica.png" id="18_u46sl"]
 [ext_resource type="FontFile" uid="uid://k5hc5clgka41" path="res://assets/fonts/joystix monospace.otf" id="19_luwmn"]
 [ext_resource type="Texture2D" uid="uid://ck052hjm48src" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/A.png" id="20_frtdx"]
@@ -638,6 +638,7 @@ texture = ExtResource("24_6lj0i")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D7"]
 position = Vector2(8520, -383.25)
 shape = SubResource("RectangleShape2D_7q7l4")
+
 [node name="bloco_instavel" parent="." instance=ExtResource("24_8xxny")]
 position = Vector2(8904, -743)
 

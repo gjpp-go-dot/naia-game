@@ -7,10 +7,10 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 17.0
 grow_horizontal = 2
 grow_vertical = 2
 stream = ExtResource("1_t5da1")
+volume_db = -15.0
 autoplay = true
 expand = true
 script = ExtResource("2_5xk4c")
