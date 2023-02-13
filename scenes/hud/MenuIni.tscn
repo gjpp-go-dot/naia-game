@@ -1,0 +1,323 @@
+[gd_scene load_steps=15 format=3 uid="uid://b3gkpi0e3an8w"]
+
+[ext_resource type="Script" path="res://sources/hud/MenuIni.gd" id="1_po4lr"]
+[ext_resource type="PackedScene" uid="uid://os16xsiebbea" path="res://scenes/sfx/MenuSFX.tscn" id="2_3vghn"]
+[ext_resource type="Texture2D" uid="uid://dqdfq51bmfd5e" path="res://assets/sprites/ui/mainmenu.png" id="2_675vo"]
+[ext_resource type="PackedScene" path="res://scenes/sfx/menu_soundtrack.tscn" id="3_j8fs0"]
+[ext_resource type="Texture2D" uid="uid://dj2asclkj47na" path="res://assets/sprites/hud/botões/hud_logo.png" id="4_7ogs6"]
+[ext_resource type="PackedScene" uid="uid://clirv2okaj27s" path="res://scenes/entities/generetor_bird.tscn" id="4_kk0tn"]
+[ext_resource type="LabelSettings" uid="uid://7ypxd7a7dioj" path="res://resources/hud/menu_label_settings.tres" id="5_bdsu1"]
+
+[sub_resource type="Animation" id="Animation_sq822"]
+resource_name = "IniBig"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Iniciar:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Iniciar:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_yre04"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Iniciar:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Iniciar:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("VBoxContainer/Ajustes:scale:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("VBoxContainer/Ajustes:scale:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("VBoxContainer/Sair:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("VBoxContainer/Sair:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q37uv"]
+_data = {
+"IniBig": SubResource("Animation_sq822"),
+"RESET": SubResource("Animation_yre04")
+}
+
+[sub_resource type="Animation" id="Animation_lxiqu"]
+resource_name = "AjuBig"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Ajustes:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Ajustes:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fkog0"]
+_data = {
+"AjuBig": SubResource("Animation_lxiqu")
+}
+
+[sub_resource type="Animation" id="Animation_3vs4h"]
+resource_name = "SaiBig"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Sair:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer/Sair:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p8vg1"]
+_data = {
+"SaiBig": SubResource("Animation_3vs4h")
+}
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_po4lr")
+
+[node name="MenuSFX" parent="." instance=ExtResource("2_3vghn")]
+
+[node name="menu_sountrack" parent="." instance=ExtResource("3_j8fs0")]
+
+[node name="generetor_bird" parent="." instance=ExtResource("4_kk0tn")]
+z_index = 4
+position = Vector2(0, 90)
+
+[node name="Background" type="TextureRect" parent="."]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_675vo")
+
+[node name="Label" type="TextureRect" parent="."]
+process_mode = 1
+texture_repeat = 1
+layout_mode = 0
+offset_left = 77.0
+offset_top = 18.0
+offset_right = 515.0
+offset_bottom = 267.0
+scale = Vector2(1.13699, 1.16265)
+texture = ExtResource("4_7ogs6")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = 256.0
+offset_right = -554.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Iniciar" type="TextureButton" parent="VBoxContainer"]
+process_mode = 1
+clip_contents = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Iniciar"]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 319.0
+offset_bottom = 31.0
+grow_vertical = 2
+text = "Jogar"
+label_settings = ExtResource("5_bdsu1")
+
+[node name="HSeparator1" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Ajustes" type="TextureButton" parent="VBoxContainer"]
+process_mode = 1
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+action_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/Ajustes"]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -31.0
+offset_right = 314.0
+offset_bottom = 32.0
+grow_vertical = 2
+text = "Ajustes"
+label_settings = ExtResource("5_bdsu1")
+
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Sair" type="TextureButton" parent="VBoxContainer"]
+process_mode = 1
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
+action_mode = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/Sair"]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 314.0
+offset_bottom = 31.0
+grow_vertical = 2
+text = "Sair"
+label_settings = ExtResource("5_bdsu1")
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="AnimIni" type="AnimationPlayer" parent="."]
+process_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_q37uv")
+}
+
+[node name="AnimAju" type="AnimationPlayer" parent="."]
+process_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_fkog0")
+}
+
+[node name="AnimSai" type="AnimationPlayer" parent="."]
+process_mode = 1
+libraries = {
+"": SubResource("AnimationLibrary_p8vg1")
+}
+
+[connection signal="mouse_entered" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Ajustes" to="." method="_on_ajustes_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Ajustes" to="." method="_on_ajustes_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Ajustes" to="." method="_on_ajustes_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Sair" to="." method="_on_sair_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Sair" to="." method="_on_sair_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_sair_pressed"]

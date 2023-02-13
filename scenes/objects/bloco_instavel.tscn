@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://umpfqks2axpm"]
+
+[ext_resource type="Script" path="res://sources/objects/bloco_instavel.gd" id="1_p24xf"]
+[ext_resource type="Texture2D" uid="uid://hbptxmv8q17e" path="res://assets/sprites/objects/stavel_block.png" id="2_4admv"]
+[ext_resource type="AudioStream" uid="uid://bs7krlbysa8j6" path="res://assets/sounds/objects/block.wav" id="3_85ggt"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(64, 40)
+
+[node name="bloco_instavel" type="CharacterBody2D"]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_p24xf")
+
+[node name="StavelBlock" type="Sprite2D" parent="."]
+position = Vector2(25, 9)
+texture = ExtResource("2_4admv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, -4)
+shape = SubResource("1")
+one_way_collision = true
+one_way_collision_margin = 64.0
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Respawn" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="instableblockfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_85ggt")
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Respawn" to="." method="_on_Respawn_timeout"]

@@ -1,0 +1,14 @@
+[remap]
+
+importer="dialogue_manager_compiler_5"
+type="Resource"
+uid="uid://biakx4h0aimes"
+path="res://.godot/imported/Ini.dialogue-dbcab5f6d096eefff9bd98d502d80913.tres"
+
+[deps]
+
+source_file="res://sources/hud/dialog/JSON/Ini.dialogue"
+dest_files=["res://.godot/imported/Ini.dialogue-dbcab5f6d096eefff9bd98d502d80913.tres"]
+
+[params]
+

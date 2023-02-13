@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=3 uid="uid://cxnwj42kepyq3"]
+
+[ext_resource type="Script" path="res://sources/hud/test.gd" id="1_kt1wr"]
+[ext_resource type="PackedScene" uid="uid://o516jxfg623e" path="res://scenes/hud/DialogBox/balloon.tscn" id="2_t2gk4"]
+[ext_resource type="Resource" uid="uid://bduyostk1rsam" path="res://sources/hud/Dialogo.dialogue" id="3_qq8hg"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kt1wr")
+Balloon = ExtResource("2_t2gk4")
+dialogue_resource = ExtResource("3_qq8hg")

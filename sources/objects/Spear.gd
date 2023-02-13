@@ -31,13 +31,11 @@ var vine_object = null
 var trampoline_state = false
 
 func trampoline_exec():
-	print("trampoline")
 	trampoline_state = true
 	get_node("Area2D").monitoring = true
 	get_node("Area2D").monitorable = true
 
 func rappel_exec():
-	print("rappel")
 	vine_object = vine_scene.instantiate()
 	vine_object.set("global_position", global_position)
 	get_parent().add_child(vine_object)
@@ -50,7 +48,6 @@ func run_hability():
 
 func set_spear_type(type):
 	spear_type = type
-
 	get_node("Sprite2D").set("texture", spear_textures[spear_type])
 
 func aim(global_position_mouse, direction):
@@ -60,12 +57,13 @@ func aim(global_position_mouse, direction):
 	var spear_direction = global_position_mouse - spear_position if direction == 1 else spear_position - global_position_mouse
 	var spear_angle = 0
 	if direction == 1:
-		spear_angle = clamp(spear_direction.angle(), -PI / 3, PI / 32) + PI / 2
+		spear_angle = clamp(spear_direction.angle(), -PI / 3, PI / 12) + PI / 2
 	else:
-		spear_angle = clamp(spear_direction.angle(), -PI / 32, PI / 3) + PI / 2 + PI
+		spear_angle = clamp(spear_direction.angle(), -PI / 12, PI / 3) + PI / 2 + PI
 	set_rotation(spear_angle)
 
 func throw(direction):
+	get_node("SpearSFX").call("throw")
 	status = Status.LAUNCHED
 	freeze = false
 	angular_damp = -1
@@ -75,16 +73,15 @@ func throw(direction):
 func _ready():
 	freeze = true
 	set_spear_type(spear_type)
+	get_node("SpearSFX").call("to_aim")
 
 func _on_area_2d_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_index):
 	if _body.get_name() == "Naia" and trampoline_state and _body.get("global_position").y < global_position.y:
 		_body.set("trampoline", true)
-		print("trampoline: true")
 
 func _on_area_2d_body_shape_exited(_body_rid, _body, _body_shape_index, _local_shape_index):
 	if _body.get_name() == "Naia" and trampoline_state and _body.get("trampoline"):
 		_body.set("trampoline", false)
-		print("trampoline: false")
 
 func _on_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_index):
 	if status == Status.LAUNCHED:
@@ -93,7 +90,10 @@ func _on_body_shape_entered(_body_rid, _body, _body_shape_index, _local_shape_in
 		set_deferred("sleeping", true)
 		collision_layer = 1
 		collision_mask = 1
+		get_node("CollisionShape2DInnerHandle").rotation_degrees = -90 if rad_to_deg(rotation) > 0 else 90
 		get_node("CollisionShape2DInnerHandle").set_deferred("disabled", false)
+		get_node("NipCollision").visible = true
+		get_node("SpearSFX").call("hit")
 		run_hability()
 
 func _physics_process(delta):
@@ -109,9 +109,11 @@ func call_back(node):
 	callback_node = node
 	sleeping = true
 	freeze = true
+	get_node("NipCollision").visible = false
 	if callback_tween:
 		callback_tween.kill()
 	callback_tween = create_tween()
 	callback_tween.tween_property(self, "modulate", Color(1,1,1,0), 0.5)
 	if is_instance_valid(vine_object):
 		vine_object.call("kill_vine")
+	get_node("SpearSFX").call("get_spear")

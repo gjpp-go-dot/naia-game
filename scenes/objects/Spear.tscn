@@ -1,22 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://71tmx3lddscr"]
+[gd_scene load_steps=9 format=3 uid="uid://71tmx3lddscr"]
 
 [ext_resource type="Script" path="res://sources/objects/Spear.gd" id="1_vxd2e"]
 [ext_resource type="Texture2D" uid="uid://b1nx44lev3j30" path="res://assets/sprites/objects/spear/spear_combat.png" id="2_1dln6"]
+[ext_resource type="PackedScene" uid="uid://dr2dtmp2uq518" path="res://scenes/sfx/SpearSFX.tscn" id="2_y4er7"]
+[ext_resource type="Texture2D" uid="uid://3aa1haofcicb" path="res://assets/sprites/objects/spear/nip_collision.png" id="3_pqbxo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q14td"]
-size = Vector2(2, 57)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o7nye"]
+size = Vector2(55.5, 2)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_q5hun"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_gan03"]
 radius = 4.12311
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1esh"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uaiga"]
 size = Vector2(6, 12)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s0rn2"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8l4rm"]
 radius = 25.02
 
 [node name="Spear" type="RigidBody2D"]
-collision_layer = 0
+collision_layer = 4
 collision_mask = 4
 mass = 0.45
 gravity_scale = 0.5
@@ -25,21 +27,31 @@ contact_monitor = true
 script = ExtResource("1_vxd2e")
 metadata/_edit_group_ = true
 
+[node name="SpearSFX" parent="." instance=ExtResource("2_y4er7")]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1dln6")
 
+[node name="NipCollision" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(0, -35)
+texture = ExtResource("3_pqbxo")
+
 [node name="CollisionShape2DInnerHandle" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8.5)
-shape = SubResource("RectangleShape2D_q14td")
+position = Vector2(-3.60619e-07, 8.25)
+rotation = -1.5708
+shape = SubResource("RectangleShape2D_o7nye")
 disabled = true
+one_way_collision = true
 
 [node name="CollisionShape2DInnerTip" type="CollisionShape2D" parent="."]
 position = Vector2(0, -32)
-shape = SubResource("CircleShape2D_q5hun")
+shape = SubResource("CircleShape2D_gan03")
 
 [node name="CollisionShape2DOuterTip" type="CollisionShape2D" parent="."]
 position = Vector2(0, -26)
-shape = SubResource("RectangleShape2D_q1esh")
+shape = SubResource("RectangleShape2D_uaiga")
 
 [node name="Area2D" type="Area2D" parent="."]
 monitoring = false
@@ -47,7 +59,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 9)
-shape = SubResource("CircleShape2D_s0rn2")
+shape = SubResource("CircleShape2D_8l4rm")
 
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
