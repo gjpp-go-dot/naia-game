@@ -170,9 +170,6 @@ func check_jump_area(area_name):
 	return false
 
 func _process(_delta):
-	if is_instance_valid(spear_object):
-		print(spear_object.get("status"))
-
 	if is_instance_valid(spear_object) and spear_object.get("status") == 0 and (Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_UP) or Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_DOWN)):
 		# range 0 to 2
 		var new_type = current_spear_type + (1 if Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_UP) else -1)

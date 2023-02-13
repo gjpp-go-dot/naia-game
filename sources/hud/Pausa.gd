@@ -51,7 +51,7 @@ func _process(delta):
 		$AnimationPlayer.play("Appear")
 		pause()
 		$menu_soundtrack.play()
-			
+
 	print(get_tree().paused)
 
 
@@ -89,7 +89,6 @@ func resume():
 	$Voltar.disabled = true
 	get_node("MenuSFX").call("confirm")
 	volume()
-	print()
 	$AnimationPlayer.play_backwards("Appear")
 	get_tree().paused = false
 	$menu_soundtrack.stop()
