@@ -3,5 +3,4 @@
 [ext_resource type="Script" path="res://sources/sfx/NaiaSFX.gd" id="1_og3uk"]
 
 [node name="NaiaSFX" type="AudioStreamPlayer"]
-volume_db = -20.0
 script = ExtResource("1_og3uk")

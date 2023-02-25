@@ -4,5 +4,4 @@
 
 [node name="menu_soundtrack" type="AudioStreamPlayer"]
 stream = ExtResource("1_uprib")
-volume_db = -44.629
 pitch_scale = 0.57
