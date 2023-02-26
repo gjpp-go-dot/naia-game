@@ -2,7 +2,7 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://k5hc5clgka41"
+uid="uid://cukjatrf1vsli"
 path="res://.godot/imported/joystix monospace.otf-0ac56a5719df937d9cd7fc63aaacb0e9.fontdata"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/joystix monospace.otf-0ac56a5719df937d9cd7fc6
 [params]
 
 Rendering=null
-antialiasing=1
+antialiasing=2
 generate_mipmaps=false
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
@@ -26,8 +26,14 @@ oversampling=0.0
 Fallbacks=null
 fallbacks=[]
 Compress=null
-compress=true
-preload=[]
+compress=false
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0),
+"variation_embolden": 0.0
+}]
 language_support={}
 script_support={}
 opentype_features={}
