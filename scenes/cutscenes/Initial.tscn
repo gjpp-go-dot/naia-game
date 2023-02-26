@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://whvvddfv3lle"]
+[gd_scene load_steps=6 format=3 uid="uid://whvvddfv3lle"]
 
 [ext_resource type="VideoStream" path="res://assets/cutscenes/main_cutscene.ogv" id="1_pfwxu"]
 [ext_resource type="Script" path="res://sources/cutscenes/InitialCutscene.gd" id="2_nnslo"]
+[ext_resource type="FontFile" uid="uid://k5hc5clgka41" path="res://assets/fonts/joystix monospace.otf" id="3_4n672"]
+[ext_resource type="Script" path="res://scenes/cutscenes/Skip_Message.gd" id="4_vv78q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ndn7s"]
+font = ExtResource("3_4n672")
+font_size = 8
+font_color = Color(1, 0.0235294, 0.580392, 1)
 
 [node name="Initial" type="VideoStreamPlayer"]
 anchors_preset = 15
@@ -13,5 +20,25 @@ stream = ExtResource("1_pfwxu")
 autoplay = true
 expand = true
 script = ExtResource("2_nnslo")
+
+[node name="Skip_Message" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.741406
+anchor_top = 0.791667
+anchor_right = 0.925024
+anchor_bottom = 0.972465
+offset_right = -195.031
+offset_bottom = -107.175
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(7.69591, 5.97398)
+text = "skip?"
+label_settings = SubResource("LabelSettings_ndn7s")
+horizontal_alignment = 2
+clip_text = true
+visible_ratio = -0.333333
+script = ExtResource("4_vv78q")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="finished" from="." to="." method="_on_finished"]
