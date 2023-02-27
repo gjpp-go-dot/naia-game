@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/naia_lanca5.png-73c25fc12b847a766f8bd38ef20f8
 [params]
 
 compress/mode=0
-compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
+compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

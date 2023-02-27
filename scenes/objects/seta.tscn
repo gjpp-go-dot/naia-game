@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7y4bp82d1lyt"]
+
+[ext_resource type="Texture2D" uid="uid://cashcju5mnls3" path="res://assets/sprites/objects/trap_stuff/seta.png" id="1_0apjl"]
+[ext_resource type="Script" path="res://sources/objects/seta.gd" id="1_1337u"]
+
+[node name="seta" type="Node2D"]
+script = ExtResource("1_1337u")
+
+[node name="anim" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_0apjl")
