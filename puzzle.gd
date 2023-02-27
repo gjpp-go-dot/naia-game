@@ -2,6 +2,7 @@ extends Node2D
 
 var contador = 0
 var tile = ""
+var delay = 1.6
 
 func _on_ready():
 	$transition/fill/anim.play("transition_out")
@@ -58,10 +59,21 @@ func _on_target_body_entered(body):
 		elif contador == 4:
 			$target.hide()
 
+
+
 func _on_area_2d_5_body_entered(body):
+	$transition/fill/anim.play("transition_in")
+	$Timer2.start(delay)
+
+	
+func _on_timer_2_timeout():
 	get_tree().change_scene_to_file("res://scenes/cutscenes/Final.tscn")
-
-
+	
 func _on_timer_timeout():
 	$target/sinal.visible = false
 	
+
+
+
+
+
