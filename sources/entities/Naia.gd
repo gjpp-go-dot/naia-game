@@ -198,6 +198,7 @@ func _physics_process(delta):
 			get_node("Naiui/ProgressBar").visible = false
 			get_node("Naiui/ProgressBar").call("stop_bounce")
 			set_camera_zoom(DEFAULT_CAMERA_ZOOM)
+			get_node("NaiaSFX").call("jump_spear")
 		else:
 			return
 

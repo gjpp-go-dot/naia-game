@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://sources/sfx/bg_music.gd" id="1_inp44"]
 
 [node name="bg_music" type="AudioStreamPlayer"]
-volume_db = -34.667
 pitch_scale = 1.06
 script = ExtResource("1_inp44")
 

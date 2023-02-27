@@ -7,10 +7,8 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_rga7r")
-volume_db = -39.63
 autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_20bp7")
-volume_db = -35.905
 autoplay = true

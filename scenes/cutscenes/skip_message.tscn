@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxqylym2y42og"]
+
+[ext_resource type="FontFile" uid="uid://cukjatrf1vsli" path="res://assets/fonts/joystix monospace.otf" id="1_rlb88"]
+[ext_resource type="Script" path="res://sources/cutscenes/Skip_Message.gd" id="2_t0tas"]
+
+[sub_resource type="Theme" id="Theme_le8y0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jmeyn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_buu2p"]
+font = ExtResource("1_rlb88")
+font_size = 32
+font_color = Color(1, 0.286275, 1, 1)
+
+[node name="skip_message" type="Node2D"]
+script = ExtResource("2_t0tas")
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = -624.0
+offset_top = -22.0
+offset_right = 105.0
+offset_bottom = 20.0
+theme = SubResource("Theme_le8y0")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jmeyn")
+text = "Aperte novamente para pular"
+label_settings = SubResource("LabelSettings_buu2p")
+horizontal_alignment = 2
