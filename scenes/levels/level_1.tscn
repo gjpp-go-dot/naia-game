@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://k0uv7wptnk63" path="res://scenes/sfx/EnviromentSFX.tscn" id="8_x70xg"]
 [ext_resource type="Texture2D" uid="uid://cme8htyv6cwru" path="res://assets/sprites/ambient_sprites/diamond_house.png" id="12_m1o2u"]
 [ext_resource type="Texture2D" uid="uid://sgdtn2tm7hn4" path="res://assets/sprites/ambient_sprites/Lotus-flower 5.png" id="16_kpkyq"]
-[ext_resource type="PackedScene" path="res://scenes/hud/Dialog.tscn" id="17_q7eta"]
+[ext_resource type="PackedScene" uid="uid://c87blnt3cv50e" path="res://scenes/hud/Dialog.tscn" id="17_q7eta"]
 [ext_resource type="Texture2D" uid="uid://b13pkpwj1lkhq" path="res://resources/environment/sumaúmatecnologica.png" id="18_u46sl"]
 [ext_resource type="FontFile" uid="uid://cukjatrf1vsli" path="res://assets/fonts/joystix monospace.otf" id="19_luwmn"]
 [ext_resource type="Texture2D" uid="uid://ck052hjm48src" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/A.png" id="20_frtdx"]

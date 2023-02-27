@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://wh40jdi1mhqu" path="res://scenes/sfx/menu_soundtrack.tscn" id="3_j8fs0"]
 [ext_resource type="Texture2D" uid="uid://dj2asclkj47na" path="res://assets/sprites/hud/botões/hud_logo.png" id="4_7ogs6"]
 [ext_resource type="PackedScene" uid="uid://clirv2okaj27s" path="res://scenes/entities/generetor_bird.tscn" id="4_kk0tn"]
-[ext_resource type="LabelSettings" path="res://resources/hud/menu_label_settings.tres" id="5_bdsu1"]
+[ext_resource type="LabelSettings" uid="uid://7ypxd7a7dioj" path="res://resources/hud/menu_label_settings.tres" id="5_bdsu1"]
 
 [sub_resource type="Animation" id="Animation_sq822"]
 resource_name = "IniBig"
