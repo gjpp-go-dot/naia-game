@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://addons/dialogic/Editor/TimelineEditor/TextEditor/timeline_editor_text.gd" id="1_1kbx2"]
 [ext_resource type="Script" path="res://addons/dialogic/Editor/TimelineEditor/TextEditor/syntax_highlighter.gd" id="1_5qfro"]
 
-[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_q86qr"]
+[sub_resource type="SyntaxHighlighter" id="SyntaxHighlighter_d742f"]
 script = ExtResource("1_5qfro")
 
 [node name="TimelineTextEditor" type="CodeEdit"]
@@ -13,7 +13,7 @@ offset_bottom = 600.0
 theme_override_constants/line_spacing = 10
 highlight_current_line = true
 draw_tabs = true
-syntax_highlighter = SubResource("SyntaxHighlighter_q86qr")
+syntax_highlighter = SubResource("SyntaxHighlighter_d742f")
 minimap_draw = true
 caret_blink = true
 line_folding = true

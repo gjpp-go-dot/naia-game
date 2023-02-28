@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://addons/dialogic/Editor/Events/Fields/SinglelineText.gd" id="1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okl7u"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0470b"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -16,7 +16,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emw2l"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y4h2"]
 content_margin_left = 4.0
 content_margin_top = 4.0
 content_margin_right = 4.0
@@ -51,6 +51,6 @@ script = ExtResource("1")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_styles/normal = SubResource("StyleBoxFlat_okl7u")
-theme_override_styles/focus = SubResource("StyleBoxFlat_emw2l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0470b")
+theme_override_styles/focus = SubResource("StyleBoxFlat_6y4h2")
 expand_to_text_length = true

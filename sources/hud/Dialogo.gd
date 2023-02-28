@@ -32,7 +32,7 @@ var text2 = ["Ah, se algum obstáculo aparecer, você pode [color=blue][wave amp
 var image2 = [spear,spear,mys]
 
 var name3 = ["[color=#177e75]Lança[/color]","."]
-var text3 = ["Hmm acho que posso te ajudar! Ao mirar, selecione a lança verde com o [color=blue][wave amp=40 freq=2]scroll do mouse[/wave][/color], tente me lançar perto do topo da superfície e segure a [color=blue][wave amp=40 freq=2]tecla W[/wave][/color] para subir no rapel.","."]
+var text3 = ["Hmm acho que posso te ajudar! Ao mirar, selecione a lança verde com o [color=blue][wave amp=40 freq=2]scroll do mouse[/wave][/color] ou as teclas [color=blue][wave amp=40 freq=2]W[/wave][/color] e [color=blue][wave amp=40 freq=2]S[/wave][/color], tente me lançar perto do topo da superfície e segure a [color=blue][wave amp=40 freq=2]tecla W[/wave][/color] para subir no rapel. ","."]
 var image3 = [spear,mys]
 
 var name4 = ["[color=#177e75]Lança[/color]","."]

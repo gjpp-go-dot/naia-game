@@ -629,6 +629,30 @@ podendo pular mais longe!"
 label_settings = SubResource("LabelSettings_2f53d")
 horizontal_alignment = 1
 
+[node name="change_spear" type="Node2D" parent="Tutorials"]
+position = Vector2(3670, 262)
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Tutorials/change_spear"]
+position = Vector2(93, 225)
+frames = SubResource("SpriteFrames_6keav")
+playing = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorials/change_spear"]
+position = Vector2(38, 225)
+frames = SubResource("SpriteFrames_dcegr")
+playing = true
+
+[node name="Label" type="Label" parent="Tutorials/change_spear"]
+offset_left = -228.0
+offset_top = 219.0
+offset_right = 955.0
+offset_bottom = 305.0
+scale = Vector2(0.25, 0.25)
+text = "Alterne o tipo de lança ao apertar      e
+ou usando o scroll do mouse"
+label_settings = SubResource("LabelSettings_2f53d")
+horizontal_alignment = 1
+
 [node name="SpearCombat" type="Sprite2D" parent="."]
 position = Vector2(108, 147)
 texture = ExtResource("24_6lj0i")
