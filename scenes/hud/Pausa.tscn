@@ -1,8 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bc1j0tnlnf6p2"]
+[gd_scene load_steps=21 format=3 uid="uid://bc1j0tnlnf6p2"]
 
 [ext_resource type="Shader" path="res://scenes/hud/Pausa.gdshader" id="1_6vjjh"]
 [ext_resource type="Script" path="res://sources/hud/Pausa.gd" id="1_nomq2"]
+[ext_resource type="PackedScene" uid="uid://os16xsiebbea" path="res://scenes/sfx/MenuSFX.tscn" id="3_ignq4"]
 [ext_resource type="Texture2D" uid="uid://dkjo6y2t6db5d" path="res://assets/sprites/hud/caixas e bg/hud_bg_flores.png" id="3_w6u5w"]
+[ext_resource type="PackedScene" path="res://scenes/sfx/pause_menu_soundtrack.tscn" id="4_1y3xs"]
 [ext_resource type="Texture2D" uid="uid://r43cii6u0sc2" path="res://assets/sprites/hud/caixas e bg/hud_caixa_pause.png" id="4_xdc80"]
 [ext_resource type="Texture2D" uid="uid://c5f1og218lgm2" path="res://assets/sprites/hud/botões/hud_botão_pause.png" id="5_capwa"]
 [ext_resource type="Theme" uid="uid://cut60d1txe8do" path="res://new_theme.tres" id="5_je7dk"]
@@ -26,7 +28,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_gxj6e"]
 resource_name = "Appear"
-length = 0.5
+length = 0.3
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -34,7 +36,7 @@ tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
+"times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -171,44 +173,44 @@ tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0, 0.9, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
+"update": 0,
 "values": [4, 4, 3]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Voltar:modulate")
+tracks/11/path = NodePath("Voltar:z_index")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+"values": [0, 0, 1]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Label2:modulate")
+tracks/12/path = NodePath("Voltar:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Continuar:modulate")
+tracks/13/path = NodePath("Voltar:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -329,6 +331,30 @@ tracks/23/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(477, 220), Vector2(477, 220), Vector2(477, 0)]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Continuar:modulate")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Label2:modulate")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_5fv5d"]
@@ -462,44 +488,44 @@ tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
+"update": 0,
 "values": [4]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("Voltar:modulate")
+tracks/11/path = NodePath("Voltar:z_index")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [0]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("Label2:modulate")
+tracks/12/path = NodePath("Voltar:modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("Continuar:modulate")
+tracks/13/path = NodePath("Voltar:modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/14/type = "value"
 tracks/14/imported = false
@@ -633,6 +659,30 @@ tracks/24/keys = {
 "update": 0,
 "values": [Vector2(477, 220)]
 }
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Continuar:modulate")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Label2:modulate")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_blljv"]
 _data = {
@@ -649,6 +699,10 @@ offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(1, 1, 1, 0)
 script = ExtResource("1_nomq2")
+
+[node name="MenuSFX" parent="." instance=ExtResource("3_ignq4")]
+
+[node name="menu_soundtrack" parent="." instance=ExtResource("4_1y3xs")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
@@ -673,6 +727,7 @@ offset_top = 248.0
 offset_right = 696.0
 offset_bottom = 265.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 theme = ExtResource("5_je7dk")
 min_value = -50.0
 max_value = 0.0
@@ -696,6 +751,7 @@ offset_top = 347.0
 offset_right = 696.0
 offset_bottom = 364.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 theme = ExtResource("5_je7dk")
 min_value = -50.0
 max_value = 0.0
@@ -719,6 +775,7 @@ offset_top = 453.0
 offset_right = 696.0
 offset_bottom = 470.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 theme = ExtResource("5_je7dk")
 min_value = -50.0
 max_value = 0.0
@@ -741,6 +798,8 @@ offset_left = 986.0
 offset_top = 609.0
 offset_right = 1152.0
 offset_bottom = 655.0
+focus_mode = 0
+disabled = true
 texture_normal = ExtResource("8_gw2vr")
 
 [node name="Label2" type="Sprite2D" parent="."]
@@ -755,6 +814,7 @@ offset_top = 220.0
 offset_right = 699.0
 offset_bottom = 274.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 texture_normal = ExtResource("7_2anqu")
 
 [node name="AjuVol" type="TextureButton" parent="."]
@@ -764,6 +824,7 @@ offset_top = 370.0
 offset_right = 699.0
 offset_bottom = 429.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 texture_normal = ExtResource("8_av71t")
 
 [node name="VoltarMenu" type="TextureButton" parent="."]
@@ -773,6 +834,7 @@ offset_top = 520.0
 offset_right = 702.0
 offset_bottom = 579.0
 scale = Vector2(1.5, 1.5)
+focus_mode = 0
 texture_normal = ExtResource("9_hcr0a")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -783,4 +845,9 @@ libraries = {
 [connection signal="changed" from="SlideMas" to="." method="_on_slide_mas_changed"]
 [connection signal="changed" from="SlideMus" to="." method="_on_slide_mus_changed"]
 [connection signal="changed" from="SlideSFX" to="." method="_on_slide_sfx_changed"]
+[connection signal="mouse_entered" from="Voltar" to="." method="_on_voltar_mouse_entered"]
 [connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
+[connection signal="mouse_entered" from="Continuar" to="." method="_on_continuar_mouse_entered"]
+[connection signal="pressed" from="Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="mouse_entered" from="AjuVol" to="." method="_on_aju_vol_mouse_entered"]
+[connection signal="mouse_entered" from="VoltarMenu" to="." method="_on_voltar_menu_mouse_entered"]

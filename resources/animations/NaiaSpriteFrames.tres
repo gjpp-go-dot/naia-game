@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=34 format=3 uid="uid://o1kjbsipv5ya"]
+[gd_resource type="SpriteFrames" load_steps=34 format=3 uid="uid://q3fxyv4ki3sb"]
 
 [ext_resource type="Texture2D" uid="uid://rypsi7lbvjaq" path="res://assets/sprites/entities/naia/idle/naia_idle1.png" id="1_ii1gm"]
 [ext_resource type="Texture2D" uid="uid://bfumo6p82vt4y" path="res://assets/sprites/entities/naia/idle/naia_idle2.png" id="2_3rjho"]
@@ -30,19 +30,19 @@
 [ext_resource type="Texture2D" uid="uid://bdr1vqu0ycjc7" path="res://assets/sprites/entities/naia/walk/naia_walk5.png" id="28_xrhc5"]
 [ext_resource type="Texture2D" uid="uid://30i41dffxmgm" path="res://assets/sprites/entities/naia/walk/naia_walk6.png" id="29_pc7ox"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h7vnd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0r6c6"]
 atlas = ExtResource("12_cpjdh")
 region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_owkvs"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1kq6"]
 atlas = ExtResource("12_cpjdh")
 region = Rect2(64, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xym5b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eqps2"]
 atlas = ExtResource("12_cpjdh")
 region = Rect2(128, 0, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tkmgt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bblua"]
 atlas = ExtResource("12_cpjdh")
 region = Rect2(192, 0, 64, 64)
 
@@ -74,10 +74,10 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 0.7,
 "texture": ExtResource("5_hkb8u")
 }, {
-"duration": 1.0,
+"duration": 0.8,
 "texture": ExtResource("6_cvhpm")
 }, {
 "duration": 1.0,
@@ -103,16 +103,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 0.6,
-"texture": SubResource("AtlasTexture_h7vnd")
+"texture": SubResource("AtlasTexture_0r6c6")
 }, {
 "duration": 0.6,
-"texture": SubResource("AtlasTexture_owkvs")
+"texture": SubResource("AtlasTexture_j1kq6")
 }, {
 "duration": 0.6,
-"texture": SubResource("AtlasTexture_xym5b")
+"texture": SubResource("AtlasTexture_eqps2")
 }, {
 "duration": 0.6,
-"texture": SubResource("AtlasTexture_tkmgt")
+"texture": SubResource("AtlasTexture_bblua")
 }],
 "loop": true,
 "name": &"rappel",

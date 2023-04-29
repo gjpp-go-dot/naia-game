@@ -1,46 +1,36 @@
-[gd_scene load_steps=16 format=3 uid="uid://b3gkpi0e3an8w"]
+[gd_scene load_steps=15 format=3 uid="uid://b3gkpi0e3an8w"]
 
 [ext_resource type="Script" path="res://sources/hud/MenuIni.gd" id="1_po4lr"]
-[ext_resource type="Texture2D" uid="uid://rr8pa7q4kfcd" path="res://resources/environment/Temporary_Menus/N_b6N3.png" id="2_mfe4p"]
-[ext_resource type="PackedScene" uid="uid://rwuxnsmrn1rb" path="res://scenes/hud/Ajustes.tscn" id="2_rmswp"]
+[ext_resource type="PackedScene" uid="uid://os16xsiebbea" path="res://scenes/sfx/MenuSFX.tscn" id="2_3vghn"]
+[ext_resource type="Texture2D" uid="uid://dqdfq51bmfd5e" path="res://assets/sprites/ui/mainmenu.png" id="2_675vo"]
+[ext_resource type="PackedScene" path="res://scenes/sfx/menu_soundtrack.tscn" id="3_j8fs0"]
 [ext_resource type="Texture2D" uid="uid://dj2asclkj47na" path="res://assets/sprites/hud/botões/hud_logo.png" id="4_7ogs6"]
-[ext_resource type="FontFile" uid="uid://k5hc5clgka41" path="res://assets/fonts/joystix monospace.otf" id="5_xa2bj"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_xmc2q"]
-font = ExtResource("5_xa2bj")
-font_size = 48
-
-[sub_resource type="LabelSettings" id="LabelSettings_dfnpp"]
-font = ExtResource("5_xa2bj")
-font_size = 48
-
-[sub_resource type="LabelSettings" id="LabelSettings_7gerh"]
-font = ExtResource("5_xa2bj")
-font_size = 48
+[ext_resource type="PackedScene" uid="uid://clirv2okaj27s" path="res://scenes/entities/generetor_bird.tscn" id="4_kk0tn"]
+[ext_resource type="LabelSettings" uid="uid://7ypxd7a7dioj" path="res://resources/hud/menu_label_settings.tres" id="5_bdsu1"]
 
 [sub_resource type="Animation" id="Animation_sq822"]
 resource_name = "IniBig"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Iniciar:scale:x")
+tracks/0/path = NodePath("VBoxContainer/Iniciar:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.8)
+"times": PackedFloat32Array(0, 0.3)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Iniciar:scale:y")
+tracks/1/path = NodePath("VBoxContainer/Iniciar:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.8)
+"times": PackedFloat32Array(0, 0.3)
 }
 
 [sub_resource type="Animation" id="Animation_yre04"]
@@ -48,7 +38,7 @@ length = 0.001
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Iniciar:scale:x")
+tracks/0/path = NodePath("VBoxContainer/Iniciar:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -59,7 +49,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Iniciar:scale:y")
+tracks/1/path = NodePath("VBoxContainer/Iniciar:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -70,7 +60,7 @@ tracks/1/keys = {
 tracks/2/type = "bezier"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Ajustes:scale:x")
+tracks/2/path = NodePath("VBoxContainer/Ajustes:scale:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -81,7 +71,7 @@ tracks/2/keys = {
 tracks/3/type = "bezier"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Ajustes:scale:y")
+tracks/3/path = NodePath("VBoxContainer/Ajustes:scale:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -92,7 +82,7 @@ tracks/3/keys = {
 tracks/4/type = "bezier"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Sair:scale:x")
+tracks/4/path = NodePath("VBoxContainer/Sair:scale:x")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -103,7 +93,7 @@ tracks/4/keys = {
 tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Sair:scale:y")
+tracks/5/path = NodePath("VBoxContainer/Sair:scale:y")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -123,24 +113,24 @@ resource_name = "AjuBig"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Ajustes:scale:x")
+tracks/0/path = NodePath("VBoxContainer/Ajustes:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.8)
+"times": PackedFloat32Array(0, 0.3)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Ajustes:scale:y")
+tracks/1/path = NodePath("VBoxContainer/Ajustes:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.8)
+"times": PackedFloat32Array(0, 0.3)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fkog0"]
@@ -153,24 +143,24 @@ resource_name = "SaiBig"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sair:scale:x")
+tracks/0/path = NodePath("VBoxContainer/Sair:scale:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.8)
+"times": PackedFloat32Array(0, 0.3)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sair:scale:y")
+tracks/1/path = NodePath("VBoxContainer/Sair:scale:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
 "points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.8)
+"times": PackedFloat32Array(0, 0.3)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p8vg1"]
@@ -178,89 +168,156 @@ _data = {
 "SaiBig": SubResource("Animation_3vs4h")
 }
 
-[node name="Node2D" type="Node2D"]
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_po4lr")
 
-[node name="Control" parent="." instance=ExtResource("2_rmswp")]
+[node name="MenuSFX" parent="." instance=ExtResource("2_3vghn")]
 
-[node name="NB6n3" type="Sprite2D" parent="."]
-position = Vector2(647, 326)
-scale = Vector2(2, 2)
-texture = ExtResource("2_mfe4p")
+[node name="menu_sountrack" parent="." instance=ExtResource("3_j8fs0")]
 
-[node name="Label" type="Sprite2D" parent="."]
+[node name="generetor_bird" parent="." instance=ExtResource("4_kk0tn")]
+z_index = 4
+position = Vector2(0, 90)
+
+[node name="Background" type="TextureRect" parent="."]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_675vo")
+
+[node name="Label" type="TextureRect" parent="."]
+process_mode = 1
 texture_repeat = 1
-position = Vector2(314, 112.75)
+layout_mode = 0
+offset_left = 77.0
+offset_top = 18.0
+offset_right = 515.0
+offset_bottom = 267.0
 scale = Vector2(1.13699, 1.16265)
 texture = ExtResource("4_7ogs6")
 
-[node name="Iniciar" type="TextureButton" parent="."]
-offset_left = 81.0
-offset_top = 255.0
-offset_right = 424.0
-offset_bottom = 346.0
-metadata/_edit_use_anchors_ = true
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = 256.0
+offset_right = -554.0
+offset_bottom = -114.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
 
-[node name="Label" type="Label" parent="Iniciar"]
-layout_mode = 0
-anchor_left = -0.0113636
-offset_left = 0.988636
-offset_right = 343.0
-offset_bottom = 91.0
-text = "Iniciar jogo"
-label_settings = SubResource("LabelSettings_xmc2q")
-metadata/_edit_use_anchors_ = true
+[node name="Iniciar" type="TextureButton" parent="VBoxContainer"]
+process_mode = 1
+clip_contents = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
 
-[node name="Ajustes" type="TextureButton" parent="."]
-offset_left = 81.0
-offset_top = 415.0
-offset_right = 306.0
-offset_bottom = 506.0
+[node name="Label" type="Label" parent="VBoxContainer/Iniciar"]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 319.0
+offset_bottom = 31.0
+grow_vertical = 2
+text = "Jogar"
+label_settings = ExtResource("5_bdsu1")
+
+[node name="HSeparator1" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Ajustes" type="TextureButton" parent="VBoxContainer"]
+process_mode = 1
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
 action_mode = 0
 
-[node name="Label" type="Label" parent="Ajustes"]
-layout_mode = 0
-offset_left = 2.0
-offset_right = 60.0
-offset_bottom = 27.0
+[node name="Label" type="Label" parent="VBoxContainer/Ajustes"]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -31.0
+offset_right = 314.0
+offset_bottom = 32.0
+grow_vertical = 2
 text = "Ajustes"
-label_settings = SubResource("LabelSettings_dfnpp")
+label_settings = ExtResource("5_bdsu1")
 
-[node name="Sair" type="TextureButton" parent="."]
-offset_left = 81.0
-offset_top = 575.0
-offset_right = 444.0
-offset_bottom = 666.0
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="Sair" type="TextureButton" parent="VBoxContainer"]
+process_mode = 1
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+focus_mode = 0
+mouse_default_cursor_shape = 2
 action_mode = 0
 
-[node name="Label" type="Label" parent="Sair"]
-layout_mode = 0
-offset_left = 1.0
-offset_right = 93.0
-offset_bottom = 27.0
-text = "Sair do jogo"
-label_settings = SubResource("LabelSettings_7gerh")
+[node name="Label" type="Label" parent="VBoxContainer/Sair"]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -30.0
+offset_right = 314.0
+offset_bottom = 31.0
+grow_vertical = 2
+text = "Sair"
+label_settings = ExtResource("5_bdsu1")
+
+[node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
 
 [node name="AnimIni" type="AnimationPlayer" parent="."]
+process_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_q37uv")
 }
 
 [node name="AnimAju" type="AnimationPlayer" parent="."]
+process_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_fkog0")
 }
 
 [node name="AnimSai" type="AnimationPlayer" parent="."]
+process_mode = 1
 libraries = {
 "": SubResource("AnimationLibrary_p8vg1")
 }
 
-[connection signal="mouse_entered" from="Iniciar" to="." method="_on_iniciar_mouse_entered"]
-[connection signal="mouse_exited" from="Iniciar" to="." method="_on_iniciar_mouse_exited"]
-[connection signal="mouse_entered" from="Ajustes" to="." method="_on_ajustes_mouse_entered"]
-[connection signal="mouse_exited" from="Ajustes" to="." method="_on_ajustes_mouse_exited"]
-[connection signal="pressed" from="Ajustes" to="." method="_on_ajustes_pressed"]
-[connection signal="mouse_entered" from="Sair" to="." method="_on_sair_mouse_entered"]
-[connection signal="mouse_exited" from="Sair" to="." method="_on_sair_mouse_exited"]
-[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Ajustes" to="." method="_on_ajustes_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Ajustes" to="." method="_on_ajustes_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Ajustes" to="." method="_on_ajustes_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Sair" to="." method="_on_sair_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Sair" to="." method="_on_sair_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Sair" to="." method="_on_sair_pressed"]

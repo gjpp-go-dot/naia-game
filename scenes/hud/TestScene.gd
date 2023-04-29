@@ -1,17 +1,22 @@
 extends Node2D
-
+var first = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$DefaultDialogNode.visible = false
+
+func sla():
+	$CharacterBody2D.canMove = false
+	$DefaultDialogNode.visible = true
+	Dialogic.start_timeline("ini",false)
+	first = false
+	Dialogic.connect("timeline_ended",oi)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
+func oi():
+		$CharacterBody2D.canMove = true
 
 
 func _on_area_2d_body_entered(body):
-	Dialogic.start("timeline",true)
+	if first == true:
+		sla()

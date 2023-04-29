@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
-@export var speed = 130
+@export var speed = 140
 @export var run_multiplier = 1.6
-@export var jump_speed = -600
-@export var gravity = 2100
+@export var jump_speed = -650
+@export var gravity = 1800
 @export_range(0.0, 1.0) var friction = 0.12
 @export_range(0.0 , 1.0) var acceleration = 0.11
+@export var max_wall_jump_speed = 120
 
 signal process_event(event_name)
+signal update_spear_type(spear_type)
 
 var can = {
 	"move": true,
@@ -45,7 +47,7 @@ var spear_scene = preload("res://scenes/objects/Spear.tscn")
 const SPEAR_OFFSET_RIGHT = Vector2(-29, -9)
 const SPEAR_OFFSET_LEFT = Vector2(29, -9)
 
-const DEFAULT_CAMERA_ZOOM = Vector2(1.2, 1.2)
+var DEFAULT_CAMERA_ZOOM = null
 
 var current_state = STATES.IDLE
 var landed = true
@@ -70,6 +72,14 @@ var current_spear_type = SpearTypes.DEFAULT
 var camera_tween = null
 
 var default_gravity = gravity
+
+var last_wall_hold = Time.get_ticks_msec()
+var wall_jumped = null
+var raycast_distance = 40
+var last_seen_direction = 1
+
+func _ready():
+	DEFAULT_CAMERA_ZOOM = get_node("Camera2D").get("zoom")
 
 func bind_process_event(event_name):
 	emit_signal("process_event", event_name)
@@ -98,6 +108,7 @@ func process_spear_aim():
 	spear_object.call("aim", get_global_mouse_position(), last_direction)
 	if Input.is_action_just_pressed(INPUTS_MAP.SPEAR_THROW):
 		get_node("AnimatedSprite2D").call("manual_unlock")
+		get_node("AnimatedSprite2D").set("lock", false)
 		bind_set_state(STATES.SPEAR_RELEASE)
 		bind_process_event("spear_release")
 		spear_object.call("throw", last_direction)
@@ -117,10 +128,8 @@ func summon_new_spear():
 
 	spear_object = spear_scene.instantiate()
 	spear_object.set("position", get_global_position() + (SPEAR_OFFSET_RIGHT if last_direction > 0 else SPEAR_OFFSET_LEFT))
-	spear_object.call("set_spear_type", current_spear_type)
-
 	get_parent().add_child(spear_object)
-
+	set_type_spear()
 	focus_horizon(last_direction)
 
 func call_spear_back():
@@ -137,24 +146,31 @@ func set_type_spear(type = null):
 	if is_instance_valid(spear_object):
 		spear_object.call("set_spear_type", type)
 
+	emit_signal("update_spear_type", type)
 
 func exec_trampoline():
 	in_trampoline = true
-	get_node("Naiui").visible = true
+	get_node("Naiui/ProgressBar").visible = true
 	get_node("Naiui/ProgressBar").call("start_bounce")
 	set_camera_zoom(Vector2(1.5, 1.5))
 	bind_process_event("prepare_trampoline_jump")
+	get_node("AnimatedSprite2D").call("PREPARE_TRAMPOLINE_JUMP")
 
 func jump(jump_speed_custom = null):
+	get_node("NaiaSFX").call("jump")
 	if jump_speed_custom:
 		velocity.y = jump_speed_custom
 	else:
 		velocity.y = jump_speed
 	landed = false
 
-## JUST FOR TESTS !!!
+func check_jump_area(area_name):
+	if get_node(area_name).call("get_overlapping_bodies").filter(func(body): return body != self).size() > 0:
+		return true
+	return false
+
 func _process(_delta):
-	if Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_UP) or Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_DOWN):
+	if is_instance_valid(spear_object) and spear_object.get("status") == 0 and (Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_UP) or Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_DOWN)):
 		# range 0 to 2
 		var new_type = current_spear_type + (1 if Input.is_action_just_released(INPUTS_MAP.CHANGE_SPEAR_UP) else -1)
 		if new_type < 0:
@@ -165,19 +181,26 @@ func _process(_delta):
 		current_spear_type = new_type
 
 		set_type_spear()
+		$Naiui/Hud.update_spear_type(current_spear_type)
 
 func _physics_process(delta):
+	for platforms in get_slide_collision_count():
+		var collision = get_slide_collision(platforms)
+		if collision.get_collider().has_method("collide_with"):
+			collision.get_collider().collide_with(collision,self)
 	if in_trampoline:
-		if Input.is_action_just_pressed(INPUTS_MAP.JUMP):
-			jump(jump_speed + ((jump_speed * 0.40) * (get_node("Naiui/ProgressBar").get("value") / 100)))
-			print(velocity.y)
+		if not Input.is_action_pressed(INPUTS_MAP.JUMP) or get_node("Naiui/ProgressBar").get("value") == 100:
+			get_node("AnimatedSprite2D").set("manual_lock", false)
+			get_node("AnimatedSprite2D").set("lock", false)
+			jump(jump_speed + ((jump_speed * 0.50) * (get_node("Naiui/ProgressBar").get("value") / 100)))
 			landed = false
 			in_trampoline = false
-			get_node("Naiui").visible = false
+			get_node("Naiui/ProgressBar").visible = false
 			get_node("Naiui/ProgressBar").call("stop_bounce")
 			set_camera_zoom(DEFAULT_CAMERA_ZOOM)
 		else:
 			return
+
 	velocity.y += gravity * delta
 
 	if get_current_animation() == "spear_aim" or get_current_animation() == "spear_release":
@@ -191,7 +214,7 @@ func _physics_process(delta):
 		last_direction = direction
 
 	if can["spear_attack"] and (not get_node("AnimatedSprite2D").get("lock")) and (current_state != STATES.SPEAR_RELEASE and current_state != STATES.SPEAR_AIM) and Input.is_action_just_pressed(INPUTS_MAP.SPEAR_AIM):
-			if spear_object == null and is_on_floor():
+			if spear_object == null and is_on_floor() and not (get_current_animation() == "spear_aim" or get_current_animation() == "spear_release"):
 				summon_new_spear()
 			else:
 				call_spear_back()
@@ -238,15 +261,27 @@ func _physics_process(delta):
 			elif landed:
 				jump()
 
+	if (Input.get_axis(INPUTS_MAP.MOVE_LEFT, INPUTS_MAP.MOVE_RIGHT) != 0) and is_on_wall():
+		if velocity.y > 0:
+			velocity.y = velocity.y + acceleration if velocity.y < max_wall_jump_speed else max_wall_jump_speed
+
+	if can["jump"] and Input.is_action_just_pressed(INPUTS_MAP.JUMP) and (check_jump_area("LeftArea") or check_jump_area("RightArea")) and not is_on_floor():
+		var wall_jumped_direction = 1 if check_jump_area("LeftArea") else -1
+		if (wall_jumped == null) or (wall_jumped != wall_jumped_direction):
+			wall_jumped = wall_jumped_direction
+			velocity.x = wall_jumped_direction * (max_wall_jump_speed * 2.75)
+			jump()
+
 	move_and_slide()
 
 	if is_on_floor():
 		if (not landed) and (velocity.y > jump_speed * 0.5):
+			get_node("NaiaSFX").call("landing")
 			bind_set_state(STATES.LANDING)
 			landed = true
+			wall_jumped = null
 	else:
 		if in_rappel:
-			print(velocity.y)
 			if abs(velocity.y) > 40:
 				bind_set_state(STATES.RAPPEL)
 			else:
@@ -256,11 +291,9 @@ func _physics_process(delta):
 		else:
 			bind_set_state(STATES.FALLING)
 
-	#print(current_state)
 	if not in_rappel:
 		bind_process_event("look_left" if last_direction < 0 else "look_right")
 	elif not is_on_floor():
-		print(vine_x_position, " ", global_position.x)
 		bind_process_event("look_left" if vine_x_position < global_position.x else "look_right")
 
 	match current_state:
@@ -285,6 +318,7 @@ func _on_animated_sprite_2d_animation_finished_component(animation):
 	pass
 	match animation:
 		"spear_release":
+			get_node("AnimatedSprite2D").call("manual_unlock")
 			bind_set_state(STATES.IDLE)
-			bind_process_event("idle")
+			get_node("AnimatedSprite2D").call("STOP")
 			reset_focus_horizon()

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr6fs126whjch"]
+[gd_scene load_steps=7 format=3 uid="uid://cr6fs126whjch"]
 
 [ext_resource type="PackedScene" uid="uid://b04b1gk4snpl6" path="res://scenes/hud/testChar.tscn" id="1_8i8bt"]
 [ext_resource type="Script" path="res://scenes/hud/TestScene.gd" id="1_ay2k3"]
 [ext_resource type="Texture2D" uid="uid://c1nps3o22rvh6" path="res://icon.svg" id="3_7pbf5"]
+[ext_resource type="PackedScene" uid="uid://btx7jmmry0ots" path="res://addons/dialogic/Example Assets/example-scenes/DialogicDefaultScene.tscn" id="4_ihrhw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x7skk"]
 size = Vector2(198, 100.5)
@@ -11,6 +12,7 @@ size = Vector2(198, 100.5)
 size = Vector2(1280, 86)
 
 [node name="Node2D" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ay2k3")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -41,5 +43,9 @@ offset_top = -44.0
 offset_right = 639.0
 offset_bottom = 42.0
 color = Color(0.372549, 0.6, 0.372549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="DefaultDialogNode" parent="." instance=ExtResource("4_ihrhw")]
+visible = false
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

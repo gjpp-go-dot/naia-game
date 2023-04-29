@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://vtuwa715yw85"]
+[gd_scene load_steps=6 format=3 uid="uid://d1ruux3wnvgwl"]
 
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="2_d1ko2"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="2_ixpyc"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s0poa"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1q8o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q3fh5"]
 texture = ExtResource("2_ixpyc")
@@ -195,7 +195,7 @@ texture_region_size = Vector2i(64, 64)
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 517
 physics_layer_0/collision_mask = 517
-physics_layer_0/physics_material = SubResource("PhysicsMaterial_s0poa")
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_e1q8o")
 sources/2 = SubResource("TileSetAtlasSource_q3fh5")
 
 [node name="TestSpear" type="Node2D"]
@@ -205,7 +205,7 @@ tile_set = SubResource("TileSet_1iqr2")
 cell_quadrant_size = 1
 collision_animatable = true
 format = 2
-layer_0/tile_data = PackedInt32Array(393215, 65538, 7, 327679, 65538, 7, 262143, 65538, 7, 196607, 65538, 7, 131071, 65538, 7, 65535, 65538, 7, 327680, 65538, 7, 327689, 65538, 7, 262153, 196610, 7, 196617, 65538, 7, 131081, 196610, 7, 65545, 65538, 7, 9, 65538, 7, 327688, 65538, 7, 327687, 65538, 7, 327686, 65538, 7, 327685, 65538, 7, 327684, 65538, 7, 327683, 65538, 7, 327682, 65538, 7, 327681, 65538, 7)
+layer_0/tile_data = PackedInt32Array(393215, 65538, 7, 327679, 65538, 7, 262143, 65538, 7, 196607, 65538, 7, 131071, 65538, 7, 65535, 65538, 7, 327680, 65538, 7, 327689, 65538, 7, 262153, 196610, 7, 9, 65538, 7, 327688, 65538, 7, 327687, 65538, 7, 327686, 65538, 7, 327685, 65538, 7, 327684, 65538, 7, 327683, 65538, 7, 327682, 65538, 7, 327681, 65538, 7, 196617, 196610, 5, 262150, 65538, 7, 196614, 65538, 7, 131078, 65538, 7, 65542, 65538, 7, 6, 65538, 7, 262147, 65538, 7, 196611, 65538, 7, 131075, 65538, 7, 65539, 65538, 7, 3, 65538, 7, -196605, 65538, 7, -131069, 65538, 7, -65533, 65538, 7, -196602, 65538, 7, -131066, 65538, 7, -65530, 65538, 7, -327674, 65538, 7, -262138, 65538, 7, -327677, 65538, 7, -262141, 65538, 7)
 
 [node name="Naia" parent="." instance=ExtResource("2_d1ko2")]
 position = Vector2(286, 282)
