@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c87blnt3cv50e"]
+[gd_scene load_steps=7 format=3 uid="uid://c0j1jewkhvmfn"]
 
 [ext_resource type="Script" path="res://sources/hud/Dialogo.gd" id="1_itntj"]
 [ext_resource type="Texture2D" uid="uid://bfarlndwp2mlo" path="res://assets/sprites/hud/caixas e bg/hud_caixa_dialogo.png" id="2_nomk4"]
-[ext_resource type="FontFile" uid="uid://cc4xli25271fd" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Bold.ttf" id="3_ynt2l"]
-[ext_resource type="FontFile" uid="uid://vrrmdx83skor" path="res://addons/dialogic/Example Assets/Fonts/Roboto-Regular.ttf" id="4_tm5yr"]
+[ext_resource type="FontFile" uid="uid://786xu0c1wopm" path="res://assets/fonts/Roboto-Bold.ttf" id="3_ynt2l"]
+[ext_resource type="FontFile" uid="uid://d12s1vqpohuyj" path="res://assets/fonts/Roboto-Regular.ttf" id="4_tm5yr"]
 [ext_resource type="FontFile" uid="uid://d2gbk8mxri583" path="res://assets/fonts/Play-Regular.ttf" id="5_0qgf4"]
 [ext_resource type="Texture2D" uid="uid://rltx4nys6ohr" path="res://assets/sprites/hud/128x128/mystery.png" id="5_gi72h"]
 

@@ -18,7 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Constants="*res://sources/globals/contants.gd"
-Dialogic="*res://addons/dialogic/Other/DialogicGameHandler.gd"
+Dialogo="*res://sources/hud/Dialogo.gd"
 
 [dialogic]
 
@@ -59,7 +59,7 @@ window/screen_space_roughness_limiter/enabled=true
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 
@@ -137,6 +137,6 @@ common/max_physics_steps_per_frame=12
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.133333, 0.133333, 0.133333, 1)
-textures/canvas_textures/default_texture_filter=0
