@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://ilqcaj35bd4v"]
+
+[ext_resource type="Script" path="res://scenes/objects/pressure_plait.gd" id="1_hitm1"]
+[ext_resource type="Texture2D" uid="uid://t8vmiu02ns46" path="res://assets/sprites/objects/trigger/pressure_plate_frame_01.png" id="2_wurqh"]
+[ext_resource type="Texture2D" uid="uid://cxo6g4itsn40f" path="res://assets/sprites/objects/trigger/pressure_plate_frame_02.png" id="3_70anp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tma0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wurqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_70anp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihxo7"]
+size = Vector2(18, 14)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_hitm1")
+
+[node name="anima" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5tma0")
+
+[node name="plate" type="Area2D" parent="."]
+collision_layer = 16384
+collision_mask = 16384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="plate"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_ihxo7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+
+[connection signal="body_entered" from="plate" to="." method="_on_plate_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

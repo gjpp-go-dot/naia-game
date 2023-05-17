@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/ARROWDOWN.png-1317771d4c69110e75e7f062359a8c6
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

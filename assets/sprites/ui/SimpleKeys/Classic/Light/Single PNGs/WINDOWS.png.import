@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/WINDOWS.png-8c7378ef26ea192fc1881daae2edcd45.
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
