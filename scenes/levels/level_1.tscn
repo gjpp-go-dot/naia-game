@@ -492,7 +492,7 @@ position = Vector2(-554, 1)
 position = Vector2(8447, -385)
 
 [node name="Naia" parent="." instance=ExtResource("4_iuxil")]
-position = Vector2(2762, 349)
+position = Vector2(3270, -190)
 collision_layer = 16897
 collision_mask = 16897
 

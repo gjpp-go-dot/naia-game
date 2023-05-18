@@ -21,5 +21,5 @@ func _process(delta):
 
 
 func _on_pressure_desparo():
-	$Node2D2/trigger.frame = 1
-	print("hit")
+	$Node2D2.desparar(3)
+	

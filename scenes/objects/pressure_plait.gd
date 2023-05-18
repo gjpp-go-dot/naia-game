@@ -17,7 +17,6 @@ signal desparo
 
 func _on_plate_body_entered(body):
 	$anima.frame = 1
-	print("pisou")
 	$plate/CollisionShape2D.set_deferred('disabled',true)
 	#$plate.set_deferred('monitoring',false)
 	$plate.set_deferred('monitorable',false)
