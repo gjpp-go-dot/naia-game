@@ -1,28 +1,24 @@
-[gd_scene load_steps=51 format=3 uid="uid://dcbkol4dj3mbw"]
+[gd_scene load_steps=35 format=3 uid="uid://dcbkol4dj3mbw"]
 
-[ext_resource type="Texture2D" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
+[ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
 [ext_resource type="Script" path="res://sources/scenarios/level_1.gd" id="1_15fhq"]
 [ext_resource type="Texture2D" uid="uid://dgvgr3exovfmw" path="res://assets/sprites/ambient_sprites/moon_structure.png" id="2_3yvyn"]
-[ext_resource type="PackedScene" path="res://scenes/levels/transition.tscn" id="2_8dqoe"]
+[ext_resource type="PackedScene" uid="uid://cc4qbtukyq43h" path="res://scenes/levels/transition.tscn" id="2_8dqoe"]
 [ext_resource type="PackedScene" uid="uid://clirv2okaj27s" path="res://scenes/entities/generetor_bird.tscn" id="3_4jmwo"]
 [ext_resource type="Texture2D" uid="uid://tin4l5lywruw" path="res://assets/sprites/ambient_sprites/moon_structure1.png" id="3_ktax8"]
 [ext_resource type="Texture2D" uid="uid://dsn2v0by2bivi" path="res://assets/sprites/tilemaps/TileSetNaia_noite.png" id="4_8pgxa"]
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="4_iuxil"]
 [ext_resource type="Texture2D" uid="uid://cl4xci5i6e6km" path="res://assets/sprites/ambient_sprites/naia_statue.png" id="4_ped7g"]
-[ext_resource type="PackedScene" path="res://scenes/levels/background_night.tscn" id="5_1lsco"]
+[ext_resource type="PackedScene" uid="uid://bb30vr5qkxmar" path="res://scenes/levels/background_night.tscn" id="5_1lsco"]
 [ext_resource type="PackedScene" uid="uid://dcmj1spqre5ho" path="res://scenes/objects/brick_block.tscn" id="5_dn0m1"]
-[ext_resource type="PackedScene" path="res://scenes/levels/background_1_front.tscn" id="6_adpxk"]
-[ext_resource type="PackedScene" path="res://scenes/sfx/bg_music.tscn" id="8_nywea"]
+[ext_resource type="PackedScene" uid="uid://4wuaegl04pi1" path="res://scenes/levels/background_1_front.tscn" id="6_adpxk"]
+[ext_resource type="PackedScene" uid="uid://dtx84oact8xl1" path="res://scenes/sfx/bg_music.tscn" id="8_nywea"]
 [ext_resource type="PackedScene" uid="uid://k0uv7wptnk63" path="res://scenes/sfx/EnviromentSFX.tscn" id="8_x70xg"]
 [ext_resource type="Texture2D" uid="uid://cme8htyv6cwru" path="res://assets/sprites/ambient_sprites/diamond_house.png" id="12_m1o2u"]
 [ext_resource type="Texture2D" uid="uid://sgdtn2tm7hn4" path="res://assets/sprites/ambient_sprites/Lotus-flower 5.png" id="16_kpkyq"]
-[ext_resource type="PackedScene" path="res://scenes/hud/Dialog.tscn" id="17_q7eta"]
+[ext_resource type="PackedScene" uid="uid://c0j1jewkhvmfn" path="res://scenes/hud/Dialog.tscn" id="17_q7eta"]
 [ext_resource type="Texture2D" uid="uid://b13pkpwj1lkhq" path="res://resources/environment/sumaúmatecnologica.png" id="18_u46sl"]
 [ext_resource type="FontFile" uid="uid://k5hc5clgka41" path="res://assets/fonts/joystix monospace.otf" id="19_luwmn"]
-[ext_resource type="Texture2D" uid="uid://ck052hjm48src" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/A.png" id="20_frtdx"]
-[ext_resource type="Texture2D" uid="uid://blq52d6gw5xg7" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/D.png" id="21_3pjsh"]
-[ext_resource type="Texture2D" uid="uid://bdsp6h1lg0o0q" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/W.png" id="21_dwko7"]
-[ext_resource type="Texture2D" uid="uid://d18pwrwflj8g2" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/SHIFT.png" id="23_cmyhi"]
 [ext_resource type="Texture2D" uid="uid://b1nx44lev3j30" path="res://assets/sprites/objects/spear/spear_combat.png" id="24_6lj0i"]
 [ext_resource type="PackedScene" uid="uid://umpfqks2axpm" path="res://scenes/objects/bloco_instavel.tscn" id="24_8xxny"]
 
@@ -356,28 +352,6 @@ size = Vector2(46, 171)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h0vo1"]
 size = Vector2(76, 195)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r14wl"]
-atlas = ExtResource("20_frtdx")
-region = Rect2(0, 0, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ag81g"]
-atlas = ExtResource("20_frtdx")
-region = Rect2(17, 0, 17, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_dcegr"]
-animations = [{
-"frames": [{
-"duration": 3.0,
-"texture": SubResource("AtlasTexture_r14wl")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_ag81g")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
 [sub_resource type="LabelSettings" id="LabelSettings_2f53d"]
 line_spacing = 1.0
 font = ExtResource("19_luwmn")
@@ -385,72 +359,6 @@ font_size = 35
 shadow_size = 12
 shadow_color = Color(0.133333, 0.133333, 0.133333, 1)
 shadow_offset = Vector2(0, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_guqrm"]
-atlas = ExtResource("21_dwko7")
-region = Rect2(0, 0, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mwo7o"]
-atlas = ExtResource("21_dwko7")
-region = Rect2(17, 0, 17, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6keav"]
-animations = [{
-"frames": [{
-"duration": 3.0,
-"texture": SubResource("AtlasTexture_guqrm")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_mwo7o")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o8jyj"]
-atlas = ExtResource("21_3pjsh")
-region = Rect2(0, 0, 17, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eb3bt"]
-atlas = ExtResource("21_3pjsh")
-region = Rect2(17, 0, 17, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_5qpvf"]
-animations = [{
-"frames": [{
-"duration": 3.0,
-"texture": SubResource("AtlasTexture_o8jyj")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_eb3bt")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5q0cu"]
-atlas = ExtResource("23_cmyhi")
-region = Rect2(0, 0, 44, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_maqkg"]
-atlas = ExtResource("23_cmyhi")
-region = Rect2(44, 0, 44, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ihxew"]
-animations = [{
-"frames": [{
-"duration": 3.0,
-"texture": SubResource("AtlasTexture_5q0cu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_maqkg")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7q7l4"]
 size = Vector2(39, 117.5)
@@ -580,8 +488,6 @@ texture = ExtResource("18_u46sl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorials/Start"]
 position = Vector2(-97, 226)
-frames = SubResource("SpriteFrames_dcegr")
-playing = true
 
 [node name="Label" type="Label" parent="Tutorials/Start"]
 offset_left = -133.0
@@ -603,20 +509,14 @@ label_settings = SubResource("LabelSettings_2f53d")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Tutorials/Start"]
 position = Vector2(63, 226)
-frames = SubResource("SpriteFrames_6keav")
-playing = true
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Tutorials/Start"]
 position = Vector2(-75, 226)
-frames = SubResource("SpriteFrames_5qpvf")
-playing = true
 
 [node name="Sprint" type="Node2D" parent="Tutorials"]
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Tutorials/Sprint"]
 position = Vector2(774, 40)
-frames = SubResource("SpriteFrames_ihxew")
-playing = true
 
 [node name="Label" type="Label" parent="Tutorials/Sprint"]
 offset_left = 694.0

@@ -32,7 +32,7 @@ func _on_ajustes_pressed():
 	get_node("MenuSFX").call("confirm")
 	settings_node = settings_scene.instantiate()
 	add_child(settings_node)
-	settings_node.call("show")
+	settings_node.call("appear")
 	settings_node.close.connect(close_settings)
 
 func _on_sair_pressed():

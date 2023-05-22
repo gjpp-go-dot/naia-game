@@ -1,29 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://rww8jwenbx6b"]
+[gd_scene load_steps=5 format=3 uid="uid://rww8jwenbx6b"]
 
 [ext_resource type="Script" path="res://sources/hud/hud.gd" id="1_4tvpl"]
 [ext_resource type="PackedScene" uid="uid://bf440xprq1itl" path="res://scenes/hud/Control.tscn" id="2_a6bej"]
-[ext_resource type="Texture2D" uid="uid://d20iwws13spdm" path="res://assets/sprites/hud/sprite_2.png" id="3_av3g1"]
-[ext_resource type="Texture2D" uid="uid://dwf5yq576m68a" path="res://assets/sprites/hud/sprite_1.png" id="3_kxcni"]
-[ext_resource type="Texture2D" uid="uid://dgdkquwtniu73" path="res://assets/sprites/hud/sprite_0.png" id="4_don06"]
 [ext_resource type="PackedScene" uid="uid://bc1j0tnlnf6p2" path="res://scenes/hud/Pausa.tscn" id="5_pt4fd"]
 [ext_resource type="Texture2D" uid="uid://mjs7shflfakq" path="res://assets/sprites/hud/New Piskel (3).png" id="6_gtvrf"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ueo45"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_av3g1")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_kxcni")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_don06")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Hud" type="CanvasLayer"]
 layer = 11
@@ -36,7 +16,6 @@ offset_right = 1.0
 [node name="CurrentSpear" type="AnimatedSprite2D" parent="."]
 position = Vector2(119, 74)
 scale = Vector2(1.8, 1.8)
-frames = SubResource("SpriteFrames_ueo45")
 
 [node name="Pausa" parent="." instance=ExtResource("5_pt4fd")]
 

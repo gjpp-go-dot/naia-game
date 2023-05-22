@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://sources/hud/Pausa.gd" id="1_nomq2"]
 [ext_resource type="PackedScene" uid="uid://os16xsiebbea" path="res://scenes/sfx/MenuSFX.tscn" id="3_ignq4"]
 [ext_resource type="Texture2D" uid="uid://dkjo6y2t6db5d" path="res://assets/sprites/hud/caixas e bg/hud_bg_flores.png" id="3_w6u5w"]
-[ext_resource type="PackedScene" path="res://scenes/sfx/pause_menu_soundtrack.tscn" id="4_1y3xs"]
+[ext_resource type="PackedScene" uid="uid://ck04lpt3n2o48" path="res://scenes/sfx/pause_menu_soundtrack.tscn" id="4_1y3xs"]
 [ext_resource type="Texture2D" uid="uid://r43cii6u0sc2" path="res://assets/sprites/hud/caixas e bg/hud_caixa_pause.png" id="4_xdc80"]
 [ext_resource type="Texture2D" uid="uid://c5f1og218lgm2" path="res://assets/sprites/hud/botões/hud_botão_pause.png" id="5_capwa"]
 [ext_resource type="Theme" uid="uid://cut60d1txe8do" path="res://new_theme.tres" id="5_je7dk"]
@@ -721,7 +721,6 @@ texture = ExtResource("5_sxhmh")
 [node name="SlideMas" type="HSlider" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 467.0
 offset_top = 248.0
 offset_right = 696.0
@@ -734,7 +733,6 @@ max_value = 0.0
 
 [node name="VolMas" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 535.0
 offset_top = 205.0
 offset_right = 745.0
@@ -745,7 +743,6 @@ label_settings = SubResource("LabelSettings_lkglo")
 [node name="SlideMus" type="HSlider" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 467.0
 offset_top = 347.0
 offset_right = 696.0
@@ -758,7 +755,6 @@ max_value = 0.0
 
 [node name="VolMus" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 522.0
 offset_top = 305.0
 offset_right = 758.0
@@ -769,7 +765,6 @@ label_settings = SubResource("LabelSettings_lkglo")
 [node name="SlideSFX" type="HSlider" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 467.0
 offset_top = 453.0
 offset_right = 696.0
@@ -782,7 +777,6 @@ max_value = 0.0
 
 [node name="VolSFX" type="Label" parent="."]
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 549.0
 offset_top = 405.0
 offset_right = 731.0
@@ -793,7 +787,6 @@ label_settings = SubResource("LabelSettings_lkglo")
 [node name="Voltar" type="TextureButton" parent="."]
 process_mode = 4
 modulate = Color(1, 1, 1, 0)
-layout_mode = 0
 offset_left = 986.0
 offset_top = 609.0
 offset_right = 1152.0
@@ -808,7 +801,6 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("5_capwa")
 
 [node name="Continuar" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 477.0
 offset_top = 220.0
 offset_right = 699.0
@@ -818,7 +810,6 @@ focus_mode = 0
 texture_normal = ExtResource("7_2anqu")
 
 [node name="AjuVol" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 477.0
 offset_top = 370.0
 offset_right = 699.0
@@ -828,7 +819,6 @@ focus_mode = 0
 texture_normal = ExtResource("8_av71t")
 
 [node name="VoltarMenu" type="TextureButton" parent="."]
-layout_mode = 0
 offset_left = 458.0
 offset_top = 520.0
 offset_right = 702.0

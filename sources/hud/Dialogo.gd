@@ -84,16 +84,18 @@ var diag = {
 }
 
 var click = 0
-var t = 0
+var t = 1
 var first = [true,true,true,true,true,true]
 var count = 0
 var inter = 0
 
 
 
+
 func apertou():
 	if Input.is_action_just_pressed("spear_throw") and $Box.visible == true:
 		click += 1
+		await get_tree().create_timer(0.2).timeout 
 
 func sub(name,text,img):
 	$Box/Text.visible = false
@@ -122,18 +124,19 @@ func nextChar(i,delta,time):
 	count += 1
 	
 func displayDiag(i,delta):
-	$Box.visible = true
-	get_tree().paused = true
-	if diag[i]["name"][click] != ".":
-		sub(diag[i]["name"][click], diag[i]["text"][click], diag[i]["image"][click])
-		nextChar(i,delta,0.1)
-		apertou()
-	else:
-		$Box.visible = false
-		click = 0
-		t = 0
-		first[i-1] = false
-		get_tree().paused = false
+	if $Box != null:
+		$Box.visible = true
+		get_tree().paused = true
+		if diag[i]["name"][click] != ".":
+			sub(diag[i]["name"][click], diag[i]["text"][click], diag[i]["image"][click])
+			nextChar(i,delta,0.05)
+			apertou()
+		else:
+			$Box.visible = false
+			click = 0
+			t = 0
+			first[i-1] = false
+			get_tree().paused = false
 	
 func _on_area_2d_2_body_entered(body):
 	t = 1
