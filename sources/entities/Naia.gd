@@ -79,6 +79,8 @@ var raycast_distance = 40
 var last_seen_direction = 1
 
 func _ready():
+	self.modulate = Color(1, 1, 1)
+	$Camera2D.zoom = Vector2(1.7,1.7)
 	DEFAULT_CAMERA_ZOOM = get_node("Camera2D").get("zoom")
 
 func bind_process_event(event_name):
@@ -322,3 +324,8 @@ func _on_animated_sprite_2d_animation_finished_component(animation):
 			bind_set_state(STATES.IDLE)
 			get_node("AnimatedSprite2D").call("STOP")
 			reset_focus_horizon()
+			
+
+
+func danos():
+	$AnimationPlayer.play("dano_normal")

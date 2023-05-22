@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds3c8li7ajwd2"]
+
+[ext_resource type="Script" path="res://scenes/objects/seta.gd" id="1_r5n7p"]
+[ext_resource type="Texture2D" uid="uid://cdmdbk00ujpvr" path="res://assets/sprites/objects/trigger/seta.png" id="1_vqq2a"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ingp2"]
+radius = 3.0
+height = 6.0
+
+[node name="seta2D" type="Node2D"]
+script = ExtResource("1_r5n7p")
+
+[node name="Seta" type="Sprite2D" parent="."]
+texture = ExtResource("1_vqq2a")
+flip_h = true
+
+[node name="seta" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="seta"]
+shape = SubResource("CapsuleShape2D_ingp2")
+
+[connection signal="body_entered" from="seta" to="." method="_on_seta_body_entered"]

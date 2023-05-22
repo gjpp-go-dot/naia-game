@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/BACKSPACE.png-7d226f0a358e36157080e7b49bd32e5
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false

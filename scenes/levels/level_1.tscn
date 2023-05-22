@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://dcbkol4dj3mbw"]
+[gd_scene load_steps=53 format=3 uid="uid://dcbkol4dj3mbw"]
 
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
 [ext_resource type="Script" path="res://sources/scenarios/level_1.gd" id="1_15fhq"]
@@ -21,6 +21,8 @@
 [ext_resource type="FontFile" uid="uid://k5hc5clgka41" path="res://assets/fonts/joystix monospace.otf" id="19_luwmn"]
 [ext_resource type="Texture2D" uid="uid://b1nx44lev3j30" path="res://assets/sprites/objects/spear/spear_combat.png" id="24_6lj0i"]
 [ext_resource type="PackedScene" uid="uid://umpfqks2axpm" path="res://scenes/objects/bloco_instavel.tscn" id="24_8xxny"]
+[ext_resource type="PackedScene" uid="uid://ilqcaj35bd4v" path="res://scenes/objects/pressure_plait.tscn" id="26_4egem"]
+[ext_resource type="PackedScene" uid="uid://biu1yoenvj3sd" path="res://scenes/objects/trigger.tscn" id="27_nvp06"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bv0ef"]
 texture = ExtResource("1_7lwaw")
@@ -398,7 +400,9 @@ position = Vector2(-554, 1)
 position = Vector2(8447, -385)
 
 [node name="Naia" parent="." instance=ExtResource("4_iuxil")]
-position = Vector2(-55, 152)
+position = Vector2(3270, -190)
+collision_layer = 16897
+collision_mask = 16897
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(9784, -859)
@@ -488,6 +492,7 @@ texture = ExtResource("18_u46sl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorials/Start"]
 position = Vector2(-97, 226)
+sprite_frames = SubResource("SpriteFrames_dcegr")
 
 [node name="Label" type="Label" parent="Tutorials/Start"]
 offset_left = -133.0
@@ -509,14 +514,17 @@ label_settings = SubResource("LabelSettings_2f53d")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Tutorials/Start"]
 position = Vector2(63, 226)
+sprite_frames = SubResource("SpriteFrames_6keav")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Tutorials/Start"]
 position = Vector2(-75, 226)
+sprite_frames = SubResource("SpriteFrames_5qpvf")
 
 [node name="Sprint" type="Node2D" parent="Tutorials"]
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Tutorials/Sprint"]
 position = Vector2(774, 40)
+sprite_frames = SubResource("SpriteFrames_ihxew")
 
 [node name="Label" type="Label" parent="Tutorials/Sprint"]
 offset_left = 694.0
@@ -563,6 +571,13 @@ position = Vector2(1992, 215)
 [node name="bloco_instavel8" parent="." instance=ExtResource("24_8xxny")]
 position = Vector2(1608, -40)
 
+[node name="pressure" parent="." instance=ExtResource("26_4egem")]
+z_index = -2
+position = Vector2(3286, 454)
+
+[node name="Node2D2" parent="." instance=ExtResource("27_nvp06")]
+position = Vector2(3725, 413)
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
@@ -572,3 +587,4 @@ position = Vector2(1608, -40)
 [connection signal="body_entered" from="Area2D6" to="CanvasLayer" method="_on_area_2d_6_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="CanvasLayer" method="_on_area_2d_2_body_entered"]
 [connection signal="body_entered" from="Area2D7" to="CanvasLayer" method="_on_area_2d_7_body_entered"]
+[connection signal="desparo" from="pressure" to="." method="_on_pressure_desparo"]

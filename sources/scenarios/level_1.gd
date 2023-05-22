@@ -19,3 +19,7 @@ func _process(delta):
 		$SpearCombat.visible = false
 
 
+
+func _on_pressure_desparo():
+	$Node2D2.desparar(3)
+	

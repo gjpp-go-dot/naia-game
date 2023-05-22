@@ -16,9 +16,9 @@ dest_files=["res://.godot/imported/GREATERTHAN.png-8a49a4bb95b1ec3655193a04f7d11
 [params]
 
 compress/mode=0
+compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/bptc_ldr=0
 compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=false
