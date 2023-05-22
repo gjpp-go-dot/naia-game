@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bukl7f3g00yno"
-path="res://.godot/imported/trigger_frame_01.png-cdf185f49496fe54944fa17fc764f2ef.ctex"
+uid="uid://bfj5ltbuju172"
+path="res://.godot/imported/pixil-frame-0.png-f7d6fb6c8f9df6d240e43a46bc9e3189.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objects/trigger/trigger_frame_01.png"
-dest_files=["res://.godot/imported/trigger_frame_01.png-cdf185f49496fe54944fa17fc764f2ef.ctex"]
+source_file="res://assets/sprites/hud/pixil-frame-0.png"
+dest_files=["res://.godot/imported/pixil-frame-0.png-f7d6fb6c8f9df6d240e43a46bc9e3189.ctex"]
 
 [params]
 

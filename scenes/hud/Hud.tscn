@@ -16,7 +16,6 @@ offset_right = 1.0
 [node name="CurrentSpear" type="AnimatedSprite2D" parent="."]
 position = Vector2(119, 74)
 scale = Vector2(1.8, 1.8)
-sprite_frames = SubResource("SpriteFrames_ueo45")
 
 [node name="Pausa" parent="." instance=ExtResource("5_pt4fd")]
 

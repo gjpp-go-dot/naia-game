@@ -95,6 +95,7 @@ var inter = 0
 func apertou():
 	if Input.is_action_just_pressed("spear_throw") and $Box.visible == true:
 		click += 1
+		$Box/Text.visible_characters = 0
 		await get_tree().create_timer(0.2).timeout 
 
 func sub(name,text,img):

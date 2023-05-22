@@ -220,6 +220,9 @@ alignment = 1
 process_mode = 1
 clip_contents = true
 custom_minimum_size = Vector2(0, 50)
+offset_top = 45.0
+offset_right = 638.0
+offset_bottom = 95.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 
@@ -237,10 +240,16 @@ label_settings = ExtResource("5_bdsu1")
 
 [node name="HSeparator1" type="HSeparator" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
+offset_top = 99.0
+offset_right = 638.0
+offset_bottom = 129.0
 
 [node name="Ajustes" type="TextureButton" parent="VBoxContainer"]
 process_mode = 1
 custom_minimum_size = Vector2(0, 50)
+offset_top = 133.0
+offset_right = 638.0
+offset_bottom = 183.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 action_mode = 0
@@ -259,10 +268,16 @@ label_settings = ExtResource("5_bdsu1")
 
 [node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
+offset_top = 187.0
+offset_right = 638.0
+offset_bottom = 217.0
 
 [node name="Sair" type="TextureButton" parent="VBoxContainer"]
 process_mode = 1
 custom_minimum_size = Vector2(0, 50)
+offset_top = 221.0
+offset_right = 638.0
+offset_bottom = 271.0
 focus_mode = 0
 mouse_default_cursor_shape = 2
 action_mode = 0
@@ -281,6 +296,9 @@ label_settings = ExtResource("5_bdsu1")
 
 [node name="HSeparator3" type="HSeparator" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
+offset_top = 275.0
+offset_right = 638.0
+offset_bottom = 305.0
 
 [node name="AnimIni" type="AnimationPlayer" parent="."]
 process_mode = 1
