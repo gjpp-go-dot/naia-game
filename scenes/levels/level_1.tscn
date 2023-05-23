@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dcbkol4dj3mbw"]
+[gd_scene load_steps=50 format=3 uid="uid://dcbkol4dj3mbw"]
 
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
 [ext_resource type="Script" path="res://sources/scenarios/level_1.gd" id="1_15fhq"]
@@ -16,7 +16,6 @@
 [ext_resource type="PackedScene" uid="uid://k0uv7wptnk63" path="res://scenes/sfx/EnviromentSFX.tscn" id="8_x70xg"]
 [ext_resource type="Texture2D" uid="uid://cme8htyv6cwru" path="res://assets/sprites/ambient_sprites/diamond_house.png" id="12_m1o2u"]
 [ext_resource type="Texture2D" uid="uid://sgdtn2tm7hn4" path="res://assets/sprites/ambient_sprites/Lotus-flower 5.png" id="16_kpkyq"]
-[ext_resource type="PackedScene" uid="uid://c87blnt3cv50e" path="res://scenes/hud/Dialog.tscn" id="17_q7eta"]
 [ext_resource type="Texture2D" uid="uid://b13pkpwj1lkhq" path="res://resources/environment/sumaúmatecnologica.png" id="18_u46sl"]
 [ext_resource type="FontFile" uid="uid://cukjatrf1vsli" path="res://assets/fonts/joystix monospace.otf" id="19_luwmn"]
 [ext_resource type="Texture2D" uid="uid://ck052hjm48src" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/A.png" id="20_frtdx"]
@@ -561,8 +560,6 @@ shape = SubResource("RectangleShape2D_4c0qd")
 position = Vector2(8283, -412)
 shape = SubResource("RectangleShape2D_ojvq0")
 
-[node name="CanvasLayer" parent="." instance=ExtResource("17_q7eta")]
-
 [node name="Area2D2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
@@ -580,8 +577,7 @@ texture = ExtResource("18_u46sl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorials/Start"]
 position = Vector2(-97, 226)
-frames = SubResource("SpriteFrames_dcegr")
-playing = true
+sprite_frames = SubResource("SpriteFrames_dcegr")
 
 [node name="Label" type="Label" parent="Tutorials/Start"]
 offset_left = -133.0
@@ -603,20 +599,17 @@ label_settings = SubResource("LabelSettings_2f53d")
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Tutorials/Start"]
 position = Vector2(63, 226)
-frames = SubResource("SpriteFrames_6keav")
-playing = true
+sprite_frames = SubResource("SpriteFrames_6keav")
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Tutorials/Start"]
 position = Vector2(-75, 226)
-frames = SubResource("SpriteFrames_5qpvf")
-playing = true
+sprite_frames = SubResource("SpriteFrames_5qpvf")
 
 [node name="Sprint" type="Node2D" parent="Tutorials"]
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Tutorials/Sprint"]
 position = Vector2(774, 40)
-frames = SubResource("SpriteFrames_ihxew")
-playing = true
+sprite_frames = SubResource("SpriteFrames_ihxew")
 
 [node name="Label" type="Label" parent="Tutorials/Sprint"]
 offset_left = 694.0
@@ -634,13 +627,11 @@ position = Vector2(3670, 262)
 
 [node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Tutorials/change_spear"]
 position = Vector2(93, 225)
-frames = SubResource("SpriteFrames_6keav")
-playing = true
+sprite_frames = SubResource("SpriteFrames_6keav")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Tutorials/change_spear"]
 position = Vector2(38, 225)
-frames = SubResource("SpriteFrames_dcegr")
-playing = true
+sprite_frames = SubResource("SpriteFrames_dcegr")
 
 [node name="Label" type="Label" parent="Tutorials/change_spear"]
 offset_left = -228.0
@@ -690,9 +681,3 @@ position = Vector2(1608, -40)
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Area2D3" to="CanvasLayer" method="_on_area_2d_3_body_entered"]
-[connection signal="body_entered" from="Area2D4" to="CanvasLayer" method="_on_area_2d_4_body_entered"]
-[connection signal="body_entered" from="Area2D5" to="CanvasLayer" method="_on_area_2d_5_body_entered"]
-[connection signal="body_entered" from="Area2D6" to="CanvasLayer" method="_on_area_2d_6_body_entered"]
-[connection signal="body_entered" from="Area2D2" to="CanvasLayer" method="_on_area_2d_2_body_entered"]
-[connection signal="body_entered" from="Area2D7" to="CanvasLayer" method="_on_area_2d_7_body_entered"]

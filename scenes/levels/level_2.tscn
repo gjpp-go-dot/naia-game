@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cc4qbtukyq43h" path="res://scenes/levels/transition.tscn" id="2_ope6n"]
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="3_17hmy"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="5_he6xi"]
-[ext_resource type="Texture2D" uid="uid://dbxe2nbnk4s6" path="res://assets/sprites/entities/objects/stoneToken.png" id="5_kgelp"]
+[ext_resource type="Texture2D" path="res://assets/sprites/entities/objects/stoneToken.png" id="5_kgelp"]
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="6_7mx06"]
-[ext_resource type="Texture2D" uid="uid://cxuwgq2rjfpjk" path="res://assets/sprites/entities/objects/cinalizaToken.png" id="6_undhc"]
+[ext_resource type="Texture2D" path="res://assets/sprites/entities/objects/cinalizaToken.png" id="6_undhc"]
 [ext_resource type="PackedScene" uid="uid://k0uv7wptnk63" path="res://scenes/sfx/EnviromentSFX.tscn" id="8_svn2f"]
 [ext_resource type="PackedScene" uid="uid://dtx84oact8xl1" path="res://scenes/sfx/bg_music.tscn" id="9_ayc1f"]
 [ext_resource type="Texture2D" uid="uid://bja8nsh2cd3da" path="res://resources/environment/Flor pau-de-sangue.png" id="10_eq4f6"]
@@ -418,13 +418,11 @@ shape = SubResource("RectangleShape2D_uj1ym")
 
 [node name="tolken" type="AnimatedSprite2D" parent="target"]
 texture_filter = 1
-frames = SubResource("SpriteFrames_vrfhn")
-playing = true
+sprite_frames = SubResource("SpriteFrames_vrfhn")
 
 [node name="sinal" type="AnimatedSprite2D" parent="target"]
 scale = Vector2(1.3125, 1.3125)
-frames = SubResource("SpriteFrames_lv3n8")
-playing = true
+sprite_frames = SubResource("SpriteFrames_lv3n8")
 
 [node name="fixed" type="TileMap" parent="."]
 z_index = -2
