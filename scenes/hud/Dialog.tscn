@@ -18,7 +18,13 @@ region = Rect2(64, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6jp3v"]
 animations = [{
-"frames": [SubResource("AtlasTexture_omviv"), SubResource("AtlasTexture_bqkg4")],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omviv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqkg4")
+}],
 "loop": true,
 "name": &"default",
 "speed": 2.0
@@ -63,5 +69,4 @@ texture = ExtResource("5_gi72h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Box"]
 position = Vector2(500, 57)
-frames = SubResource("SpriteFrames_6jp3v")
-playing = true
+sprite_frames = SubResource("SpriteFrames_6jp3v")

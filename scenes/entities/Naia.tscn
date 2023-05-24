@@ -69,7 +69,7 @@ offset_bottom = 36.0
 
 [node name="ProgressBar" type="ProgressBar" parent="Naiui"]
 visible = false
-anchors_preset = 15
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 21.0

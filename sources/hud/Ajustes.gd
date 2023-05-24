@@ -33,12 +33,10 @@ func _process(delta):
 func appear():
 	closing = false
 	get_node("Background").visible = true
-	$AnimationPlayer.playback_speed = 1.5
 	get_node("AnimationPlayer").play("AJus")
 
 func _on_voltar_pressed():
 	get_node("MenuSFX").call("confirm")
 	closing = true
-	$AnimationPlayer.playback_speed = 2
 	$AnimationPlayer.play_backwards("AJus")
 
