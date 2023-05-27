@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://dcbkol4dj3mbw"]
+[gd_scene load_steps=53 format=3 uid="uid://dcbkol4dj3mbw"]
 
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
 [ext_resource type="Script" path="res://sources/scenarios/level_1.gd" id="1_15fhq"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://b1nx44lev3j30" path="res://assets/sprites/objects/spear/spear_combat.png" id="24_6lj0i"]
 [ext_resource type="PackedScene" uid="uid://umpfqks2axpm" path="res://scenes/objects/bloco_instavel.tscn" id="24_8xxny"]
 [ext_resource type="PackedScene" uid="uid://dgjohj2lhu5j2" path="res://scenes/hud/Dialog.tscn" id="25_px0mw"]
+[ext_resource type="PackedScene" uid="uid://6ehghs5yws5s" path="res://scenes/hud/gameover.tscn" id="26_5vt70"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bv0ef"]
 texture = ExtResource("1_7lwaw")
@@ -455,6 +456,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7q7l4"]
 size = Vector2(39, 117.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ldh0"]
+size = Vector2(695, 64)
+
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_15fhq")
 
@@ -681,8 +685,24 @@ position = Vector2(1608, -40)
 
 [node name="Dialogo" parent="." instance=ExtResource("25_px0mw")]
 
+[node name="lago" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lago"]
+position = Vector2(5150.5, 341)
+shape = SubResource("RectangleShape2D_0ldh0")
+
+[node name="gameover" parent="." instance=ExtResource("26_5vt70")]
+process_mode = 4
+layer = 70
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_shape_entered" from="Area2D3" to="Dialogo" method="_on_area_2d_3_body_shape_entered"]
+[connection signal="body_entered" from="Area2D4" to="Dialogo" method="_on_area_2d_4_body_entered"]
+[connection signal="body_entered" from="Area2D5" to="Dialogo" method="_on_area_2d_5_body_entered"]
+[connection signal="body_entered" from="Area2D6" to="Dialogo" method="_on_area_2d_6_body_entered"]
 [connection signal="body_shape_entered" from="Area2D2" to="." method="_on_area_2d_2_body_shape_entered"]
 [connection signal="body_shape_entered" from="Area2D2" to="Dialogo" method="_on_area_2d_2_body_shape_entered"]
+[connection signal="body_entered" from="Area2D7" to="Dialogo" method="_on_area_2d_7_body_entered"]
+[connection signal="body_entered" from="lago" to="." method="_on_lago_body_entered"]
