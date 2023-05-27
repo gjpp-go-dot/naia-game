@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c610x75p3qjou"
-path="res://.godot/imported/bg_trees1.png-fcb57744d7850fc15e5081f29ed4a1ae.ctex"
+uid="uid://dc5weesnw2lhp"
+path="res://.godot/imported/bgdegrade1.png-3b76c9cf51bce7a05dafc27300c6ac81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/parallax/bg_trees1.png"
-dest_files=["res://.godot/imported/bg_trees1.png-fcb57744d7850fc15e5081f29ed4a1ae.ctex"]
+source_file="res://assets/sprites/parallax/bgdegrade1.png"
+dest_files=["res://.godot/imported/bgdegrade1.png-3b76c9cf51bce7a05dafc27300c6ac81.ctex"]
 
 [params]
 
