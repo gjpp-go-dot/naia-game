@@ -14,8 +14,8 @@ config/name="Until It Blooms"
 run/main_scene="res://scenes/hud/MenuIni.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
 boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
-boot_splash/image="res://assets/sprites/entities/naia/idle/naia_idle1.png"
-config/icon="res://icon.svg"
+boot_splash/show_image=false
+config/icon="res://assets/sprites/entities/naia/idle/naia_idle1.png"
 
 [autoload]
 
