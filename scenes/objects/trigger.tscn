@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://biu1yoenvj3sd"]
+
+[ext_resource type="Script" path="res://scenes/objects/trigger.gd" id="1_u7ln5"]
+[ext_resource type="Texture2D" uid="uid://bukl7f3g00yno" path="res://assets/sprites/objects/trigger/trigger_frame_01.png" id="2_t8wii"]
+[ext_resource type="Texture2D" uid="uid://bm0jblds4il48" path="res://assets/sprites/objects/trigger/trigger_frame_02.png" id="3_0ut2f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_10g1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t8wii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0ut2f")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_u7ln5")
+
+[node name="trigger" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_10g1t")
+flip_h = true
