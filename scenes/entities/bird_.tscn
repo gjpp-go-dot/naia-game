@@ -76,5 +76,5 @@ script = ExtResource("1_vcdvp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 scale = Vector2(0.3, 0.3)
-frames = SubResource("SpriteFrames_joyr1")
-playing = true
+sprite_frames = SubResource("SpriteFrames_joyr1")
+autoplay = "default"

@@ -38,6 +38,5 @@ func appear():
 func _on_voltar_pressed():
 	get_node("MenuSFX").call("confirm")
 	closing = true
-	$AnimationPlayer.playback_speed = 2
 	$AnimationPlayer.play_backwards("AJus")
 

@@ -34,6 +34,7 @@ layer = 10
 script = ExtResource("1_itntj")
 
 [node name="Box" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(640, 600)
 texture = ExtResource("2_nomk4")
 

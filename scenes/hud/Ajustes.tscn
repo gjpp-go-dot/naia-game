@@ -12,7 +12,6 @@
 [sub_resource type="LabelSettings" id="LabelSettings_lkglo"]
 font = ExtResource("6_c35ul")
 font_size = 32
-outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="Animation" id="Animation_a138h"]

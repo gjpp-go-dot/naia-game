@@ -84,7 +84,7 @@ var diag = {
 }
 
 var click = 0
-var t = 1
+var t = 0
 var first = [true,true,true,true,true,true]
 var count = 0
 var inter = 0
