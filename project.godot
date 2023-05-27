@@ -13,7 +13,8 @@ config_version=5
 config/name="Until It Blooms"
 run/main_scene="res://scenes/hud/MenuIni.tscn"
 config/features=PackedStringArray("4.0", "Mobile")
-boot_splash/image="\"C:\\Users\\Inteli\\OneDrive\\Área de Trabalho\\ProjetoNaia\\naia-game\\assets\\sprites\\entities\\naia\\idle\\naia_idle1.png\""
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/image="res://assets/sprites/entities/naia/idle/naia_idle1.png"
 config/icon="res://icon.svg"
 
 [autoload]
