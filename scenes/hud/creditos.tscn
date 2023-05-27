@@ -1,0 +1,144 @@
+[gd_scene load_steps=12 format=3 uid="uid://olt7ccbnf3c1"]
+
+[ext_resource type="FontFile" uid="uid://bjf5i3s13dben" path="res://assets/fonts/noto_sans/NotoSans-Regular.ttf" id="1_va6p1"]
+[ext_resource type="Script" path="res://sources/hud/creditos.gd" id="1_vt3up"]
+[ext_resource type="Texture2D" uid="uid://dj2asclkj47na" path="res://assets/sprites/hud/botões/hud_logo.png" id="2_jc06q"]
+[ext_resource type="Texture2D" uid="uid://dqdfq51bmfd5e" path="res://assets/sprites/ui/mainmenu.png" id="2_xg2y5"]
+[ext_resource type="FontFile" uid="uid://cukjatrf1vsli" path="res://assets/fonts/joystix monospace.otf" id="3_0bjp2"]
+[ext_resource type="FontFile" uid="uid://cej7otf6vptfu" path="res://assets/fonts/noto_sans/NotoSans-Bold.ttf" id="5_lpwuc"]
+[ext_resource type="Texture2D" uid="uid://tin4l5lywruw" path="res://assets/sprites/ambient_sprites/moon_structure1.png" id="6_n2lyr"]
+[ext_resource type="PackedScene" uid="uid://cc4qbtukyq43h" path="res://scenes/levels/transition.tscn" id="8_ub8kx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tnyfk"]
+font = ExtResource("3_0bjp2")
+font_size = 32
+font_color = Color(0.717647, 0.858824, 0.0117647, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xxhae"]
+font = ExtResource("1_va6p1")
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_barcy"]
+font = ExtResource("5_lpwuc")
+font_size = 24
+
+[node name="Creditos" type="Node2D"]
+script = ExtResource("1_vt3up")
+
+[node name="Background" type="TextureRect" parent="."]
+process_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xg2y5")
+
+[node name="VBoxContainer" type="ColorRect" parent="."]
+offset_left = 320.0
+offset_right = 960.0
+offset_bottom = 2745.0
+color = Color(0.223529, 0.529412, 0.45098, 0.494118)
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(320, 360)
+texture = ExtResource("2_jc06q")
+
+[node name="Title1" type="Label" parent="VBoxContainer"]
+layout_mode = 0
+offset_top = 721.0
+offset_right = 640.0
+offset_bottom = 763.0
+text = "Team"
+label_settings = SubResource("LabelSettings_tnyfk")
+horizontal_alignment = 1
+
+[node name="Text1" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+offset_top = 798.0
+offset_right = 640.0
+offset_bottom = 1170.0
+text = "Daniel Cunha - Game Design.
+Gabriel Torres - Production and Business.
+Gabriel Gallo - Programming.
+Gabriella Marquetti - Art and Production.
+João Carazzato - Business.
+João Rodrigues - Art and Programming.
+Leandro Custódio - Programming and Sound.
+Lívia Bonotto - Game Design and Sound.
+Mihaell Alves - Game Design and Production.
+Pablo Ruan - Game Design and Programming.
+Vinicios Lugli - Programming and Production.
+Vivian Shibata - Art."
+label_settings = SubResource("LabelSettings_xxhae")
+horizontal_alignment = 1
+
+[node name="Title2" type="Label" parent="VBoxContainer"]
+offset_top = 1253.0
+offset_right = 640.0
+offset_bottom = 1295.0
+text = "Special thanks"
+label_settings = SubResource("LabelSettings_tnyfk")
+horizontal_alignment = 1
+
+[node name="Text2" type="Label" parent="VBoxContainer"]
+offset_top = 1330.0
+offset_right = 640.0
+offset_bottom = 1400.0
+text = "Instituto de Tecnologia e Liderança
+Game Jam Plus"
+label_settings = SubResource("LabelSettings_xxhae")
+horizontal_alignment = 1
+
+[node name="Title3" type="Label" parent="VBoxContainer"]
+offset_top = 1483.0
+offset_right = 640.0
+offset_bottom = 1567.0
+text = "Non-copyright 
+assets credits
+"
+label_settings = SubResource("LabelSettings_tnyfk")
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="VBoxContainer"]
+layout_mode = 0
+offset_top = 1602.0
+offset_right = 640.0
+offset_bottom = 1639.0
+text = "SFX"
+label_settings = SubResource("LabelSettings_barcy")
+horizontal_alignment = 1
+
+[node name="Text3" type="Label" parent="VBoxContainer"]
+offset_top = 1660.0
+offset_right = 640.0
+offset_bottom = 1918.0
+text = "Water Effects - by Robinhood76 and CmdRobot at freesound.org/Forest Ambience - Music by Finnolia Productions Inc from soundeffectsplus.com;Campfire Crackling - Sound Effect by SoundsForYou from Pixabay.com;Bosque Nocturno - Sound Effect by jmalraux2022 from Pixabay.comForest Fire - Sound Effect by Finnolia Productions Inc from soundeffectsplus.com;Crowd in Panic - Sound Effect from Pixabay.com;Cry for Help - Sound Effect from Pixabay.com;Plors - Sound Effect from Pixabay.com;"
+label_settings = SubResource("LabelSettings_xxhae")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Subtitle2" type="Label" parent="VBoxContainer"]
+offset_top = 1943.0
+offset_right = 640.0
+offset_bottom = 1980.0
+text = "MUSICS"
+label_settings = SubResource("LabelSettings_barcy")
+horizontal_alignment = 1
+
+[node name="Text4" type="Label" parent="VBoxContainer"]
+offset_top = 2001.0
+offset_right = 640.0
+offset_bottom = 2259.0
+text = "Drifting at 432 Hz - Music by danielbingw from Pixabay.com;Out of Time - Music by Daddy_s_Music from Pixabay.com;Midnight - Music by Lexin_Music from Pixabay.com;At the edge of the earth - Music by OYStudio from Pixabay.com;The beat of nature - Music by Olexy from Pixabay.com;Inspiring cinematic ambient - Music by Lexin_Music from Pixabay.com;Forest Lullaby - Music by Oleksii Kaplunskyi from Pixabay."
+label_settings = SubResource("LabelSettings_xxhae")
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Sprite2D2" type="Sprite2D" parent="VBoxContainer"]
+position = Vector2(320, 2400)
+texture = ExtResource("6_n2lyr")
+
+[node name="transition" parent="." instance=ExtResource("8_ub8kx")]
