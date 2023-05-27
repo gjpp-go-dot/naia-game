@@ -140,13 +140,6 @@ func displayDiag(i,delta):
 			get_tree().paused = false
 	
 
-func _on_area_2d_2_body_entered(body):
-	t = 1
-
-
-func _on_area_2d_3_body_entered(body):
-	t = 2
-
 
 func _on_area_2d_4_body_entered(body):
 	t = 3
@@ -162,3 +155,11 @@ func _on_area_2d_6_body_entered(body):
 
 func _on_area_2d_7_body_entered(body):
 	t = 6
+
+
+func _on_area_2d_2_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	t=1
+
+
+func _on_area_2d_3_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	t=2

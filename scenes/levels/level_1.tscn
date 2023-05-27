@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dcbkol4dj3mbw"]
+[gd_scene load_steps=51 format=3 uid="uid://dcbkol4dj3mbw"]
 
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
 [ext_resource type="Script" path="res://sources/scenarios/level_1.gd" id="1_15fhq"]
@@ -24,6 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://d18pwrwflj8g2" path="res://assets/sprites/ui/SimpleKeys/Classic/Dark/Spritesheets/SHIFT.png" id="23_cmyhi"]
 [ext_resource type="Texture2D" uid="uid://b1nx44lev3j30" path="res://assets/sprites/objects/spear/spear_combat.png" id="24_6lj0i"]
 [ext_resource type="PackedScene" uid="uid://umpfqks2axpm" path="res://scenes/objects/bloco_instavel.tscn" id="24_8xxny"]
+[ext_resource type="PackedScene" uid="uid://dgjohj2lhu5j2" path="res://scenes/hud/Dialog.tscn" id="25_px0mw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bv0ef"]
 texture = ExtResource("1_7lwaw")
@@ -678,6 +679,10 @@ position = Vector2(1992, 215)
 [node name="bloco_instavel8" parent="." instance=ExtResource("24_8xxny")]
 position = Vector2(1608, -40)
 
+[node name="Dialogo" parent="." instance=ExtResource("25_px0mw")]
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_shape_entered" from="Area2D2" to="." method="_on_area_2d_2_body_shape_entered"]
+[connection signal="body_shape_entered" from="Area2D2" to="Dialogo" method="_on_area_2d_2_body_shape_entered"]
