@@ -5,6 +5,7 @@ var tile = ""
 var delay = 1.6
 
 func _on_ready():
+	get_tree().paused = false
 	$transition/fill/anim.play("transition_out")
 	$tiles1.position = Vector2(0,2000)
 	$tiles2.position = Vector2(0,2000)
@@ -15,21 +16,25 @@ func _physics_process(delta):
 	$water.position.y -= 0.2
 
 func _on_water_body_entered(body):
+	
 	if body.name == "Naia":
-		contador = 0
-		$Naia.position.x = -289
-		$Naia.position.y = 24
-		$target.position.x = 95
-		$target.position.y = -328
-		$water.position.x = -244
-		$water.position.y = 120
-		$tiles1.hide()
-		$tiles2.hide()
-		$tiles3.hide()
-		$target.show()
-		$tiles1.position = Vector2(0,2000)
-		$tiles2.position = Vector2(0,2000)
-		$tiles3.position = Vector2(0,2000)
+		#contador = 0
+		#$Naia.position.x = -289
+		#$Naia.position.y = 24
+		#$target.position.x = 95
+		#$target.position.y = -328
+		#$water.position.x = -244
+		#$water.position.y = 120
+		#$tiles1.hide()
+		#$tiles2.hide()
+		#$tiles3.hide()
+		#$target.show()
+		#$tiles1.position = Vector2(0,2000)
+		#$tiles2.position = Vector2(0,2000)
+		#$tiles3.position = Vector2(0,2000)
+		$gameover.process_mode = Node.PROCESS_MODE_ALWAYS
+		get_tree().paused = true
+		$gameover/AnimationPlayer.play("perdeu")
 
 
 func _on_target_body_entered(body):

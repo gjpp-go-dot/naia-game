@@ -146,6 +146,6 @@ common/max_physics_steps_per_frame=12
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="mobile"
 environment/defaults/default_clear_color=Color(0.133333, 0.133333, 0.133333, 1)
-textures/canvas_textures/default_texture_filter=0

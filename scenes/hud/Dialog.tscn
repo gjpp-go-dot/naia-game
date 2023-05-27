@@ -1,9 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgjohj2lhu5j2"]
+[gd_scene load_steps=9 format=3 uid="uid://dgjohj2lhu5j2"]
 
 [ext_resource type="Script" path="res://sources/hud/Dialogo.gd" id="1_itntj"]
 [ext_resource type="Texture2D" uid="uid://bfarlndwp2mlo" path="res://assets/sprites/hud/caixas e bg/hud_caixa_dialogo.png" id="2_nomk4"]
 [ext_resource type="FontFile" uid="uid://d2gbk8mxri583" path="res://assets/fonts/Play-Regular.ttf" id="5_0qgf4"]
+[ext_resource type="Texture2D" uid="uid://b7xcjfbqqgwm3" path="res://assets/sprites/hud/pixil-frame-0.png" id="5_5do33"]
 [ext_resource type="Texture2D" uid="uid://rltx4nys6ohr" path="res://assets/sprites/hud/128x128/mystery.png" id="5_gi72h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ihl6n"]
+atlas = ExtResource("5_5do33")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lg6o"]
+atlas = ExtResource("5_5do33")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nb132"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ihl6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lg6o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 process_mode = 3
@@ -11,15 +34,14 @@ layer = 10
 script = ExtResource("1_itntj")
 
 [node name="Box" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(640, 600)
 texture = ExtResource("2_nomk4")
 
 [node name="Name" type="RichTextLabel" parent="Box"]
 offset_left = -346.0
 offset_top = -91.0
-offset_right = -38.0
-offset_bottom = -53.0
+offset_right = -40.0
+offset_bottom = -46.0
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
 text = "Nome"
@@ -39,3 +61,9 @@ text = "Text"
 position = Vector2(-451, 2)
 scale = Vector2(1.4, 1.4)
 texture = ExtResource("5_gi72h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Box"]
+position = Vector2(511, 60)
+sprite_frames = SubResource("SpriteFrames_nb132")
+autoplay = "default"
+frame_progress = 0.052451

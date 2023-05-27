@@ -1,13 +1,13 @@
-[gd_scene load_steps=34 format=3 uid="uid://186ad82shn2e"]
+[gd_scene load_steps=35 format=3 uid="uid://186ad82shn2e"]
 
 [ext_resource type="Script" path="res://puzzle.gd" id="1_c3y68"]
 [ext_resource type="PackedScene" uid="uid://bprcs25t8mnlk" path="res://scenes/levels/background_1.tscn" id="2_4p1mi"]
 [ext_resource type="PackedScene" uid="uid://cc4qbtukyq43h" path="res://scenes/levels/transition.tscn" id="2_ope6n"]
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="3_17hmy"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="5_he6xi"]
-[ext_resource type="Texture2D" path="res://assets/sprites/entities/objects/stoneToken.png" id="5_kgelp"]
+[ext_resource type="Texture2D" uid="uid://dbxe2nbnk4s6" path="res://assets/sprites/entities/objects/stoneToken.png" id="5_kgelp"]
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="6_7mx06"]
-[ext_resource type="Texture2D" path="res://assets/sprites/entities/objects/cinalizaToken.png" id="6_undhc"]
+[ext_resource type="Texture2D" uid="uid://cxuwgq2rjfpjk" path="res://assets/sprites/entities/objects/cinalizaToken.png" id="6_undhc"]
 [ext_resource type="PackedScene" uid="uid://k0uv7wptnk63" path="res://scenes/sfx/EnviromentSFX.tscn" id="8_svn2f"]
 [ext_resource type="PackedScene" uid="uid://dtx84oact8xl1" path="res://scenes/sfx/bg_music.tscn" id="9_ayc1f"]
 [ext_resource type="Texture2D" uid="uid://bja8nsh2cd3da" path="res://resources/environment/Flor pau-de-sangue.png" id="10_eq4f6"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://dnsbqocsw31o1" path="res://resources/environment/sun_structure.png" id="13_663fy"]
 [ext_resource type="Texture2D" uid="uid://bemlpvd2ow3ch" path="res://resources/environment/snake_structure.png" id="14_akfck"]
 [ext_resource type="Texture2D" uid="uid://dqrr8alicguo2" path="res://resources/environment/predioborboletas.png" id="15_jjhqi"]
+[ext_resource type="PackedScene" uid="uid://6ehghs5yws5s" path="res://scenes/hud/gameover.tscn" id="17_wun5i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ua87"]
 size = Vector2(2588, 33.25)
@@ -514,6 +515,10 @@ texture = ExtResource("15_jjhqi")
 wait_time = 8.0
 
 [node name="Timer2" type="Timer" parent="."]
+
+[node name="gameover" parent="." instance=ExtResource("17_wun5i")]
+process_mode = 4
+layer = 50
 
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="water" to="." method="_on_water_body_entered"]
