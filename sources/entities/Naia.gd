@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-@export var speed = 140
-@export var run_multiplier = 1.6
+@export var speed = 224
+@export var walk_multiplier = 0.65
 @export var jump_speed = -650
 @export var gravity = 1800
 @export_range(0.0, 1.0) var friction = 0.12
@@ -222,15 +222,15 @@ func _physics_process(delta):
 
 	if can["run"]:
 		if Input.is_action_pressed(INPUTS_MAP.RUN):
-			current_speed = speed * run_multiplier
+			current_speed = speed * walk_multiplier
 
 	if can["move"]:
 		if direction != 0:
 			velocity.x = lerp(velocity.x, direction * current_speed, acceleration)
 			if current_speed == speed:
-				bind_set_state(STATES.WALKING)
-			else:
 				bind_set_state(STATES.RUNNING)
+			else:
+				bind_set_state(STATES.WALKING)
 		else:
 			velocity.x = lerp(velocity.x, 0.0, friction)
 			bind_set_state(STATES.IDLE)
