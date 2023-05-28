@@ -1,9 +1,9 @@
 [gd_scene load_steps=35 format=3 uid="uid://186ad82shn2e"]
 
 [ext_resource type="Script" path="res://puzzle.gd" id="1_c3y68"]
-[ext_resource type="PackedScene" uid="uid://bprcs25t8mnlk" path="res://scenes/levels/background_1.tscn" id="2_4p1mi"]
 [ext_resource type="PackedScene" uid="uid://cc4qbtukyq43h" path="res://scenes/levels/transition.tscn" id="2_ope6n"]
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="3_17hmy"]
+[ext_resource type="PackedScene" uid="uid://ce5dwg0ewb34v" path="res://scenes/levels/background_2.tscn" id="3_f5tc7"]
 [ext_resource type="Texture2D" uid="uid://c3e1bqbsuar1f" path="res://assets/sprites/tilemaps/TileSetNaiaFim.png" id="5_he6xi"]
 [ext_resource type="Texture2D" uid="uid://dbxe2nbnk4s6" path="res://assets/sprites/entities/objects/stoneToken.png" id="5_kgelp"]
 [ext_resource type="PackedScene" uid="uid://res5v7heprty" path="res://scenes/entities/Naia.tscn" id="6_7mx06"]
@@ -388,7 +388,7 @@ script = ExtResource("1_c3y68")
 
 [node name="transition" parent="." instance=ExtResource("2_ope6n")]
 
-[node name="background_1" parent="." instance=ExtResource("2_4p1mi")]
+[node name="background_2" parent="." instance=ExtResource("3_f5tc7")]
 
 [node name="water" type="Area2D" parent="."]
 position = Vector2(-244, 120)

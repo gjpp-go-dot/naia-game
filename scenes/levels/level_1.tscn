@@ -485,6 +485,7 @@ position = Vector2(854.087, 858.358)
 
 [node name="background_1_front" parent="." instance=ExtResource("6_adpxk")]
 layer = 10
+visible = false
 
 [node name="generetor_bird" parent="." instance=ExtResource("3_4jmwo")]
 z_index = -1

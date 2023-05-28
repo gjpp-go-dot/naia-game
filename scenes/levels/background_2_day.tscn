@@ -1,9 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ce5dwg0ewb34v"]
+[gd_scene load_steps=5 format=3 uid="uid://clvsc2ko2ht2r"]
 
-[ext_resource type="Script" path="res://sources/scenarios/ParallaxBackground.gd" id="1_uc5vu"]
-[ext_resource type="Texture2D" uid="uid://dc5weesnw2lhp" path="res://assets/sprites/parallax/bgdegrade1.png" id="2_f8twu"]
-[ext_resource type="Texture2D" uid="uid://hhu37l2e64kk" path="res://assets/sprites/parallax/bg_trees5.png" id="5_8f2jy"]
-[ext_resource type="Texture2D" uid="uid://c610x75p3qjou" path="res://assets/sprites/parallax/bg_trees1.png" id="6_qvveu"]
+[ext_resource type="Script" path="res://sources/scenarios/ParallaxBackground.gd" id="1_1hp3w"]
+[ext_resource type="Texture2D" uid="uid://dc5weesnw2lhp" path="res://assets/sprites/parallax/bgdegrade1.png" id="2_he2fi"]
+[ext_resource type="Texture2D" uid="uid://c610x75p3qjou" path="res://assets/sprites/parallax/bg_trees1.png" id="3_5p1x5"]
+[ext_resource type="Texture2D" uid="uid://hhu37l2e64kk" path="res://assets/sprites/parallax/bg_trees5.png" id="4_tgvms"]
 
 [node name="background_2" type="Node2D"]
 position = Vector2(-20, 157)
@@ -11,41 +11,46 @@ position = Vector2(-20, 157)
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 offset = Vector2(0, 80)
 transform = Transform2D(1, 0, 0, 1, 0, 80)
-script = ExtResource("1_uc5vu")
+script = ExtResource("1_1hp3w")
 
 [node name="ParallaxLayer0" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-20, 157)
 motion_scale = Vector2(0.05, 0.03)
+motion_offset = Vector2(0, 100)
 motion_mirroring = Vector2(1276, 0)
 
 [node name="Sprite2D_Layer0" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer0"]
+modulate = Color(0.870588, 0.870588, 0.870588, 1)
+show_behind_parent = true
 position = Vector2(56.7221, -40.5007)
 scale = Vector2(0.498872, 1.93194)
-texture = ExtResource("2_f8twu")
+texture = ExtResource("2_he2fi")
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer0"]
 offset_left = -298.0
 offset_top = -19.0
 offset_right = 369.0
 offset_bottom = 663.0
-color = Color(0.662745, 0.662745, 0.345098, 1)
+color = Color(0.364706, 0.364706, 0.113725, 1)
 
 [node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-20, 157)
 motion_scale = Vector2(0.05, 0.03)
+motion_offset = Vector2(0, 100)
 motion_mirroring = Vector2(1276, 0)
 
 [node name="Sprite2D_Layer0" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+modulate = Color(0.870588, 0.870588, 0.870588, 1)
 position = Vector2(694.722, -40.0006)
 scale = Vector2(0.498872, 1.93333)
-texture = ExtResource("2_f8twu")
+texture = ExtResource("2_he2fi")
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer4"]
 offset_left = 348.0
 offset_top = -19.0
 offset_right = 1015.0
 offset_bottom = 663.0
-color = Color(0.662745, 0.662745, 0.345098, 1)
+color = Color(0.364706, 0.364706, 0.113725, 1)
 
 [node name="ParallaxLayer1" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-19, 157)
@@ -56,7 +61,7 @@ motion_mirroring = Vector2(1276, 0)
 [node name="Sprite2D_Layer1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer1"]
 position = Vector2(20, -36)
 scale = Vector2(0.5, 0.420735)
-texture = ExtResource("6_qvveu")
+texture = ExtResource("3_5p1x5")
 
 [node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-19, 157)
@@ -67,41 +72,43 @@ motion_mirroring = Vector2(1276, 0)
 [node name="Sprite2D_Layer1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
 position = Vector2(660, -36)
 scale = Vector2(0.5, 0.420735)
-texture = ExtResource("6_qvveu")
+texture = ExtResource("3_5p1x5")
 flip_h = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 0.3)
-motion_offset = Vector2(0, 100)
+motion_offset = Vector2(0, 30)
 motion_mirroring = Vector2(1275, 0)
 
 [node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
 offset_left = -258.0
 offset_top = 244.0
 offset_right = 1582.0
 offset_bottom = 922.0
-color = Color(0.364706, 0.364706, 0.113725, 1)
+color = Color(0.219608, 0.392157, 0.423529, 1)
 
 [node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(700, 152)
 motion_scale = Vector2(0.4, 0.3)
+motion_offset = Vector2(0, 30)
 motion_mirroring = Vector2(1276, 0)
 
 [node name="Sprite2D_Layer3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
 position = Vector2(3, -61)
 scale = Vector2(0.499219, 0.493056)
-texture = ExtResource("5_8f2jy")
+texture = ExtResource("4_tgvms")
 offset = Vector2(0, 130)
 flip_h = true
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 position = Vector2(-20, 157)
 motion_scale = Vector2(0.4, 0.3)
-motion_offset = Vector2(0, 100)
+motion_offset = Vector2(0, 30)
 motion_mirroring = Vector2(1276, 0)
 
 [node name="Sprite2D_Layer3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(84, -66)
 scale = Vector2(0.499219, 0.493056)
-texture = ExtResource("5_8f2jy")
+texture = ExtResource("4_tgvms")
 offset = Vector2(0, 130)
