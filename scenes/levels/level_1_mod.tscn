@@ -692,8 +692,6 @@ position = Vector2(8447, -385)
 
 [node name="Naia" parent="." instance=ExtResource("9_rt00d")]
 position = Vector2(-12, 191)
-speed = 280
-run_multiplier = 1.3
 jump_speed = -700
 
 [node name="Area2D" type="Area2D" parent="."]

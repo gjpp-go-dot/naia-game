@@ -10,7 +10,7 @@ motion_scale = Vector2(1.2, 1.2)
 motion_mirroring = Vector2(1000, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
-modulate = Color(0.180392, 0.180392, 0.180392, 1)
+modulate = Color(0.180392, 0.180392, 0.180392, 0.745098)
 position = Vector2(-12, 461)
 texture = ExtResource("1_1cwn8")
 offset = Vector2(300, -100)

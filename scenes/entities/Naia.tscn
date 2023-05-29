@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://res5v7heprty"]
+[gd_scene load_steps=12 format=3 uid="uid://res5v7heprty"]
 
 [ext_resource type="Script" path="res://sources/entities/Naia.gd" id="1_mof0k"]
 [ext_resource type="PackedScene" uid="uid://bwgdrgbm25kht" path="res://scenes/sfx/NaiaSFX.tscn" id="2_8ptua"]
 [ext_resource type="SpriteFrames" uid="uid://q3fxyv4ki3sb" path="res://resources/animations/NaiaSpriteFrames.tres" id="2_aygsa"]
+[ext_resource type="Script" path="res://scenes/entities/Camera2D.gd" id="3_kb1ta"]
 [ext_resource type="Script" path="res://sources/animations/NaiaAnimatedSprite2D.gd" id="3_nrcns"]
 [ext_resource type="PackedScene" uid="uid://rww8jwenbx6b" path="res://scenes/hud/Hud.tscn" id="4_cunqg"]
 [ext_resource type="Script" path="res://sources/ui/ProgressBar.gd" id="4_w8isn"]
@@ -19,126 +20,24 @@ bg_color = Color(0.2, 0.2, 0.2, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq0g1"]
 bg_color = Color(0.662745, 0.862745, 0.462745, 1)
 
-[sub_resource type="Animation" id="Animation_xkhdg"]
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate:r")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate:g")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate:b")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_6sndy"]
-resource_name = "dano_normal"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate:r")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate:g")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.568627, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath(".:modulate:b")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.568627, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath(".:modulate:a")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.3)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_sbx1g"]
-_data = {
-"RESET": SubResource("Animation_xkhdg"),
-"dano_normal": SubResource("Animation_6sndy")
-}
-
 [node name="Naia" type="CharacterBody2D"]
-texture_filter = 1
-collision_layer = 17025
-collision_mask = 17025
+collision_layer = 513
+collision_mask = 513
 script = ExtResource("1_mof0k")
 
 [node name="NaiaSFX" parent="." instance=ExtResource("2_8ptua")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-rotation = -0.02
-offset = Vector2(0, -50)
-zoom = Vector2(1.7, 1.7)
+offset = Vector2(200, -50)
+zoom = Vector2(1.2, 1.2)
+limit_left = -430
 position_smoothing_enabled = true
-drag_horizontal_offset = -1.0
-drag_vertical_offset = 1.0
+drag_horizontal_enabled = true
 drag_left_margin = 0.05
 drag_top_margin = 0.05
 drag_right_margin = 0.05
 drag_bottom_margin = 0.0
+script = ExtResource("3_kb1ta")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -193,11 +92,6 @@ show_percentage = false
 script = ExtResource("4_w8isn")
 
 [node name="Hud" parent="Naiui" instance=ExtResource("4_cunqg")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_sbx1g")
-}
 
 [connection signal="process_event" from="." to="AnimatedSprite2D" method="_on_naia_process_event"]
 [connection signal="update_spear_type" from="." to="Naiui/Hud" method="_on_naia_update_spear_type"]
