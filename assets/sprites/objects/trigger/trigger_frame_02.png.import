@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r60sdpmlc3yg"
-path="res://.godot/imported/trigger_frame_01.png-68edd1f542949fbd45a4a5b28993e323.ctex"
+uid="uid://bm0jblds4il48"
+path="res://.godot/imported/trigger_frame_02.png-8b461708f0bbaa576b7d59ec92da1386.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objects/trap_stuff/trigger_frame_01.png"
-dest_files=["res://.godot/imported/trigger_frame_01.png-68edd1f542949fbd45a4a5b28993e323.ctex"]
+source_file="res://assets/sprites/objects/trigger/trigger_frame_02.png"
+dest_files=["res://.godot/imported/trigger_frame_02.png-8b461708f0bbaa576b7d59ec92da1386.ctex"]
 
 [params]
 

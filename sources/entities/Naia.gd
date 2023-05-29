@@ -323,3 +323,9 @@ func _on_animated_sprite_2d_animation_finished_component(animation):
 			bind_set_state(STATES.IDLE)
 			get_node("AnimatedSprite2D").call("STOP")
 			reset_focus_horizon()
+
+
+
+
+func danos():
+	$AnimationPlayer.play("dano_normal")

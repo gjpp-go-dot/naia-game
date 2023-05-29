@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://dcbkol4dj3mbw"]
+[gd_scene load_steps=55 format=3 uid="uid://dcbkol4dj3mbw"]
 
 [ext_resource type="Texture2D" uid="uid://ser4mwgyk43r" path="res://resources/tiles/water_animation.tres" id="1_7lwaw"]
 [ext_resource type="Script" path="res://sources/scenarios/level_1.gd" id="1_15fhq"]
@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://umpfqks2axpm" path="res://scenes/objects/bloco_instavel.tscn" id="24_8xxny"]
 [ext_resource type="PackedScene" uid="uid://dgjohj2lhu5j2" path="res://scenes/hud/Dialog.tscn" id="25_px0mw"]
 [ext_resource type="PackedScene" uid="uid://6ehghs5yws5s" path="res://scenes/hud/gameover.tscn" id="26_5vt70"]
+[ext_resource type="PackedScene" uid="uid://biu1yoenvj3sd" path="res://scenes/objects/trigger.tscn" id="27_fug2i"]
+[ext_resource type="PackedScene" uid="uid://ilqcaj35bd4v" path="res://scenes/objects/pressure_plait.tscn" id="28_dfxax"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bv0ef"]
 texture = ExtResource("1_7lwaw")
@@ -495,7 +497,7 @@ position = Vector2(-554, 1)
 position = Vector2(8447, -385)
 
 [node name="Naia" parent="." instance=ExtResource("4_iuxil")]
-position = Vector2(-55, 152)
+position = Vector2(2666, -207)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(9784, -859)
@@ -696,6 +698,13 @@ shape = SubResource("RectangleShape2D_0ldh0")
 process_mode = 4
 layer = 70
 
+[node name="trigger" parent="." instance=ExtResource("27_fug2i")]
+position = Vector2(3725, 411)
+
+[node name="pressure_plaite" parent="." instance=ExtResource("28_dfxax")]
+z_index = -2
+position = Vector2(3310, 454)
+
 [connection signal="ready" from="." to="." method="_on_ready"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
@@ -707,3 +716,4 @@ layer = 70
 [connection signal="body_shape_entered" from="Area2D2" to="Dialogo" method="_on_area_2d_2_body_shape_entered"]
 [connection signal="body_entered" from="Area2D7" to="Dialogo" method="_on_area_2d_7_body_entered"]
 [connection signal="body_entered" from="lago" to="." method="_on_lago_body_entered"]
+[connection signal="desparo" from="pressure_plaite" to="." method="_on_pressure_plaite_desparo"]

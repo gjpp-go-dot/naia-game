@@ -24,3 +24,7 @@ func _on_lago_body_entered(body):
 		$gameover.process_mode = Node.PROCESS_MODE_ALWAYS
 		get_tree().paused = true
 		$gameover/AnimationPlayer.play("perdeu")
+
+
+func _on_pressure_plaite_desparo():
+	$trigger.desparar(2)

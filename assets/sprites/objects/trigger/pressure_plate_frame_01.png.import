@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctvxafen0kxr7"
-path="res://.godot/imported/pressure_plate_frame_01.png-36dd7dc8679a17782d429aa3f05e5353.ctex"
+uid="uid://t8vmiu02ns46"
+path="res://.godot/imported/pressure_plate_frame_01.png-3bc896d3e41318ceb650cc5be60e3610.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/objects/trap_stuff/pressure_plate_frame_01.png"
-dest_files=["res://.godot/imported/pressure_plate_frame_01.png-36dd7dc8679a17782d429aa3f05e5353.ctex"]
+source_file="res://assets/sprites/objects/trigger/pressure_plate_frame_01.png"
+dest_files=["res://.godot/imported/pressure_plate_frame_01.png-3bc896d3e41318ceb650cc5be60e3610.ctex"]
 
 [params]
 
