@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://olt7ccbnf3c1"]
+[gd_scene load_steps=13 format=3 uid="uid://olt7ccbnf3c1"]
 
 [ext_resource type="FontFile" uid="uid://bjf5i3s13dben" path="res://assets/fonts/noto_sans/NotoSans-Regular.ttf" id="1_va6p1"]
 [ext_resource type="Script" path="res://sources/hud/creditos.gd" id="1_vt3up"]
@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://cej7otf6vptfu" path="res://assets/fonts/noto_sans/NotoSans-Bold.ttf" id="5_lpwuc"]
 [ext_resource type="Texture2D" uid="uid://tin4l5lywruw" path="res://assets/sprites/ambient_sprites/moon_structure1.png" id="6_n2lyr"]
 [ext_resource type="PackedScene" uid="uid://cc4qbtukyq43h" path="res://scenes/levels/transition.tscn" id="8_ub8kx"]
+[ext_resource type="AudioStream" uid="uid://beol5mpjtj2rr" path="res://assets/sounds/menu/inspiring-cinematic-ambient-116199.mp3" id="9_m4r30"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tnyfk"]
 font = ExtResource("3_0bjp2")
@@ -76,6 +77,7 @@ label_settings = SubResource("LabelSettings_xxhae")
 horizontal_alignment = 1
 
 [node name="Title2" type="Label" parent="VBoxContainer"]
+layout_mode = 0
 offset_top = 1253.0
 offset_right = 640.0
 offset_bottom = 1295.0
@@ -84,6 +86,7 @@ label_settings = SubResource("LabelSettings_tnyfk")
 horizontal_alignment = 1
 
 [node name="Text2" type="Label" parent="VBoxContainer"]
+layout_mode = 0
 offset_top = 1330.0
 offset_right = 640.0
 offset_bottom = 1400.0
@@ -93,6 +96,7 @@ label_settings = SubResource("LabelSettings_xxhae")
 horizontal_alignment = 1
 
 [node name="Title3" type="Label" parent="VBoxContainer"]
+layout_mode = 0
 offset_top = 1483.0
 offset_right = 640.0
 offset_bottom = 1567.0
@@ -112,6 +116,7 @@ label_settings = SubResource("LabelSettings_barcy")
 horizontal_alignment = 1
 
 [node name="Text3" type="Label" parent="VBoxContainer"]
+layout_mode = 0
 offset_top = 1660.0
 offset_right = 640.0
 offset_bottom = 1918.0
@@ -121,6 +126,7 @@ horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="Subtitle2" type="Label" parent="VBoxContainer"]
+layout_mode = 0
 offset_top = 1943.0
 offset_right = 640.0
 offset_bottom = 1980.0
@@ -129,6 +135,7 @@ label_settings = SubResource("LabelSettings_barcy")
 horizontal_alignment = 1
 
 [node name="Text4" type="Label" parent="VBoxContainer"]
+layout_mode = 0
 offset_top = 2001.0
 offset_right = 640.0
 offset_bottom = 2259.0
@@ -142,3 +149,8 @@ position = Vector2(320, 2400)
 texture = ExtResource("6_n2lyr")
 
 [node name="transition" parent="." instance=ExtResource("8_ub8kx")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_m4r30")
+pitch_scale = 0.75
+autoplay = true
