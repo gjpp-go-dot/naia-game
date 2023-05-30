@@ -5,6 +5,7 @@ var delay = 1.6
 func _on_ready():
 	get_tree().paused = false
 	$transition/fill/anim.play("transition_out")
+	Global.fase = 1
 	
 
 func _on_area_2d_body_entered(body):

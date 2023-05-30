@@ -1,10 +1,9 @@
 extends Camera2D
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Global.
+	if Global.fase == 1:
+		self.limit_left = -430
+	if Global.fase == 2:
+		self.limit_left = -10000000

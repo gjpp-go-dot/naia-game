@@ -20,6 +20,7 @@ config/icon="res://assets/sprites/entities/naia/idle/naia_idle1.png"
 [autoload]
 
 Constants="*res://sources/globals/contants.gd"
+Global="*res://sources/globals/Global.gd"
 
 [dialogic]
 

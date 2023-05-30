@@ -828,17 +828,18 @@ sprite_frames = SubResource("SpriteFrames_5qpvf")
 [node name="Sprint" type="Node2D" parent="Tutorials"]
 
 [node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Tutorials/Sprint"]
-position = Vector2(774, 40)
+position = Vector2(767, 37)
+scale = Vector2(0.681818, 0.625)
 sprite_frames = SubResource("SpriteFrames_ihxew")
 
 [node name="Label" type="Label" parent="Tutorials/Sprint"]
-offset_left = 694.0
-offset_top = 37.0
-offset_right = 1592.0
-offset_bottom = 123.0
+offset_left = 684.0
+offset_top = 31.0
+offset_right = 1582.0
+offset_bottom = 160.0
 scale = Vector2(0.25, 0.25)
-text = "Segurar        fará você correr
-podendo pular mais longe!"
+text = "Segurar      fará você andar
+mais lentamente"
 label_settings = SubResource("LabelSettings_2f53d")
 horizontal_alignment = 1
 

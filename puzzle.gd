@@ -11,6 +11,7 @@ func _on_ready():
 	$tiles2.position = Vector2(0,2000)
 	$tiles3.position = Vector2(0,2000)
 	$Timer.start()
+	Global.fase = 2
 
 func _physics_process(delta):
 	$water.position.y -= 0.2
